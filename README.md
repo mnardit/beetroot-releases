@@ -12,7 +12,7 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 
 ## Features
 
-- **AI-powered text transforms** — Fix grammar, translate, summarize, rewrite, simplify, shorten, explain, extract data, format as code, bullet points. 10 built-in prompts + custom prompts with quick-access in the right-click menu.
+- **AI-powered text transforms** — Fix grammar, translate, summarize, rewrite, simplify, shorten, explain, extract data, format as code, bullet points. 10 built-in prompts + custom prompts with quick-access in the right-click menu. Requires your own OpenAI API key (BYOK).
 - **Unlimited clipboard history** — Text and images, persisted in SQLite across reboots. Pin important items so they never get lost.
 - **Fuzzy search and regex filtering** — Find anything instantly. Filter by type: text, images, pinned, notes.
 - **OCR text extraction** — Right-click any image to extract text using the native Windows OCR engine. No external services, no network calls.
@@ -28,7 +28,7 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 - **Syntax highlighting** — Code preview with automatic language detection.
 - **Auto-update** — Built-in updater checks for new versions and installs with one click.
 - **Auto-delete** — Optionally clear history after 1, 7, or 30 days.
-- **i18n** — English and Russian.
+- **i18n** — English, Russian, German, Spanish, Chinese, Japanese.
 
 ## Screenshots
 
