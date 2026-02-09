@@ -61,11 +61,15 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 
 Download the latest `.exe` installer from [Releases](https://github.com/mnardit/beetroot-releases/releases).
 
-Package manager support (coming soon):
+Or install via package manager:
 
-```
-winget install beetroot
+```powershell
+# Scoop
+scoop bucket add beetroot https://github.com/mnardit/scoop-bucket
 scoop install beetroot
+
+# Winget (pending approval)
+winget install MNardit.Beetroot
 ```
 
 **Requirements:** Windows 10 or later.
