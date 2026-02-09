@@ -2,6 +2,8 @@
 
 **A smart clipboard manager for Windows with built-in AI transforms.**
 
+![Beetroot — clipboard history](docs/screenshots/main-dark.png)
+
 ## Download
 
 Get the latest version from [Releases](https://github.com/mnardit/beetroot-releases/releases).
@@ -27,6 +29,16 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 - **Auto-update** — Built-in updater checks for new versions and installs with one click.
 - **Auto-delete** — Optionally clear history after 1, 7, or 30 days.
 - **i18n** — English and Russian.
+
+## Screenshots
+
+| Clipboard history | AI in context menu |
+|---|---|
+| ![Light theme](docs/screenshots/main-light.png) | ![Context menu with AI](docs/screenshots/context-menu-ai.png) |
+
+| AI settings & custom prompts |
+|---|
+| ![AI settings](docs/screenshots/settings-ai.png) |
 
 ## Why not Win+V?
 
