@@ -68,8 +68,10 @@ Or install via package manager:
 scoop bucket add beetroot https://github.com/mnardit/scoop-bucket
 scoop install beetroot
 
-# Winget (pending approval)
+# Winget
 winget install MNardit.Beetroot
+n# Chocolatey
+choco install beetroot
 ```
 
 **Requirements:** Windows 10 or later.
