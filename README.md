@@ -32,13 +32,17 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 
 ## Screenshots
 
-| Clipboard history | AI in context menu |
+| Dark theme | Light theme |
 |---|---|
-| ![Light theme](docs/screenshots/main-light.png) | ![Context menu with AI](docs/screenshots/context-menu-ai.png) |
+| ![Dark theme](docs/screenshots/main-dark.png) | ![Light theme](docs/screenshots/main-light.png) |
 
-| AI settings & custom prompts |
-|---|
-| ![AI settings](docs/screenshots/settings-ai.png) |
+| Context menu with AI | Fuzzy search |
+|---|---|
+| ![Context menu](docs/screenshots/context-menu-ai.png) | ![Search](docs/screenshots/search.png) |
+
+| Preview with syntax highlighting | Appearance settings |
+|---|---|
+| ![Preview](docs/screenshots/preview-json.png) | ![Settings](docs/screenshots/settings-appearance.png) |
 
 ## Why not Win+V?
 
@@ -64,14 +68,15 @@ Download the latest `.exe` installer from [Releases](https://github.com/mnardit/
 Or install via package manager:
 
 ```powershell
+# Winget
+winget install MNardit.Beetroot
+
+# Chocolatey
+choco install beetroot
+
 # Scoop
 scoop bucket add beetroot https://github.com/mnardit/scoop-bucket
 scoop install beetroot
-
-# Winget
-winget install MNardit.Beetroot
-n# Chocolatey
-choco install beetroot
 ```
 
 **Requirements:** Windows 10 or later.
