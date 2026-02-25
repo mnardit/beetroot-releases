@@ -1,5 +1,9 @@
 # Beetroot
 
+[![Latest Release](https://img.shields.io/github/v/release/mnardit/beetroot-releases?label=version)](https://github.com/mnardit/beetroot-releases/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/mnardit/beetroot-releases/total)](https://github.com/mnardit/beetroot-releases/releases)
+[![Windows](https://img.shields.io/badge/platform-Windows%2010%2B-blue)](https://github.com/mnardit/beetroot-releases/releases/latest)
+
 **A smart clipboard manager for Windows with built-in AI transforms.**
 
 ![Beetroot — clipboard history](docs/screenshots/main-dark.png)
@@ -84,6 +88,10 @@ scoop install beetroot
 ## Tech stack
 
 Tauri v2 (Rust backend) + React 19 + TypeScript + SQLite + Vite
+
+## Built by
+
+[Max Nardit](https://github.com/mnardit) — analyst turned builder. After 10 years on macOS, switched to Windows and built the clipboard manager it was missing.
 
 ## License
 
