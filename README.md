@@ -3,8 +3,11 @@
 [![Latest Release](https://img.shields.io/github/v/release/mnardit/beetroot-releases?label=version)](https://github.com/mnardit/beetroot-releases/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/mnardit/beetroot-releases/total)](https://github.com/mnardit/beetroot-releases/releases)
 [![Windows](https://img.shields.io/badge/platform-Windows%2010%2B-blue)](https://github.com/mnardit/beetroot-releases/releases/latest)
+[![Website](https://img.shields.io/badge/website-max.nardit.com%2Fbeetroot-C43D72)](https://max.nardit.com/beetroot)
 
 **A smart clipboard manager for Windows with built-in AI transforms.**
+
+**Website:** [max.nardit.com/beetroot](https://max.nardit.com/beetroot)
 
 ![Beetroot — clipboard history](docs/screenshots/main-dark.png)
 
