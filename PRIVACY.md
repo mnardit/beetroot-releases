@@ -146,7 +146,7 @@ We may update this Privacy Policy from time to time. Changes will be included in
 
 For privacy-related questions or concerns:
 - **GitHub Issues:** [github.com/mnardit/beetroot-releases/issues](https://github.com/mnardit/beetroot-releases/issues)
-- **Security vulnerabilities:** [github.com/mnardit/beetroot/security](https://github.com/mnardit/beetroot/security)
+- **Security vulnerabilities:** [github.com/mnardit/beetroot-releases/security/advisories](https://github.com/mnardit/beetroot-releases/security/advisories)
 
 ---
 
