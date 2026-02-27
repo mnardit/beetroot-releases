@@ -22,7 +22,7 @@ The App captures and stores:
 - **Text content** copied to your system clipboard
 - **Image data** (screenshots, copied images) saved as PNG files
 - **Rich text / HTML content** for formatted paste
-- **Metadata:** timestamp, content type, content hash, usage frequency
+- **Metadata:** timestamp, content type, content hash, last used timestamp
 
 This data is stored **exclusively on your device** in:
 - `%APPDATA%/com.beetroot.desktop/clipboard.db` (SQLite database)
@@ -45,6 +45,8 @@ The App sends data to external servers **only** when you explicitly use AI text 
 | AI Transform | Selected clipboard text + prompt instruction | OpenAI API (`api.openai.com`) | Only when you manually trigger an AI action |
 
 **No data is sent automatically.** AI transforms require your explicit action (right-click menu or keyboard shortcut).
+
+The App also connects to GitHub (`github.com`) on startup to check for available updates. This request contains no personal data — only the current version number is compared against published releases.
 
 ### 2.4 Data We Do NOT Collect
 
@@ -115,8 +117,8 @@ You have complete control over your data:
 | Right | How to exercise |
 |-------|----------------|
 | **Access** | All data is stored locally; open the App to view your clipboard history |
-| **Delete** | Right-click any item to delete it, or use Settings > Data > Clear History |
-| **Export** | Use Settings > Data > Export to save your data |
+| **Delete** | Right-click any item to delete it, or configure auto-delete in Settings > General |
+| **Export** | Manually copy the database file from `%APPDATA%/com.beetroot.desktop/` |
 | **Restrict processing** | Use the Pause button to stop clipboard monitoring at any time |
 | **Withdraw consent** | Uninstall the App to stop all data collection |
 
