@@ -27,15 +27,15 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 - **Content detection** — Automatic badges for URLs, emails, code, JSON, and colors. Open detected URLs directly in your browser.
 - **8 themes + custom accent color** — Beetroot Dark/Light, Tokyo Night Storm, Gruvbox Material Hard, GitHub Light Pro, Nord Snow, Cyberpunk Dark/Light, plus Auto mode. Override the accent color with any hex value.
 - **Window effects** — Glass, Frosted, or Solid transparency with Mica on Windows 11.
-- **Global hotkeys** — Default `Ctrl+`` to show/hide. Fully configurable. Separate optional hotkey for plain text paste.
+- **Global hotkeys** — Default `Ctrl+`` to show/hide. Fully configurable. Supports non-QWERTY layouts (AZERTY, QWERTZ) and AltGr combinations. Separate optional hotkey for plain text paste.
 - **Multi-monitor aware** — Window always appears on the monitor where your cursor is.
 - **Keyboard-first design** — `Ctrl+1..9` quick paste, `Alt+T` transform, `Space` preview, `Alt+P` pin, `Alt+Del` delete, arrow keys to navigate.
 - **Rich text or plain text paste** — Choose whether to preserve formatting or strip it.
 - **Batch operations** — Multi-select with `Ctrl+Click`, then batch delete or batch copy with configurable separator.
 - **Syntax highlighting** — Code preview with automatic language detection.
-- **Auto-update** — Built-in updater checks for new versions and installs with one click.
+- **Auto-update** — Built-in updater checks for new versions and installs with one click. Can be disabled in Settings for fully offline operation.
 - **Auto-delete** — Optionally clear history after 1, 7, or 30 days.
-- **i18n** — English, Russian, German, Spanish, Chinese, Japanese.
+- **i18n** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish.
 
 ## Screenshots
 
