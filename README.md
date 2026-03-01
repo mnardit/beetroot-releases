@@ -17,6 +17,8 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 
 **Windows Installer (recommended):** Download `Beetroot_x64-setup.exe`
 
+> **Upgrading from v1.0.5 or earlier?** Auto-update won't work for this release due to a signing key change. Please [download v1.0.6 manually](https://github.com/mnardit/beetroot-releases/releases/latest). Future updates will work automatically.
+
 ## Features
 
 - **AI-powered text transforms** — Fix grammar, translate, summarize, rewrite, simplify, shorten, explain, extract data, format as code, bullet points. 10 built-in prompts + custom prompts with quick-access in the right-click menu. Requires your own OpenAI API key (BYOK).
