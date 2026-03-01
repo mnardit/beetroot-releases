@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Beetroot Clipboard Manager**
-**Last updated:** February 10, 2026
-**Version:** 1.0
+**Last updated:** March 1, 2026
+**Version:** 1.1
 
 ---
 
@@ -46,7 +46,7 @@ The App sends data to external servers **only** when you explicitly use AI text 
 
 **No data is sent automatically.** AI transforms require your explicit action (right-click menu or keyboard shortcut).
 
-The App also connects to GitHub (`github.com`) on startup to check for available updates. This request contains no personal data — only the current version number is compared against published releases.
+If auto-update is enabled (the default), the App connects to GitHub (`github.com`) shortly after startup to check for available updates. This request contains no personal data — only the current version number is compared against published releases. You can disable auto-update in Settings > General, in which case the App makes **no network connections at all** (unless you use AI transforms).
 
 ### 2.4 Data We Do NOT Collect
 

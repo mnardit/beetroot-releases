@@ -22,7 +22,8 @@ Do not open public issues for security vulnerabilities. We will acknowledge repo
 ## Security Model
 
 - **No servers:** All data is stored locally in `%APPDATA%/com.beetroot.desktop/`
-- **CSP enforced:** `connect-src 'self' https://api.openai.com` — no other outbound connections
+- **CSP enforced:** `connect-src 'self' https://api.openai.com` — no other outbound connections from the WebView
+- **Offline mode:** Auto-update can be disabled in Settings — zero network connections without an API key
 - **Path validation:** All file operations are validated against path traversal
 - **Size limits:** 1 MB text, 10 MB images
 - **Clipboard throttle:** 300ms minimum between captures
