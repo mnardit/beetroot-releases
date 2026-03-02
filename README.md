@@ -2,77 +2,25 @@
 
 [![Latest Release](https://img.shields.io/github/v/release/mnardit/beetroot-releases?label=version)](https://github.com/mnardit/beetroot-releases/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/mnardit/beetroot-releases/total)](https://github.com/mnardit/beetroot-releases/releases)
-[![Windows](https://img.shields.io/badge/platform-Windows%2010%2B-blue)](https://github.com/mnardit/beetroot-releases/releases/latest)
 [![Website](https://img.shields.io/badge/website-max.nardit.com%2Fbeetroot-C43D72)](https://max.nardit.com/beetroot)
 
-**A smart clipboard manager for Windows with built-in AI transforms.**
+**The clipboard manager Windows should have built.** AI transforms, OCR, search across your entire clipboard history.
+
+Your data stays on your machine. No telemetry. No cloud. No account required.
 
 **Website:** [max.nardit.com/beetroot](https://max.nardit.com/beetroot)
 
-![Beetroot — clipboard history](docs/screenshots/main-dark.png)
+![Beetroot clipboard manager — dark theme](docs/screenshots/main-dark.png)
+
+## Why I built this
+
+I used Paste on macOS for years. When I switched to Windows, the built-in Win+V felt like a toy — 25-item limit, no search, gone after reboot. Ditto works but looks like it's from 2005. So I built the clipboard manager I wanted to use every day.
+
+— [Max Nardit](https://max.nardit.com)
 
 ## Download
 
-Get the latest version from [Releases](https://github.com/mnardit/beetroot-releases/releases).
-
-**Windows Installer (recommended):** Download `Beetroot_x64-setup.exe`
-
-> **Upgrading from v1.0.5 or earlier?** Auto-update won't work due to a signing key change in v1.0.6. Please [download the latest version manually](https://github.com/mnardit/beetroot-releases/releases/latest). Users on v1.0.6+ get updates automatically.
-
-## Features
-
-- **AI-powered text transforms** — Fix grammar, translate, summarize, rewrite, simplify, shorten, explain, extract data, format as code, bullet points. 10 built-in prompts + custom prompts with quick-access in the right-click menu. Requires your own OpenAI API key (BYOK).
-- **Unlimited clipboard history** — Text and images, persisted in SQLite across reboots. Pin important items so they never get lost.
-- **Fuzzy search and regex filtering** — Find anything instantly. Filter by type: text, images, pinned, notes.
-- **OCR text extraction** — Right-click any image to extract text using the native Windows OCR engine. No external services, no network calls.
-- **Notes on clipboard items** — Annotate any entry with a note for later context. Searchable.
-- **Content detection** — Automatic badges for URLs, emails, code, JSON, and colors. Open detected URLs directly in your browser.
-- **8 themes + custom accent color** — Beetroot Dark/Light, Tokyo Night Storm, Gruvbox Material Hard, GitHub Light Pro, Nord Snow, Cyberpunk Dark/Light, plus Auto mode. Override the accent color with any hex value.
-- **Window effects** — Glass, Frosted, or Solid transparency with Mica on Windows 11.
-- **Global hotkeys** — Default `Ctrl+`` to show/hide. Fully configurable. Supports non-QWERTY layouts (AZERTY, QWERTZ) and AltGr combinations. Separate optional hotkey for plain text paste.
-- **Multi-monitor aware** — Window always appears on the monitor where your cursor is.
-- **Keyboard-first design** — `Ctrl+1..9` quick paste, `Alt+T` transform, `Space` preview, `Alt+P` pin, `Alt+Del` delete, arrow keys to navigate.
-- **Rich text or plain text paste** — Choose whether to preserve formatting or strip it.
-- **Batch operations** — Multi-select with `Ctrl+Click`, then batch delete or batch copy with configurable separator.
-- **Syntax highlighting** — Code preview with automatic language detection.
-- **Auto-update** — Built-in updater checks for new versions and installs with one click. Can be disabled in Settings for fully offline operation.
-- **Auto-delete** — Optionally clear history after 1, 7, or 30 days.
-- **i18n** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish.
-
-## Screenshots
-
-| Dark theme | Light theme |
-|---|---|
-| ![Dark theme](docs/screenshots/main-dark.png) | ![Light theme](docs/screenshots/main-light.png) |
-
-| Context menu with AI | Fuzzy search |
-|---|---|
-| ![Context menu](docs/screenshots/context-menu-ai.png) | ![Search](docs/screenshots/search.png) |
-
-| Preview with syntax highlighting | Appearance settings |
-|---|---|
-| ![Preview](docs/screenshots/preview-json.png) | ![Settings](docs/screenshots/settings-appearance.png) |
-
-## Why not Win+V?
-
-| Feature | Win+V | Beetroot |
-|---|---|---|
-| AI transforms | No | 10 built-in + custom prompts |
-| Search | No | Fuzzy search + regex |
-| Image history | Thumbnails only | Full images stored locally |
-| OCR | No | Native Windows OCR |
-| History limit | 25 items | Unlimited |
-| Persists across reboots | No | Yes |
-| Themes | No | 8 themes + custom accent color |
-| Plain text paste | No | Configurable (rich or plain) |
-| Multi-monitor | No | Follows cursor |
-| Notes on items | No | Yes |
-| Auto-delete | No | 1 / 7 / 30 days |
-| Keyboard shortcuts | Basic | 10+ shortcuts, Ctrl+1..9 quick paste |
-
-## Install
-
-Download the latest `.exe` installer from [Releases](https://github.com/mnardit/beetroot-releases/releases).
+Get the latest version from [**Releases**](https://github.com/mnardit/beetroot-releases/releases/latest).
 
 Or install via package manager:
 
@@ -80,24 +28,78 @@ Or install via package manager:
 # Winget
 winget install MNardit.Beetroot
 
-# Chocolatey
-choco install beetroot
-
 # Scoop
 scoop bucket add beetroot https://github.com/mnardit/scoop-bucket
 scoop install beetroot
+
+# Chocolatey
+choco install beetroot
 ```
+
+> [!NOTE]
+> **Upgrading from v1.0.5 or earlier?** Auto-update won't work due to a signing key change. Please [download manually](https://github.com/mnardit/beetroot-releases/releases/latest). Users on v1.0.6+ get updates automatically.
 
 **Requirements:** Windows 10 or later.
 
-## Tech stack
+## What makes Beetroot different
 
-Tauri v2 (Rust backend) + React 19 + TypeScript + SQLite + Vite
+### AI Transforms
 
-## Built by
+Select any clipboard item and let AI rewrite it — fix grammar, translate to English, summarize, make professional, simplify, shorten, explain, extract key data, format as code, or create bullet points. 10 built-in prompts plus your own custom ones, all accessible from the right-click menu.
 
-[Max Nardit](https://github.com/mnardit) — analyst turned builder. After 10 years on macOS, switched to Windows and built the clipboard manager it was missing.
+Bring your own OpenAI API key. No subscription to Beetroot.
+
+![Context menu with AI transforms](docs/screenshots/context-menu-ai.png)
+
+### OCR
+
+Copied a screenshot? Right-click it and extract the text. Runs entirely on-device using the native Windows OCR engine. No uploads, no external services, instant.
+
+### Search
+
+Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mode for power users. Filter by type — text, images, pinned items, or notes.
+
+![Fuzzy search in action](docs/screenshots/search.png)
+
+## Beetroot vs Win+V
+
+| | Win+V | Beetroot |
+|---|---|---|
+| AI transforms | — | 10 built-in + custom prompts |
+| Search | — | Fuzzy + regex |
+| OCR | — | Native, on-device |
+| Image history | Thumbnails, limited | Full images, stored locally |
+| History size | 25 items, lost on reboot | Unlimited, persists forever |
+| Themes | — | 9 themes + custom accent |
+| Plain text paste | — | Dedicated hotkey |
+| Multi-monitor | — | Window follows your cursor |
+
+## All features
+
+- **Unlimited history** — every text and image you copy, persisted across reboots
+- **Pin and notes** — pin important items, annotate with searchable notes
+- **9 themes** — Beetroot Dark/Light, Tokyo Night Storm, Gruvbox, GitHub Light, Nord Snow, Cyberpunk Dark/Light, Pure Dark (OLED black), plus Auto mode
+- **Window effects** — Glass, Frosted, or Solid transparency. Mica on Windows 11.
+- **Global hotkeys** — default `Ctrl+`` `, fully configurable. Works with any keyboard layout (AZERTY, QWERTZ, AltGr). Separate hotkey for plain text paste.
+- **Keyboard-first** — `Ctrl+1..9` quick paste, `Alt+T` AI transform, `Space` preview, `Alt+P` pin, `Ctrl+C` copy, `Alt+Del` delete
+- **Content detection** — auto-badges for URLs, emails, code, JSON, colors. Click to open URLs.
+- **Batch operations** — multi-select with `Ctrl+Click`, then batch delete or copy with separator
+- **Syntax highlighting** — automatic language detection in preview
+- **Auto-update** — one-click updates, or disable in Settings for fully offline operation
+- **10 languages** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish
+
+## Screenshots
+
+| Dark theme | Light theme |
+|---|---|
+| ![Dark](docs/screenshots/main-dark.png) | ![Light](docs/screenshots/main-light.png) |
+
+| Code preview | Settings |
+|---|---|
+| ![Preview](docs/screenshots/preview-json.png) | ![Settings](docs/screenshots/settings-appearance.png) |
 
 ## License
 
 Beetroot is free for personal and commercial use. Source code is proprietary.
+
+Built with Tauri, React, and Rust.
