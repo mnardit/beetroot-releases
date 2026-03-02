@@ -17,7 +17,7 @@ Get the latest version from [Releases](https://github.com/mnardit/beetroot-relea
 
 **Windows Installer (recommended):** Download `Beetroot_x64-setup.exe`
 
-> **Upgrading from v1.0.5 or earlier?** Auto-update won't work for this release due to a signing key change. Please [download v1.0.6 manually](https://github.com/mnardit/beetroot-releases/releases/latest). Future updates will work automatically.
+> **Upgrading from v1.0.5 or earlier?** Auto-update won't work due to a signing key change in v1.0.6. Please [download the latest version manually](https://github.com/mnardit/beetroot-releases/releases/latest). Users on v1.0.6+ get updates automatically.
 
 ## Features
 
