@@ -103,6 +103,10 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 |---|---|
 | ![Themes](docs/screenshots/settings-themes.png) | ![Settings](docs/screenshots/settings-general.png) |
 
+| Pure Dark (OLED) | Search |
+|---|---|
+| ![Pure Dark](docs/screenshots/main-pure-dark.png) | ![Search](docs/screenshots/search.png) |
+
 ## License
 
 Beetroot is free for personal and commercial use. Source code is proprietary.
