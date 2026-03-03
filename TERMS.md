@@ -68,7 +68,7 @@ Since all data is stored locally on your device:
 
 ## 5. Privacy
 
-Your privacy is important. Please review our [Privacy Policy](privacy-policy.md) for details on data collection, storage, and processing. Key points:
+Your privacy is important. Please review our [Privacy Policy](PRIVACY.md) for details on data collection, storage, and processing. Key points:
 - All clipboard data stays on your device
 - No analytics, telemetry, or tracking
 - AI transforms send text to OpenAI only when you explicitly trigger them
