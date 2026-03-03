@@ -80,7 +80,8 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 - **Pin and notes** — pin important items, annotate with searchable notes
 - **9 themes** — Beetroot Dark/Light, Tokyo Night Storm, Gruvbox, GitHub Light, Nord Snow, Cyberpunk Dark/Light, Pure Dark (OLED black), plus Auto mode
 - **Window effects** — Glass, Frosted, or Solid transparency. Mica on Windows 11.
-- **Global hotkeys** — default `Ctrl+`` `, fully configurable. Works with any keyboard layout (AZERTY, QWERTZ, AltGr). Separate hotkey for plain text paste.
+- **Typography** — customizable UI font (6 presets) and code font (5 presets) with adjustable size
+- **Global hotkeys** — default `Ctrl+`` `, fully configurable. Works with any keyboard layout (AZERTY, QWERTZ, AltGr). Separate hotkey for plain text paste. Instant layout detection when switching with Win+Space.
 - **Keyboard-first** — `Ctrl+1..9` quick paste, `Alt+T` AI transform, `Space` preview, `Alt+P` pin, `Ctrl+C` copy, `Alt+Del` delete
 - **Content detection** — auto-badges for URLs, emails, code, JSON, colors. Click to open URLs.
 - **Batch operations** — multi-select with `Ctrl+Click`, then batch delete or copy with separator
@@ -97,6 +98,14 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 | Code preview | Settings |
 |---|---|
 | ![Preview](docs/screenshots/preview-json.png) | ![Settings](docs/screenshots/settings-appearance.png) |
+
+## Third-party fonts
+
+Beetroot bundles the following fonts under the [SIL Open Font License 1.1](https://scripts.sil.org/OFL):
+
+- [Inter](https://rsms.me/inter/) by Rasmus Andersson
+- [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) by Google
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) by JetBrains
 
 ## License
 
