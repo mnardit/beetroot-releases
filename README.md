@@ -102,4 +102,12 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 
 Beetroot is free for personal and commercial use. Source code is proprietary.
 
+### Third-party fonts
+
+Beetroot bundles the following fonts under the [SIL Open Font License 1.1](https://openfontlicense.org/):
+
+- [Inter](https://github.com/rsms/inter) — Copyright 2020 The Inter Project Authors
+- [Noto Sans](https://github.com/notofonts/latin-greek-cyrillic) — Copyright 2022 The Noto Project Authors
+- [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) — Copyright 2020 The JetBrains Mono Project Authors
+
 Built with Tauri, React, and Rust.
