@@ -95,9 +95,13 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 |---|---|
 | ![Dark](docs/screenshots/main-dark.png) | ![Light](docs/screenshots/main-light.png) |
 
-| Code preview | Settings |
+| Context menu & AI | JSON preview |
 |---|---|
-| ![Preview](docs/screenshots/preview-json.png) | ![Settings](docs/screenshots/settings-appearance.png) |
+| ![Context menu](docs/screenshots/context-menu-ai.png) | ![Preview](docs/screenshots/preview-json.png) |
+
+| Themes | Languages & hotkeys |
+|---|---|
+| ![Themes](docs/screenshots/settings-themes.png) | ![Settings](docs/screenshots/settings-general.png) |
 
 ## License
 
