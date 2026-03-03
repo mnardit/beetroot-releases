@@ -99,14 +99,6 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 |---|---|
 | ![Preview](docs/screenshots/preview-json.png) | ![Settings](docs/screenshots/settings-appearance.png) |
 
-## Third-party fonts
-
-Beetroot bundles the following fonts under the [SIL Open Font License 1.1](https://scripts.sil.org/OFL):
-
-- [Inter](https://rsms.me/inter/) by Rasmus Andersson
-- [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) by Google
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) by JetBrains
-
 ## License
 
 Beetroot is free for personal and commercial use. Source code is proprietary.
