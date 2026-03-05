@@ -73,6 +73,8 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 | Themes | — | 9 themes + custom accent |
 | Plain text paste | — | Dedicated hotkey |
 | Multi-monitor | — | Window follows your cursor |
+| Pin on top | — | Pin + drag anywhere |
+| Notes | — | Searchable annotations |
 
 ## All features
 
@@ -80,14 +82,16 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 - **Pin and notes** — pin important items, annotate with searchable notes
 - **9 themes** — Beetroot Dark/Light, Tokyo Night Storm, Gruvbox, GitHub Light, Nord Snow, Cyberpunk Dark/Light, Pure Dark (OLED black), plus Auto mode
 - **Window effects** — Glass, Frosted, or Solid transparency. Mica on Windows 11.
-- **Typography** — customizable UI font (6 presets) and code font (5 presets) with adjustable size
+- **Typography** — customizable UI font (8 presets) and code font (5 presets) with adjustable size
 - **Global hotkeys** — default `Ctrl+`` `, fully configurable. Works with any keyboard layout (AZERTY, QWERTZ, AltGr). Separate hotkey for plain text paste. Instant layout detection when switching with Win+Space.
 - **Keyboard-first** — `Ctrl+1..9` quick paste, `Alt+T` AI transform, `Space` preview, `Alt+P` pin, `Ctrl+C` copy, `Alt+Del` delete
 - **Content detection** — auto-badges for URLs, emails, code, JSON, colors. Click to open URLs.
 - **Batch operations** — multi-select with `Ctrl+Click`, then batch delete or copy with separator
 - **Syntax highlighting** — automatic language detection in preview
 - **Auto-update** — one-click updates, or disable in Settings for fully offline operation
-- **10 languages** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish
+- **15 languages** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish, Italian, Polish, Dutch, Ukrainian, Thai
+- **Pin window on top** — keep Beetroot visible while you work, drag it anywhere between monitors. Or use follow-cursor mode so it pops up right where your mouse is.
+- **Never lose your data** — automatic backup rotation (3 copies + snapshot before each update), auto-recovery from corruption, warns if your data sits in OneDrive/Dropbox/Google Drive
 
 ## Screenshots
 
@@ -116,6 +120,8 @@ Beetroot is free for personal and commercial use. Source code is proprietary.
 Beetroot bundles the following fonts under the [SIL Open Font License 1.1](https://openfontlicense.org/):
 
 - [Inter](https://github.com/rsms/inter) — Copyright 2020 The Inter Project Authors
+- [Open Sans](https://github.com/googlefonts/opensans) — Copyright 2020 The Open Sans Project Authors
+- [Montserrat](https://github.com/JulietaUla/montserrat) — Copyright 2011 The Montserrat Project Authors
 - [Noto Sans](https://github.com/notofonts/latin-greek-cyrillic) — Copyright 2022 The Noto Project Authors
 - [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) — Copyright 2020 The JetBrains Mono Project Authors
 
