@@ -61,6 +61,12 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 
 ![Fuzzy search in action](docs/screenshots/search.png)
 
+### Pin Window
+
+Keep Beetroot visible while you work. Pin it on top and drag it anywhere between monitors — it stays on top and doesn't hide when you click away. Or switch to follow-cursor mode so the window pops up right where your mouse is.
+
+![Pinned window mode](docs/screenshots/pin-window.png)
+
 ## Beetroot vs Win+V
 
 | | Win+V | Beetroot |
@@ -90,7 +96,7 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 - **Syntax highlighting** — automatic language detection in preview
 - **Auto-update** — one-click updates, or disable in Settings for fully offline operation
 - **15 languages** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish, Italian, Polish, Dutch, Ukrainian, Thai
-- **Pin window on top** — keep Beetroot visible while you work, drag it anywhere between monitors. Or use follow-cursor mode so it pops up right where your mouse is.
+- **Pin window on top** — always-on-top, drag between monitors, or follow-cursor mode
 - **Never lose your data** — automatic backup rotation (3 copies + snapshot before each update), auto-recovery from corruption, warns if your data sits in OneDrive/Dropbox/Google Drive
 
 ## Screenshots
