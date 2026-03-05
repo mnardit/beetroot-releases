@@ -12,6 +12,27 @@ Your data stays on your machine. No telemetry. No cloud. No account required.
 
 ![Beetroot clipboard manager — dark theme](docs/screenshots/main-dark.png)
 
+## See it in action
+
+<table>
+<tr>
+<td align="center"><b>Search</b></td>
+<td align="center"><b>AI Transforms</b></td>
+</tr>
+<tr>
+<td><img src="docs/gif/search-demo.gif" alt="Fuzzy search demo" width="400"></td>
+<td><img src="docs/gif/ai-transform.gif" alt="AI translate and fix grammar" width="400"></td>
+</tr>
+<tr>
+<td align="center"><b>Themes</b></td>
+<td align="center"><b>Settings</b></td>
+</tr>
+<tr>
+<td><img src="docs/gif/theme-switching.gif" alt="Theme switching" width="400"></td>
+<td><img src="docs/gif/settings-walkthrough.gif" alt="Settings walkthrough" width="400"></td>
+</tr>
+</table>
+
 ## Why I built this
 
 I used Paste on macOS for years. When I switched to Windows, the built-in Win+V felt like a toy — 25-item limit, no search, gone after reboot. Ditto works but looks like it's from 2005. So I built the clipboard manager I wanted to use every day.
@@ -103,19 +124,19 @@ Keep Beetroot visible while you work. Pin it on top and drag it anywhere between
 
 | Dark theme | Light theme |
 |---|---|
-| ![Dark](docs/screenshots/main-dark.png) | ![Light](docs/screenshots/main-light.png) |
+| ![Dark](docs/screenshots/main-dark-new.png) | ![Light](docs/screenshots/main-light-filters.png) |
 
-| Context menu & AI | JSON preview |
+| Context menu & AI | Code preview |
 |---|---|
-| ![Context menu](docs/screenshots/context-menu-ai.png) | ![Preview](docs/screenshots/preview-json.png) |
+| ![Context menu](docs/screenshots/context-menu.jpg) | ![Preview](docs/screenshots/preview-code.png) |
 
-| Themes | Languages & hotkeys |
+| Search | AI Transform menu |
 |---|---|
-| ![Themes](docs/screenshots/settings-themes.png) | ![Settings](docs/screenshots/settings-general.png) |
+| ![Search](docs/screenshots/search-results.png) | ![Transforms](docs/screenshots/transform-menu.png) |
 
-| Pure Dark (OLED) | Search |
+| Settings | Rose theme |
 |---|---|
-| ![Pure Dark](docs/screenshots/main-pure-dark.png) | ![Search](docs/screenshots/search.png) |
+| ![Settings](docs/screenshots/settings-languages.png) | ![Rose](docs/screenshots/settings-general-new.png) |
 
 ## License
 
