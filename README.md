@@ -132,9 +132,9 @@ Keep Beetroot visible while you work. Pin it on top and drag it anywhere between
 |---|---|
 | ![Search](docs/screenshots/search-results.png) | ![Transforms](docs/screenshots/transform-menu.png) |
 
-| Settings | Rose theme |
+| Settings | Beetroot Light theme |
 |---|---|
-| ![Settings](docs/screenshots/settings-languages.png) | ![Rose](docs/screenshots/settings-general-new.png) |
+| ![Settings](docs/screenshots/settings-languages.png) | ![Beetroot Light](docs/screenshots/settings-general-new.png) |
 
 ## License
 
