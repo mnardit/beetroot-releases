@@ -78,9 +78,11 @@ The App respects clipboard privacy signals from password managers. When a passwo
 
 ### Data Location
 
-All App data is stored in: `%APPDATA%/com.beetroot.desktop/`
+By default, all App data is stored in: `%APPDATA%/com.beetroot.desktop/`
 
-To completely remove all data, delete this folder after uninstalling.
+You can change the storage location in Settings (e.g., to an external drive or a different partition). The App will move your database and images to the new folder automatically.
+
+To completely remove all data, delete the data folder after uninstalling.
 
 ---
 
