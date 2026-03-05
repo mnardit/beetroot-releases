@@ -72,7 +72,7 @@ The App respects clipboard privacy signals from password managers. When a passwo
 
 - All clipboard data is stored **locally on your device only**
 - The database is **not encrypted** (stored as a standard SQLite file)
-- Default retention: unlimited (never deleted). You can enable auto-delete in Settings (1 day, 7 days, or 30 days) and set a history size limit (100–1000 items)
+- Default retention: unlimited (never deleted). You can enable auto-delete in Settings (1 day, 7 days, or 30 days) and set a history size limit (100, 250, 500, 1000, or Unlimited)
 - You can delete individual items, clear all history, or uninstall the App to remove all data
 - Pinned items are excluded from auto-deletion
 
