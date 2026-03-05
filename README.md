@@ -86,8 +86,6 @@ Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mo
 
 Keep Beetroot visible while you work. Pin it on top and drag it anywhere between monitors — it stays on top and doesn't hide when you click away. Or switch to follow-cursor mode so the window pops up right where your mouse is.
 
-![Pinned window mode](docs/screenshots/pin-window.png)
-
 ## Beetroot vs Win+V
 
 | | Win+V | Beetroot |
