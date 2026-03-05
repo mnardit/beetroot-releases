@@ -10,7 +10,7 @@ Your data stays on your machine. No telemetry. No cloud. No account required.
 
 **Website:** [max.nardit.com/beetroot](https://max.nardit.com/beetroot)
 
-![Beetroot clipboard manager — dark theme](docs/screenshots/main-dark.png)
+![Beetroot clipboard manager — dark theme](docs/screenshots/main-dark-new.png)
 
 ## See it in action
 
@@ -70,7 +70,7 @@ Select any clipboard item and let AI rewrite it — fix grammar, translate to En
 
 Bring your own OpenAI API key. No subscription to Beetroot.
 
-![Context menu with AI transforms](docs/screenshots/context-menu-ai.png)
+![Context menu with AI transforms](docs/screenshots/context-menu.jpg)
 
 ### OCR
 
@@ -80,7 +80,7 @@ Copied a screenshot? Right-click it and extract the text. Runs entirely on-devic
 
 Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mode for power users. Filter by type — text, images, pinned items, or notes.
 
-![Fuzzy search in action](docs/screenshots/search.png)
+![Fuzzy search in action](docs/screenshots/search-results.png)
 
 ### Pin Window
 
