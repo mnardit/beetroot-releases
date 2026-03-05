@@ -28,6 +28,10 @@ Do not open public issues for security vulnerabilities. We will acknowledge repo
 - **Size limits:** 1 MB text, 10 MB images
 - **Clipboard throttle:** 300ms minimum between captures
 - **Password manager respect:** Honors `CF_CLIPBOARD_VIEWER_IGNORE` and `ExcludeClipboardContentFromMonitorProcessing`
+- **Automatic backups:** 3-copy rotation using SQLite Backup API (point-in-time snapshots) + snapshot before each database migration
+- **Auto-recovery:** Detects database corruption at startup and restores from the latest backup automatically
+- **Cloud sync detection:** Warns if your data folder is inside OneDrive, Dropbox, or Google Drive (cloud sync can corrupt SQLite databases)
+- **Drive type detection:** Warns if the data folder is on a USB or network drive
 
 See [PRIVACY.md](PRIVACY.md) for the full privacy policy.
 

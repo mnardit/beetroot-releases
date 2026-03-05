@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 1, 2026
-**Version:** 1.1
+**Last updated:** March 5, 2026
+**Version:** 1.2
 
 ---
 
@@ -103,10 +103,13 @@ We implement the following security measures:
 - **Path validation:** Prevents path traversal attacks on file operations
 - **Size limits:** Maximum 1 MB text, 10 MB images to prevent abuse
 - **Clipboard throttling:** 300ms minimum between captures
+- **Automatic backups:** 3-copy rotation using SQLite Backup API (point-in-time snapshots), plus a snapshot before each database migration. If corruption is detected at startup, the App automatically restores from the latest backup and notifies you
+- **Cloud sync detection:** The App warns you if your data folder is inside a cloud sync service (OneDrive, Dropbox, Google Drive) because cloud sync can corrupt SQLite databases. It also warns about USB and network drives
 
 **Known limitations:**
 - The SQLite database is not encrypted. Any process running under your user account can read the clipboard history file.
 - The OpenAI API key is stored in the WebView's localStorage without encryption.
+- Runtime backups are created every 100 clipboard writes. In the unlikely event of both a crash and database corruption between backups, up to 100 recent items could be lost.
 
 ---
 

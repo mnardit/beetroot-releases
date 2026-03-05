@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Beetroot Clipboard Manager**
-**Last updated:** February 10, 2026
-**Version:** 1.0
+**Last updated:** March 5, 2026
+**Version:** 1.1
 
 ---
 
@@ -19,6 +19,8 @@ Beetroot is a desktop clipboard manager for Windows that:
 - Provides search, filtering, and organization of clipboard history
 - Offers AI-powered text transforms via OpenAI API (requires API key)
 - Provides OCR text extraction from images
+- Supports pin-on-top and follow-cursor window modes
+- Automatic backup rotation (3 copies) with recovery from database corruption
 - Stores all data locally on your device
 
 ---
@@ -29,9 +31,13 @@ Beetroot is provided as **free software** for personal and commercial use. You m
 - Install and use the App on any number of personal devices
 - Use the App for any lawful purpose, personal or commercial
 
+You may also:
+- Redistribute the compiled application in its unmodified form (e.g., host on your website)
+
 You may not:
 - Reverse engineer, decompile, or disassemble the App
-- Redistribute, sell, or sublicense the App
+- Sell or sublicense the App
+- Modify, repackage, or create derivative works of the App
 - Remove or modify any proprietary notices
 - Use the App for any unlawful purpose
 
@@ -147,7 +153,7 @@ For questions about these Terms:
 | Question | Answer |
 |----------|--------|
 | Is Beetroot free? | Yes, free for personal and commercial use |
-| Can I redistribute it? | No |
+| Can I redistribute it? | Yes, the unmodified compiled app (not the source code) |
 | Who is responsible for my data? | You are; all data is stored locally |
 | Is there a warranty? | No, provided "as is" |
 | Can I use it commercially? | Yes |
