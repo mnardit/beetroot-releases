@@ -200,7 +200,7 @@ Only the text you right-click → Transform. The request goes directly from your
 In the app's local settings (localStorage in the WebView2 profile). It never leaves your machine.
 
 **Where is my data stored?**
-By default in `%LOCALAPPDATA%\com.beetroot.app\`. You can move it in Settings → Data. The database is a standard SQLite file — back it up by copying the folder.
+By default in `%LOCALAPPDATA%\com.beetroot.desktop\`. You can move it in Settings → Data. The database is a standard SQLite file — back it up by copying the folder.
 
 **Does Beetroot work on Windows 10?**
 Yes. Windows 10 and 11 are both supported. Mica and Acrylic window effects are available on Windows 11.
