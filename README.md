@@ -78,7 +78,7 @@ Copied a screenshot? Right-click it and extract the text. Runs entirely on-devic
 
 ### Search
 
-Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mode for power users. Filter by type — text, images, pinned items, or notes.
+Find that thing you copied three weeks ago. Fuzzy search handles typos, regex mode for power users. Filter by type — text, images, starred items, or notes.
 
 ![Fuzzy search in action](docs/screenshots/search-results.png)
 
@@ -104,17 +104,18 @@ Keep Beetroot visible while you work. Pin it on top and drag it anywhere between
 ## All features
 
 - **Unlimited history** — every text and image you copy, persisted across reboots
-- **Pin and notes** — pin important items, annotate with searchable notes
+- **Star and notes** — star important items so they never scroll away, annotate with searchable notes
 - **9 themes** — Beetroot Dark/Light, Tokyo Night Storm, Gruvbox, GitHub Light, Nord Snow, Cyberpunk Dark/Light, Pure Dark (OLED black), plus Auto mode
-- **Window effects** — Glass, Frosted, or Solid transparency. Mica on Windows 11.
+- **Window effects** — Mica, Acrylic, or Solid. Native effects auto-detected by Windows version.
 - **Typography** — customizable UI font (8 presets) and code font (5 presets) with adjustable size
 - **Global hotkeys** — default `Ctrl+`` `, fully configurable. Works with any keyboard layout (AZERTY, QWERTZ, AltGr). Separate hotkey for plain text paste. Instant layout detection when switching with Win+Space.
-- **Keyboard-first** — `Ctrl+1..9` quick paste, `Alt+T` AI transform, `Space` preview, `Alt+P` pin, `Ctrl+C` copy, `Alt+Del` delete
+- **Keyboard-first** — `Ctrl+1..9` quick paste, `Alt+T` AI transform, `Space` preview, `Alt+P` pin window, `Ctrl+C` copy, `Alt+Del` delete. All shortcuts customizable via Settings → Shortcuts.
 - **Content detection** — auto-badges for URLs, emails, code, JSON, colors. Click to open URLs.
 - **Batch operations** — multi-select with `Ctrl+Click`, then batch delete or copy with separator
 - **Syntax highlighting** — automatic language detection in preview
+- **Single instance** — launching Beetroot again brings the existing window to focus, no duplicates
 - **Auto-update** — one-click updates, or disable in Settings for fully offline operation
-- **15 languages** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish, Italian, Polish, Dutch, Ukrainian, Thai
+- **26 languages** — English, Russian, German, Spanish, Chinese, Japanese, French, Portuguese, Korean, Turkish, Italian, Polish, Dutch, Ukrainian, Thai, Hindi, Indonesian, Vietnamese, Czech, Hungarian, Romanian, Swedish, Danish, Finnish, Norwegian, Malay
 - **Pin window on top** — always-on-top, drag between monitors, or follow-cursor mode
 - **Never lose your data** — automatic backup rotation (3 copies + snapshot before each update), auto-recovery from corruption, warns if your data sits in OneDrive/Dropbox/Google Drive
 
