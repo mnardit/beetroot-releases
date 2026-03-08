@@ -21,6 +21,10 @@
   <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Download</strong></a> · <a href="https://max.nardit.com/beetroot">Website</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
 </p>
 
+<p align="center">
+  <b>English</b> · <a href="README.ru.md">Русский</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.zh.md">中文</a>
+</p>
+
 > This repo hosts releases and documentation. Source code is proprietary.
 
 ---
