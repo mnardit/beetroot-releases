@@ -91,7 +91,7 @@ choco install beetroot
 
 | Funktion | Win+V | Beetroot |
 |---|---|---|
-| Historie | 25 Einträge, nach Neustart weg | Unbegrenzt, dauerhaft gespeichert |
+| Historie | 25 Clips, nach Neustart weg | Unbegrenzt, dauerhaft gespeichert |
 | Suche | Nein | Unscharf + Regex |
 | KI-Transformationen | Nein | 10 integrierte + eigene Prompts |
 | OCR | Nein | Native Windows-Engine, lokal |
@@ -109,7 +109,7 @@ choco install beetroot
 1. **Installieren** — .exe herunterladen oder winget/scoop/choco verwenden
 2. **Öffnen** — `` Ctrl+` `` drücken (anpassbar) um Beetroot anzuzeigen
 3. **Suchen** — einfach tippen für unscharfe Suche, oder `/regex/`
-4. **Favoriten & Notizen** — Rechtsklick → Favorit um Einträge oben zu halten, Notizen für Kontext
+4. **Favoriten & Notizen** — Rechtsklick → Favorit um Clips oben zu halten, Notizen für Kontext
 5. **KI & OCR** — Rechtsklick → Transformieren für KI, oder Rechtsklick auf ein Bild → OCR
 
 ---
@@ -121,7 +121,7 @@ choco install beetroot
 - **Unscharfe Suche** — findet alles, auch mit Tippfehlern
 - **Regex-Modus** — `/pattern/` für Power-User mit Hervorhebung
 - **Filter** — Text, Bilder, Favoriten, Notizen — ein Klick zum Filtern
-- **Schnelles Einfügen** — `Ctrl+1..9` für die letzten Einträge ohne Fenster zu öffnen
+- **Schnelles Einfügen** — `Ctrl+1..9` für die letzten Clips ohne Fenster zu öffnen
 - **Stapeloperationen** — Mehrfachauswahl mit `Ctrl+Click`, Stapelkopieren oder -löschen
 - **Inhaltserkennung** — Auto-Badges für URLs, E-Mails, Code, JSON, Farben; Klick zum Öffnen
 - **Einzelinstanz** — erneutes Starten fokussiert das bestehende Fenster
@@ -163,7 +163,7 @@ choco install beetroot
 | Kürzel | Aktion |
 |---|---|
 | `` Ctrl+` `` | Beetroot anzeigen / verbergen |
-| `Enter` | Ausgewählten Eintrag einfügen |
+| `Enter` | Ausgewählten Clip einfügen |
 | `Ctrl+1..9` | Schnelles Einfügen |
 | `Space` | Vorschau |
 | `Alt+T` | KI-Transformation |

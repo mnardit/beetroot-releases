@@ -91,7 +91,7 @@ choco install beetroot
 
 | Función | Win+V | Beetroot |
 |---|---|---|
-| Historial | 25 elementos, se pierden al reiniciar | Ilimitado, persistente |
+| Historial | 25 clips, se pierden al reiniciar | Ilimitado, persistente |
 | Búsqueda | No | Difusa + regex |
 | Transformaciones IA | No | 10 integradas + prompts personalizados |
 | OCR | No | Motor nativo de Windows, local |
@@ -121,7 +121,7 @@ choco install beetroot
 - **Búsqueda difusa** — encuentra cualquier cosa con tolerancia a errores
 - **Modo regex** — `/pattern/` para usuarios avanzados con resaltado
 - **Filtros** — texto, imágenes, favoritos, notas — un clic para filtrar
-- **Pegado rápido** — `Ctrl+1..9` para pegar elementos recientes sin abrir la ventana
+- **Pegado rápido** — `Ctrl+1..9` para pegar clips recientes sin abrir la ventana
 - **Operaciones por lotes** — selección múltiple con `Ctrl+Click`, copiar o eliminar en lote
 - **Detección de contenido** — badges automáticos para URLs, emails, código, JSON, colores; clic para abrir
 - **Instancia única** — abrir Beetroot de nuevo enfoca la ventana existente
@@ -163,7 +163,7 @@ choco install beetroot
 | Atajo | Acción |
 |---|---|
 | `` Ctrl+` `` | Mostrar / ocultar Beetroot |
-| `Enter` | Pegar elemento seleccionado |
+| `Enter` | Pegar clip seleccionado |
 | `Ctrl+1..9` | Pegado rápido |
 | `Space` | Vista previa |
 | `Alt+T` | Transformación IA |

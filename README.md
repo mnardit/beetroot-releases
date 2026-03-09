@@ -91,7 +91,7 @@ choco install beetroot
 
 | Feature | Win+V | Beetroot |
 |---|---|---|
-| History | 25 items, lost on reboot | Unlimited, persists forever |
+| History | 25 clips, lost on reboot | Unlimited, persists forever |
 | Search | No | Fuzzy + regex |
 | AI transforms | No | 10 built-in + custom prompts |
 | OCR | No | Native Windows engine, on-device |
@@ -109,7 +109,7 @@ choco install beetroot
 1. **Install** — download .exe or use winget/scoop/choco
 2. **Open** — press `` Ctrl+` `` (customizable) to show Beetroot
 3. **Search** — start typing to fuzzy-search your history, or use `/regex/`
-4. **Star & annotate** — right-click → Star to keep items on top, add notes for context
+4. **Star & annotate** — right-click → Star to keep clips on top, add notes for context
 5. **AI & OCR** — right-click → Transform for AI, or right-click an image → OCR
 
 ---
@@ -133,7 +133,7 @@ choco install beetroot
 - **Fuzzy search** — find anything with typo tolerance, powered by in-memory index
 - **Regex mode** — `/pattern/` for power users with match highlighting
 - **Filters** — text, images, starred, notes — one click to narrow down
-- **Quick paste** — `Ctrl+1..9` to paste recent items without opening the window
+- **Quick paste** — `Ctrl+1..9` to paste recent clips without opening the window
 - **Batch operations** — multi-select with `Ctrl+Click`, batch copy with custom separator or delete
 - **Content detection** — auto-badges for URLs, emails, code, JSON, colors; click to open URLs
 - **Single instance** — launching Beetroot again brings the existing window to focus
@@ -175,7 +175,7 @@ choco install beetroot
 | Shortcut | Action |
 |---|---|
 | `` Ctrl+` `` | Show / hide Beetroot |
-| `Enter` | Paste selected item |
+| `Enter` | Paste selected clip |
 | `Ctrl+1..9` | Quick paste |
 | `Space` | Preview |
 | `Alt+T` | Transform with AI |
