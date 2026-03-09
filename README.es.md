@@ -266,5 +266,9 @@ Gratis para uso personal y comercial. El código fuente es propietario.
 ---
 
 <p align="center">
+  ¿Te gusta Beetroot? Una ⭐ ayuda a que otros lo descubran.
+</p>
+
+<p align="center">
   Creado por <a href="https://max.nardit.com">Max Nardit</a>
 </p>

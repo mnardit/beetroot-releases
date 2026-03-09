@@ -266,5 +266,9 @@ Kostenlos für private und gewerbliche Nutzung. Quellcode ist proprietär.
 ---
 
 <p align="center">
+  Gefällt Ihnen Beetroot? Ein ⭐ hilft anderen, es zu entdecken.
+</p>
+
+<p align="center">
   Erstellt von <a href="https://max.nardit.com">Max Nardit</a>
 </p>

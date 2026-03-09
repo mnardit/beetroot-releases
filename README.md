@@ -278,5 +278,9 @@ Free for personal and commercial use. Source code is proprietary.
 ---
 
 <p align="center">
+  Enjoying Beetroot? A ⭐ helps others find it too.
+</p>
+
+<p align="center">
   Built by <a href="https://max.nardit.com">Max Nardit</a>
 </p>

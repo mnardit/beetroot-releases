@@ -266,5 +266,9 @@ Beetroot пока не имеет подписи кода (сертификат 
 ---
 
 <p align="center">
+  Нравится Beetroot? Поставьте ⭐ — так другие тоже его найдут.
+</p>
+
+<p align="center">
   Создано <a href="https://max.nardit.com">Max Nardit</a>
 </p>

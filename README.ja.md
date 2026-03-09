@@ -266,5 +266,9 @@ Beetrootはまだコード署名されていません（証明書申請中）。
 ---
 
 <p align="center">
+  Beetroot を気に入りましたか？ ⭐ を付けると、他の人も見つけやすくなります。
+</p>
+
+<p align="center">
   <a href="https://max.nardit.com">Max Nardit</a> 制作
 </p>
