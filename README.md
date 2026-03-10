@@ -199,7 +199,7 @@ No. Everything stays in a local SQLite database on your machine. With a local AI
 In the app's local settings (localStorage in the WebView2 profile). It never leaves your machine.
 
 **Where is my data stored?**
-By default in `%LOCALAPPDATA%\com.beetroot.desktop\`. You can move it in Settings → Data. The database is a standard SQLite file — back it up by copying the folder.
+By default in `%APPDATA%\com.beetroot.desktop\`. You can move it in Settings → Data. The database is a standard SQLite file — back it up by copying the folder.
 
 **Does auto-update work?**
 Yes, for v1.0.6+. Users on v1.0.5 or earlier need to [download manually](https://github.com/mnardit/beetroot-releases/releases/latest) once — after that, auto-update works normally. You can disable auto-update in Settings → General.

@@ -199,7 +199,7 @@ Nein. Alles bleibt in einer lokalen SQLite-Datenbank auf deinem Rechner. Mit ein
 In den lokalen App-Einstellungen (localStorage im WebView2-Profil). Er verlässt nie deinen Rechner.
 
 **Wo werden meine Daten gespeichert?**
-Standardmäßig in `%LOCALAPPDATA%\com.beetroot.desktop\`. Der Speicherort lässt sich ändern unter Einstellungen → Daten. Die Datenbank ist eine Standard-SQLite-Datei — Backup durch Kopieren des Ordners.
+Standardmäßig in `%APPDATA%\com.beetroot.desktop\`. Der Speicherort lässt sich ändern unter Einstellungen → Daten. Die Datenbank ist eine Standard-SQLite-Datei — Backup durch Kopieren des Ordners.
 
 **Funktioniert Auto-Update?**
 Ja, ab v1.0.6. Nutzer von v1.0.5 oder früher müssen einmal [manuell herunterladen](https://github.com/mnardit/beetroot-releases/releases/latest) — danach funktioniert Auto-Update normal. Auto-Update kann unter Einstellungen → Allgemein deaktiviert werden.

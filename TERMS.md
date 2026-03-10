@@ -130,7 +130,7 @@ OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE APP (WHICH IS $
 ## 10. Termination
 
 - You may stop using the App at any time by uninstalling it
-- Delete `%LOCALAPPDATA%/com.beetroot.desktop/` to remove all stored data
+- Delete `%APPDATA%/com.beetroot.desktop/` to remove all stored data
 - We reserve the right to discontinue the App at any time without notice
 
 ---
@@ -157,4 +157,4 @@ For questions about these Terms:
 | Who is responsible for my data? | You are; all data is stored locally |
 | Is there a warranty? | No, provided "as is" |
 | Can I use it commercially? | Yes |
-| How do I delete everything? | Uninstall + delete `%LOCALAPPDATA%/com.beetroot.desktop/` |
+| How do I delete everything? | Uninstall + delete `%APPDATA%/com.beetroot.desktop/` |

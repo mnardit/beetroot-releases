@@ -199,7 +199,7 @@ choco install beetroot
 アプリのローカル設定（WebView2プロファイルのlocalStorage）に保存されます。マシンから外に出ることはありません。
 
 **データはどこに保存されますか？**
-デフォルトでは `%LOCALAPPDATA%\com.beetroot.desktop\`。設定 → データで移動可能です。データベースは標準的なSQLiteファイルです — フォルダをコピーするだけでバックアップできます。
+デフォルトでは `%APPDATA%\com.beetroot.desktop\`。設定 → データで移動可能です。データベースは標準的なSQLiteファイルです — フォルダをコピーするだけでバックアップできます。
 
 **自動更新は動作しますか？**
 はい、v1.0.6以降で動作します。v1.0.5以前のユーザーは一度[手動でダウンロード](https://github.com/mnardit/beetroot-releases/releases/latest)する必要があります — その後は自動更新が正常に動作します。設定 → 一般で自動更新を無効にできます。

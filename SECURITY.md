@@ -21,8 +21,8 @@ Do not open public issues for security vulnerabilities. We will acknowledge repo
 
 ## Security Model
 
-- **No servers:** All data is stored locally in `%LOCALAPPDATA%/com.beetroot.desktop/`
-- **CSP enforced:** `connect-src 'self' https://api.openai.com http://127.0.0.1:* http://localhost:*` — no other outbound connections from the WebView
+- **No servers:** All data is stored locally in `%APPDATA%/com.beetroot.desktop/`
+- **CSP enforced:** `connect-src 'self' https://api.openai.com http://127.0.0.1:* http://localhost:* https://127.0.0.1:* https://localhost:*` — no other outbound connections from the WebView
 - **Loopback-only local AI:** Local LLM endpoints are restricted to 127.0.0.1 and localhost — the App cannot send clipboard data to remote servers in Local LLM mode
 - **Offline mode:** Auto-update can be disabled in Settings — zero network connections without OpenAI. Local AI models require no network access
 - **Path validation:** All file operations are validated against path traversal
@@ -31,7 +31,7 @@ Do not open public issues for security vulnerabilities. We will acknowledge repo
 - **Password manager respect:** Honors `CF_CLIPBOARD_VIEWER_IGNORE` and `ExcludeClipboardContentFromMonitorProcessing`
 - **Automatic backups:** 3-copy rotation using SQLite Backup API (point-in-time snapshots) + snapshot before each database migration
 - **Auto-recovery:** Detects database corruption at startup and restores from the latest backup automatically
-- **Cloud sync detection:** Warns if your data folder is inside OneDrive, Dropbox, or Google Drive (cloud sync can corrupt SQLite databases)
+- **Cloud sync detection:** Warns if your data folder is inside OneDrive, Dropbox, Google Drive, or iCloud (cloud sync can corrupt SQLite databases)
 - **Drive type detection:** Warns if the data folder is on a USB or network drive
 
 See [PRIVACY.md](PRIVACY.md) for the full privacy policy.

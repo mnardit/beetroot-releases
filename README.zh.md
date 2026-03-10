@@ -199,7 +199,7 @@ choco install beetroot
 在应用的本地设置中（WebView2 配置文件中的 localStorage）。它绝不会离开您的电脑。
 
 **我的数据存储在哪里？**
-默认在 `%LOCALAPPDATA%\com.beetroot.desktop\`。可在设置 → 数据中移动。数据库是标准 SQLite 文件 — 复制文件夹即可备份。
+默认在 `%APPDATA%\com.beetroot.desktop\`。可在设置 → 数据中移动。数据库是标准 SQLite 文件 — 复制文件夹即可备份。
 
 **自动更新可用吗？**
 是的，v1.0.6 起可用。v1.0.5 及更早版本的用户需要[手动下载](https://github.com/mnardit/beetroot-releases/releases/latest)一次 — 之后自动更新正常工作。可在设置 → 通用中禁用自动更新。

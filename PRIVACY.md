@@ -26,8 +26,8 @@ The App captures and stores:
 - **Source app info:** executable name, display name, window title, and app icon of the application you copied from
 
 This data is stored **exclusively on your device** in:
-- `%LOCALAPPDATA%/com.beetroot.desktop/clipboard.db` (SQLite database)
-- `%LOCALAPPDATA%/com.beetroot.desktop/images/` (image files)
+- `%APPDATA%/com.beetroot.desktop/clipboard.db` (SQLite database)
+- `%APPDATA%/com.beetroot.desktop/images/` (image files)
 
 ### 2.2 Application Settings (Stored Locally)
 
@@ -77,13 +77,13 @@ The App respects clipboard privacy signals from password managers. When a passwo
 
 - All clipboard data is stored **locally on your device only**
 - The database is **not encrypted** (stored as a standard SQLite file)
-- Default retention: unlimited (never deleted). You can enable auto-delete in Settings (1 day, 7 days, or 30 days) and set a history size limit (100, 250, 500, 1000, or Unlimited)
+- Default history limit: 500 items. You can change this to 100, 250, 1000, or Unlimited in Settings. You can also enable auto-delete by age (1 day, 7 days, or 30 days)
 - You can delete individual items, clear all history, or uninstall the App to remove all data
 - Starred items are excluded from auto-deletion
 
 ### Data Location
 
-By default, all App data is stored in: `%LOCALAPPDATA%/com.beetroot.desktop/`
+By default, all App data is stored in: `%APPDATA%/com.beetroot.desktop/`
 
 You can change the storage location in Settings (e.g., to an external drive or a different partition). The App will move your database and images to the new folder automatically.
 
@@ -143,7 +143,7 @@ You have complete control over your data:
 |-------|----------------|
 | **Access** | All data is stored locally; open the App to view your clipboard history |
 | **Delete** | Right-click any item to delete it, or configure auto-delete in Settings > General |
-| **Export** | Manually copy the database file from `%LOCALAPPDATA%/com.beetroot.desktop/` |
+| **Export** | Manually copy the database file from `%APPDATA%/com.beetroot.desktop/` |
 | **Restrict processing** | Use the Pause button to stop clipboard monitoring at any time |
 | **Withdraw consent** | Uninstall the App to stop all data collection |
 
@@ -184,7 +184,7 @@ For privacy-related questions or concerns:
 | Does the App collect my clipboard data? | Yes, it stores everything you copy locally on your device |
 | Is my data sent to any server? | No, unless you use OpenAI AI transforms (sent to OpenAI). Local AI stays on your machine |
 | Is my data encrypted? | No, it is stored as a standard SQLite database |
-| Can I delete my data? | Yes, through the App or by deleting `%LOCALAPPDATA%/com.beetroot.desktop/` |
+| Can I delete my data? | Yes, through the App or by deleting `%APPDATA%/com.beetroot.desktop/` |
 | Do you have access to my data? | No, we have no servers and no access to your device |
 | Does the App have analytics? | No |
 | Is an account required? | No |
