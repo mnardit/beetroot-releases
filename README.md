@@ -93,7 +93,8 @@ choco install beetroot
 |---|---|---|
 | History | 25 clips, lost on reboot | Unlimited, persists forever |
 | Search | No | Fuzzy + regex |
-| AI transforms | No | 10 built-in + custom prompts |
+| AI transforms | No | OpenAI + local models, 10 built-in + custom |
+| Source app tracking | No | Icon, name, window title per clip |
 | OCR | No | Native Windows engine, on-device |
 | Image history | Thumbnails only | Full images, stored locally |
 | Themes | No | 9 themes + Auto mode + accent color |
@@ -117,6 +118,7 @@ choco install beetroot
 ## Table of contents
 
 - [Features](#features)
+- [Local AI models](#local-ai-models)
 - [Keyboard shortcuts](#keyboard-shortcuts)
 - [FAQ](#faq)
 - [Privacy & security](#privacy--security)
@@ -140,10 +142,18 @@ choco install beetroot
 
 ### AI transforms
 
+- **Two providers** — OpenAI (cloud) or a local model running on your machine, switch with one click
+- **Local AI** — works with LM Studio, Ollama, llama.cpp, or any OpenAI-compatible server on localhost
+- **Reasoning models** — Qwen3, DeepSeek R1, and similar work out of the box (auto-strips `<think>` tags)
 - **10 built-in prompts** — fix grammar, translate, summarize, rewrite, extract data, format as code, and more
 - **Custom prompts** — create up to 20 of your own, accessible from the right-click menu
-- **BYOK** — bring your own OpenAI API key; Beetroot never stores or proxies your data
-- **GPT-5 nano/mini** — fast and cheap, optimized for short text transforms
+- **BYOK** — bring your own OpenAI API key; or skip it entirely with a local model
+
+### Source app tracking
+
+- **See where each clip came from** — app icon, name, and window title on every copied item
+- **Filter by app** — "Apps" dropdown with search, sort by last used / most used / alphabetical
+- **Searchable** — source app and window title included in fuzzy and regex search
 
 ### OCR
 
@@ -167,6 +177,27 @@ choco install beetroot
 - **Cloud sync warnings** — alerts if data folder is inside OneDrive, Dropbox, or Google Drive
 - **Drive detection** — warns before writing to USB or network drives
 - **Auto-update** — built-in updater, or disable for fully offline operation
+
+---
+
+## Local AI models
+
+Run AI transforms without sending anything to the cloud. Beetroot works with any OpenAI-compatible server on localhost.
+
+**Recommended models for text transforms:**
+
+| Model | Size | Speed | Best for |
+|-------|------|-------|----------|
+| **Qwen3 8B** (Q4_K) | ~5 GB | ⚡ Fast | Best all-rounder — grammar, translation, rewriting |
+| **Gemma 3 4B** (Q4_K) | ~3 GB | ⚡⚡ Very fast | Lightweight tasks — fixing typos, simple rewrites |
+| **Phi-4 Mini 3.8B** (Q4_K) | ~2.5 GB | ⚡⚡ Very fast | Code and structured text |
+| **Llama 3.1 8B** (Q4_K) | ~5 GB | ⚡ Fast | General-purpose, widely supported |
+| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB | 🐢 Slower | Premium quality with 16+ GB VRAM |
+| **DeepSeek R1 7B** (Q4_K) | ~5 GB | ⚡ Fast | Complex rewrites and summarization |
+
+Reasoning models (Qwen3, DeepSeek R1) work out of the box — Beetroot automatically strips internal `<think>` tags.
+
+Tested with [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com), and [llama.cpp](https://github.com/ggml-org/llama.cpp). Set up in Settings → AI → Local LLM.
 
 ---
 
@@ -195,10 +226,10 @@ All shortcuts are customizable in **Settings → Shortcuts**. Works with AZERTY,
 Yes. Free for personal and commercial use — no ads, no trials, no feature gates, no telemetry.
 
 **Does Beetroot send my clipboard data anywhere?**
-No. Everything stays in a local SQLite database on your machine. AI transforms send only the selected text to the OpenAI API when you explicitly choose to transform — and only using your own API key.
+No. Everything stays in a local SQLite database on your machine. With a local AI model, nothing ever leaves your machine. If you use OpenAI, only the text you explicitly transform is sent — directly to their API using your own key.
 
-**What exactly is sent to OpenAI?**
-Only the text you right-click → Transform. The request goes directly from your machine to the OpenAI API. Beetroot never sees, stores, or proxies your data. No API key = zero network requests.
+**What about local AI models?**
+With a local model (LM Studio, Ollama, etc.), all AI processing happens on your machine. Zero network requests. Set it up in Settings → AI → Local LLM.
 
 **Where is my API key stored?**
 In the app's local settings (localStorage in the WebView2 profile). It never leaves your machine.
