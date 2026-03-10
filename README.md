@@ -6,7 +6,7 @@
 
 <p align="center">
   The clipboard manager Windows should have built.<br/>
-  AI transforms, OCR, fuzzy search across unlimited history — all from one keyboard shortcut.
+  AI transforms, OCR, and fuzzy search across your full history — one shortcut away.
 </p>
 
 <p align="center">
@@ -14,18 +14,35 @@
   <a href="https://github.com/mnardit/beetroot-releases/releases"><img src="https://img.shields.io/github/downloads/mnardit/beetroot-releases/total" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4" alt="Windows 10/11">
   <img src="https://img.shields.io/badge/price-free-brightgreen" alt="Free">
-  <img src="https://img.shields.io/badge/source-proprietary-orange" alt="Proprietary">
 </p>
 
 <p align="center">
-  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Download</strong></a> · <a href="https://max.nardit.com/beetroot">Website</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Download Beetroot (free)</strong></a> · <a href="https://max.nardit.com/beetroot">Website</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
 </p>
 
 <p align="center">
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> This repo hosts releases and documentation. Source code is proprietary.
+> **New in v1.4:** Local AI models (LM Studio, Ollama) — run transforms without an API key. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.4.0)
+
+---
+
+## Why not Win+V?
+
+| Feature | Win+V | Beetroot |
+|---|---|---|
+| History | 25 clips, lost on reboot | Unlimited, persists across reboots |
+| Search | No | Fuzzy + regex |
+| AI transforms | No | OpenAI + local models, 10 built-in + custom |
+| Source app tracking | No | Icon, name, window title per clip |
+| OCR | No | Native Windows engine, on-device |
+| Image history | Thumbnails only | Full images, stored locally |
+| Themes | No | 9 themes + Auto mode + accent color |
+| Plain text paste | No | Dedicated hotkey |
+| Multi-monitor | No | Window follows your cursor |
+| Pin on top | No | Pin + drag anywhere |
+| Notes | No | Searchable annotations |
 
 ---
 
@@ -39,12 +56,12 @@
 |---|---|
 | <img src="docs/gif/ai-transform.gif" alt="AI translate and fix grammar" width="400"> | <img src="docs/gif/theme-switching.gif" alt="Theme switching" width="400"> |
 
+<details>
+<summary>More screenshots</summary>
+
 | Dark theme | Light theme |
 |---|---|
 | ![Dark](docs/screenshots/main-dark-new.png) | ![Light](docs/screenshots/main-light-filters.png) |
-
-<details>
-<summary>More screenshots</summary>
 
 | Context menu & AI | Code preview |
 |---|---|
@@ -80,51 +97,7 @@ scoop install beetroot
 choco install beetroot
 ```
 
-> [!NOTE]
-> **Upgrading from v1.0.5 or earlier?** Auto-update won't work due to a one-time signing key change. [Download the latest version manually](https://github.com/mnardit/beetroot-releases/releases/latest) — all future updates will work automatically.
-
 **Requirements:** Windows 10 or later.
-
----
-
-## Why not Win+V?
-
-| Feature | Win+V | Beetroot |
-|---|---|---|
-| History | 25 clips, lost on reboot | Unlimited, persists forever |
-| Search | No | Fuzzy + regex |
-| AI transforms | No | OpenAI + local models, 10 built-in + custom |
-| Source app tracking | No | Icon, name, window title per clip |
-| OCR | No | Native Windows engine, on-device |
-| Image history | Thumbnails only | Full images, stored locally |
-| Themes | No | 9 themes + Auto mode + accent color |
-| Plain text paste | No | Dedicated hotkey |
-| Multi-monitor | No | Window follows your cursor |
-| Pin on top | No | Pin + drag anywhere |
-| Notes | No | Searchable annotations |
-
----
-
-## Quick start
-
-1. **Install** — download .exe or use winget/scoop/choco
-2. **Open** — press `` Ctrl+` `` (customizable) to show Beetroot
-3. **Search** — start typing to fuzzy-search your history, or use `/regex/`
-4. **Star & annotate** — right-click → Star to keep clips on top, add notes for context
-5. **AI & OCR** — right-click → Transform for AI, or right-click an image → OCR
-
----
-
-## Table of contents
-
-- [Features](#features)
-- [Local AI models](#local-ai-models)
-- [Keyboard shortcuts](#keyboard-shortcuts)
-- [FAQ](#faq)
-- [Privacy & security](#privacy--security)
-- [Troubleshooting](#troubleshooting)
-- [Feedback & bug reports](#feedback--bug-reports)
-- [License](#license)
 
 ---
 
@@ -133,33 +106,48 @@ choco install beetroot
 ### Search & workflow
 
 - **Fuzzy search** — find anything with typo tolerance, powered by in-memory index
-- **Regex mode** — `/pattern/` for power users with match highlighting
+- **Regex mode** — `/pattern/` with match highlighting
 - **Filters** — text, images, starred, notes — one click to narrow down
 - **Quick paste** — `Ctrl+1..9` to paste recent clips without opening the window
-- **Batch operations** — multi-select with `Ctrl+Click`, batch copy with custom separator or delete
-- **Content detection** — auto-badges for URLs, emails, code, JSON, colors; click to open URLs
+- **Batch operations** — multi-select with `Ctrl+Click`, then copy (custom separator) or delete
+- **Content detection** — auto-badges for URLs, emails, code, JSON, colors
 - **Single instance** — launching Beetroot again brings the existing window to focus
 
 ### AI transforms
 
-- **Two providers** — OpenAI (cloud) or a local model running on your machine, switch with one click
-- **Local AI** — works with LM Studio, Ollama, llama.cpp, or any OpenAI-compatible server on localhost
+- **Two providers** — OpenAI (cloud) or local (LM Studio, Ollama, etc.), one-click switch
 - **Reasoning models** — Qwen3, DeepSeek R1, and similar work out of the box (auto-strips `<think>` tags)
 - **10 built-in prompts** — fix grammar, translate, summarize, rewrite, extract data, format as code, and more
 - **Custom prompts** — create up to 20 of your own, accessible from the right-click menu
-- **BYOK** — bring your own OpenAI API key; or skip it entirely with a local model
+- **BYOK** — bring your own OpenAI key, or skip it with a local model
+
+<details>
+<summary>Recommended local models for text transforms</summary>
+
+| Model | Size | Speed | Best for |
+|-------|------|-------|----------|
+| **Qwen3 8B** (Q4_K) | ~5 GB | Fast | Grammar, translation, rewriting |
+| **Gemma 3 4B** (Q4_K) | ~3 GB | Very fast | Fixing typos, simple rewrites |
+| **Phi-4 Mini 3.8B** (Q4_K) | ~2.5 GB | Very fast | Code and structured text |
+| **Llama 3.1 8B** (Q4_K) | ~5 GB | Fast | General-purpose |
+| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB | Slow (16+ GB VRAM) | Premium quality |
+| **DeepSeek R1 7B** (Q4_K) | ~5 GB | Fast | Complex rewrites, summarization |
+
+Tested with [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com), and [llama.cpp](https://github.com/ggml-org/llama.cpp). Set up in Settings → AI → Local LLM.
+
+</details>
 
 ### Source app tracking
 
-- **See where each clip came from** — app icon, name, and window title on every copied item
+- **See where each clip came from** — app icon, name, and window title
 - **Filter by app** — "Apps" dropdown with search, sort by last used / most used / alphabetical
 - **Searchable** — source app and window title included in fuzzy and regex search
 
 ### OCR
 
 - **Extract text from images** — right-click any image → OCR
-- **Native Windows engine** — no cloud, no uploads, works fully offline
-- **Instant** — runs asynchronously, doesn't freeze the app
+- **Native Windows engine** — no cloud, no uploads, fully offline
+- **Instant** — async, never freezes the UI
 
 ### Customization
 
@@ -180,27 +168,6 @@ choco install beetroot
 
 ---
 
-## Local AI models
-
-Run AI transforms without sending anything to the cloud. Beetroot works with any OpenAI-compatible server on localhost.
-
-**Recommended models for text transforms:**
-
-| Model | Size | Speed | Best for |
-|-------|------|-------|----------|
-| **Qwen3 8B** (Q4_K) | ~5 GB | ⚡ Fast | Best all-rounder — grammar, translation, rewriting |
-| **Gemma 3 4B** (Q4_K) | ~3 GB | ⚡⚡ Very fast | Lightweight tasks — fixing typos, simple rewrites |
-| **Phi-4 Mini 3.8B** (Q4_K) | ~2.5 GB | ⚡⚡ Very fast | Code and structured text |
-| **Llama 3.1 8B** (Q4_K) | ~5 GB | ⚡ Fast | General-purpose, widely supported |
-| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB | 🐢 Slower | Premium quality with 16+ GB VRAM |
-| **DeepSeek R1 7B** (Q4_K) | ~5 GB | ⚡ Fast | Complex rewrites and summarization |
-
-Reasoning models (Qwen3, DeepSeek R1) work out of the box — Beetroot automatically strips internal `<think>` tags.
-
-Tested with [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com), and [llama.cpp](https://github.com/ggml-org/llama.cpp). Set up in Settings → AI → Local LLM.
-
----
-
 ## Keyboard shortcuts
 
 | Shortcut | Action |
@@ -216,7 +183,7 @@ Tested with [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com), and 
 | `Ctrl+C` | Copy to clipboard |
 | `Alt+Del` | Delete |
 
-All shortcuts are customizable in **Settings → Shortcuts**. Works with AZERTY, QWERTZ, and AltGr layouts. Layout labels update instantly when you switch with Win+Space.
+All shortcuts are customizable in **Settings → Shortcuts**. Works with AZERTY, QWERTZ, and AltGr layouts.
 
 ---
 
@@ -228,33 +195,14 @@ Yes. Free for personal and commercial use — no ads, no trials, no feature gate
 **Does Beetroot send my clipboard data anywhere?**
 No. Everything stays in a local SQLite database on your machine. With a local AI model, nothing ever leaves your machine. If you use OpenAI, only the text you explicitly transform is sent — directly to their API using your own key.
 
-**What about local AI models?**
-With a local model (LM Studio, Ollama, etc.), all AI processing happens on your machine. Zero network requests. Set it up in Settings → AI → Local LLM.
-
 **Where is my API key stored?**
 In the app's local settings (localStorage in the WebView2 profile). It never leaves your machine.
 
 **Where is my data stored?**
 By default in `%LOCALAPPDATA%\com.beetroot.desktop\`. You can move it in Settings → Data. The database is a standard SQLite file — back it up by copying the folder.
 
-**Does Beetroot work on Windows 10?**
-Yes. Windows 10 and 11 are both supported. Mica and Acrylic window effects are available on Windows 11.
-
-**Can I run multiple Beetroot windows?**
-No. Beetroot is single-instance — launching it again brings the existing window to focus.
-
 **Does auto-update work?**
 Yes, for v1.0.6+. Users on v1.0.5 or earlier need to [download manually](https://github.com/mnardit/beetroot-releases/releases/latest) once — after that, auto-update works normally. You can disable auto-update in Settings → General.
-
----
-
-## Privacy & security
-
-Your data stays on your machine. No telemetry, no analytics, no cloud sync, no account.
-
-- [Privacy Policy](PRIVACY.md)
-- [Security Policy](SECURITY.md)
-- [Terms of Service](TERMS.md)
 
 ---
 
@@ -272,7 +220,7 @@ OCR uses the native Windows engine. Make sure the relevant language pack is inst
 - Remap the hotkey in Settings → Shortcuts
 
 **SmartScreen or antivirus warning**
-Beetroot is not code-signed yet (certificate pending). Click "More info" → "Run anyway" in SmartScreen. This is a false positive — the app is safe.
+Beetroot is not code-signed yet (certificate pending). Click "More info" → "Run anyway" in SmartScreen. You can verify the .exe hash against the [release checksums](https://github.com/mnardit/beetroot-releases/releases/latest).
 
 ---
 
@@ -292,6 +240,8 @@ Please include:
 
 Free for personal and commercial use. Source code is proprietary.
 
+[Privacy Policy](PRIVACY.md) · [Security Policy](SECURITY.md) · [Terms of Service](TERMS.md)
+
 <details>
 <summary>Third-party fonts & credits</summary>
 
@@ -309,7 +259,7 @@ Free for personal and commercial use. Source code is proprietary.
 ---
 
 <p align="center">
-  Enjoying Beetroot? A ⭐ helps others find it too.
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Download Beetroot</strong></a> · Enjoying it? A ⭐ helps others find it too.
 </p>
 
 <p align="center">
