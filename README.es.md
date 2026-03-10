@@ -6,7 +6,7 @@
 
 <p align="center">
   El gestor de portapapeles que Windows debería haber incluido.<br/>
-  Transformaciones con IA, OCR, búsqueda difusa en todo el historial — todo con un atajo de teclado.
+  Transformaciones con IA, OCR y búsqueda difusa en todo el historial — a un atajo de distancia.
 </p>
 
 <p align="center">
@@ -14,18 +14,35 @@
   <a href="https://github.com/mnardit/beetroot-releases/releases"><img src="https://img.shields.io/github/downloads/mnardit/beetroot-releases/total" alt="Descargas"></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4" alt="Windows 10/11">
   <img src="https://img.shields.io/badge/price-free-brightgreen" alt="Gratis">
-  <img src="https://img.shields.io/badge/source-proprietary-orange" alt="Propietario">
 </p>
 
 <p align="center">
-  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Descargar</strong></a> · <a href="https://max.nardit.com/beetroot">Sitio web</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Descargar Beetroot (gratis)</strong></a> · <a href="https://max.nardit.com/beetroot">Sitio web</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
 </p>
 
 <p align="center">
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <b>Español</b> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> Este repositorio contiene releases y documentación. El código fuente es propietario.
+> **Nuevo en v1.4:** Modelos de IA locales (LM Studio, Ollama) — ejecute transformaciones sin clave API. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.4.0)
+
+---
+
+## ¿Por qué no Win+V?
+
+| Función | Win+V | Beetroot |
+|---|---|---|
+| Historial | 25 clips, se pierden al reiniciar | Ilimitado, persistente entre reinicios |
+| Búsqueda | No | Difusa + regex |
+| Transformaciones IA | No | OpenAI + modelos locales, 10 integradas + personalizadas |
+| Seguimiento de app origen | No | Icono, nombre y título de ventana por clip |
+| OCR | No | Motor nativo de Windows, local |
+| Historial de imágenes | Solo miniaturas | Imágenes completas, almacenadas localmente |
+| Temas | No | 9 temas + modo Auto + color de acento |
+| Pegar como texto plano | No | Atajo dedicado |
+| Multi-monitor | No | La ventana sigue al cursor |
+| Fijar arriba | No | Fijar + arrastrar a cualquier lugar |
+| Notas | No | Anotaciones con búsqueda |
 
 ---
 
@@ -39,12 +56,12 @@
 |---|---|
 | <img src="docs/gif/ai-transform.gif" alt="Traducción y corrección gramatical con IA" width="400"> | <img src="docs/gif/theme-switching.gif" alt="Cambio de temas" width="400"> |
 
+<details>
+<summary>Más capturas de pantalla</summary>
+
 | Tema oscuro | Tema claro |
 |---|---|
 | ![Oscuro](docs/screenshots/main-dark-new.png) | ![Claro](docs/screenshots/main-light-filters.png) |
-
-<details>
-<summary>Más capturas</summary>
 
 | Menú contextual e IA | Vista previa de código |
 |---|---|
@@ -80,37 +97,7 @@ scoop install beetroot
 choco install beetroot
 ```
 
-> [!NOTE]
-> **¿Actualizando desde v1.0.5 o anterior?** La actualización automática no funcionará debido a un cambio único en la clave de firma. [Descargue la última versión manualmente](https://github.com/mnardit/beetroot-releases/releases/latest) — todas las actualizaciones futuras funcionarán automáticamente.
-
 **Requisitos:** Windows 10 o posterior.
-
----
-
-## ¿Por qué no Win+V?
-
-| Función | Win+V | Beetroot |
-|---|---|---|
-| Historial | 25 clips, se pierden al reiniciar | Ilimitado, persistente |
-| Búsqueda | No | Difusa + regex |
-| Transformaciones IA | No | 10 integradas + prompts personalizados |
-| OCR | No | Motor nativo de Windows, local |
-| Historial de imágenes | Solo miniaturas | Imágenes completas, almacenadas localmente |
-| Temas | No | 9 temas + modo Auto + color de acento |
-| Pegar como texto plano | No | Atajo dedicado |
-| Multi-monitor | No | La ventana sigue al cursor |
-| Fijar arriba | No | Fijar + arrastrar a cualquier lugar |
-| Notas | No | Anotaciones con búsqueda |
-
----
-
-## Inicio rápido
-
-1. **Instalar** — descargue .exe o use winget/scoop/choco
-2. **Abrir** — presione `` Ctrl+` `` (personalizable) para mostrar Beetroot
-3. **Buscar** — escriba para búsqueda difusa, o use `/regex/`
-4. **Favoritos y notas** — clic derecho → Favorito para fijar arriba, añada notas para contexto
-5. **IA y OCR** — clic derecho → Transformar para IA, o clic derecho en una imagen → OCR
 
 ---
 
@@ -118,35 +105,58 @@ choco install beetroot
 
 ### Búsqueda y flujo de trabajo
 
-- **Búsqueda difusa** — encuentra cualquier cosa con tolerancia a errores
-- **Modo regex** — `/pattern/` para usuarios avanzados con resaltado
+- **Búsqueda difusa** — encuentra cualquier cosa con tolerancia a errores, impulsada por un índice en memoria
+- **Modo regex** — `/pattern/` con resaltado de coincidencias
 - **Filtros** — texto, imágenes, favoritos, notas — un clic para filtrar
 - **Pegado rápido** — `Ctrl+1..9` para pegar clips recientes sin abrir la ventana
-- **Operaciones por lotes** — selección múltiple con `Ctrl+Click`, copiar o eliminar en lote
-- **Detección de contenido** — badges automáticos para URLs, emails, código, JSON, colores; clic para abrir
+- **Operaciones por lotes** — selección múltiple con `Ctrl+Click`, luego copiar (separador personalizable) o eliminar
+- **Detección de contenido** — badges automáticos para URLs, emails, código, JSON, colores
 - **Instancia única** — abrir Beetroot de nuevo enfoca la ventana existente
 
 ### Transformaciones IA
 
+- **Dos proveedores** — OpenAI (nube) o local (LM Studio, Ollama, etc.), cambio con un clic
+- **Modelos de razonamiento** — Qwen3, DeepSeek R1 y similares funcionan directamente (elimina automáticamente las etiquetas `<think>`)
 - **10 prompts integrados** — corregir gramática, traducir, resumir, reescribir, extraer datos, formatear como código y más
-- **Prompts personalizados** — hasta 20 propios, accesibles desde el menú contextual
-- **BYOK** — use su propia clave de API de OpenAI; Beetroot nunca almacena ni redirige sus datos
-- **GPT-5 nano/mini** — rápido y económico, optimizado para textos cortos
+- **Prompts personalizados** — cree hasta 20 propios, accesibles desde el menú contextual
+- **BYOK** — use su propia clave de OpenAI, o prescinda de ella con un modelo local
+
+<details>
+<summary>Modelos locales recomendados para transformaciones de texto</summary>
+
+| Modelo | Tamaño | Velocidad | Ideal para |
+|-------|------|-------|----------|
+| **Qwen3 8B** (Q4_K) | ~5 GB | Rápido | Gramática, traducción, reescritura |
+| **Gemma 3 4B** (Q4_K) | ~3 GB | Muy rápido | Corrección de errores, reescrituras simples |
+| **Phi-4 Mini 3.8B** (Q4_K) | ~2.5 GB | Muy rápido | Código y texto estructurado |
+| **Llama 3.1 8B** (Q4_K) | ~5 GB | Rápido | Uso general |
+| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB | Lento (16+ GB VRAM) | Calidad premium |
+| **DeepSeek R1 7B** (Q4_K) | ~5 GB | Rápido | Reescrituras complejas, resúmenes |
+
+Probado con [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com) y [llama.cpp](https://github.com/ggml-org/llama.cpp). Configure en Configuración → IA → LLM Local.
+
+</details>
+
+### Seguimiento de app origen
+
+- **Vea de dónde proviene cada clip** — icono de la app, nombre y título de ventana
+- **Filtre por app** — desplegable "Apps" con búsqueda, ordenar por último uso / más usado / alfabético
+- **Incluido en búsquedas** — la app origen y el título de ventana se incluyen en la búsqueda difusa y regex
 
 ### OCR
 
-- **Extraer texto de imágenes** — clic derecho en una imagen → OCR
+- **Extraer texto de imágenes** — clic derecho en cualquier imagen → OCR
 - **Motor nativo de Windows** — sin nube, sin subidas, totalmente offline
-- **Instantáneo** — se ejecuta de forma asíncrona, no bloquea la app
+- **Instantáneo** — asíncrono, nunca bloquea la interfaz
 
 ### Personalización
 
 - **9 temas** — Beetroot Dark/Light, Tokyo Night Storm, Gruvbox, GitHub Light, Nord Snow, Cyberpunk Dark/Light, Pure Dark (OLED #000000), más modo Auto
 - **Efectos de ventana** — Mica, Acrylic o Solid; detectados automáticamente según la versión de Windows
-- **Tipografía** — 8 fuentes UI, 5 fuentes de código, 6 tamaños
+- **Tipografía** — 8 fuentes de interfaz, 5 fuentes de código, 6 tamaños predefinidos
 - **26 idiomas** — EN, RU, DE, ES, ZH, JA, FR, PT, KO, TR, IT, PL, NL, UK, TH, HI, ID, VI, CS, HU, RO, SV, DA, FI, NB, MS
 - **Fijar ventana** — siempre visible, arrastrar entre monitores, o modo seguir cursor
-- **Todos los atajos personalizables** — reasigne todo en Configuración → Atajos; compatible con AZERTY, QWERTZ, AltGr
+- **Todos los atajos personalizables** — reasigne todo en Configuración → Atajos; compatible con AZERTY, QWERTZ y AltGr
 
 ### Fiabilidad
 
@@ -166,14 +176,14 @@ choco install beetroot
 | `Enter` | Pegar clip seleccionado |
 | `Ctrl+1..9` | Pegado rápido |
 | `Space` | Vista previa |
-| `Alt+T` | Transformación IA |
+| `Alt+T` | Transformar con IA |
 | `Alt+P` | Fijar ventana arriba |
 | `Alt+F` | Modo seguir cursor |
 | `Shift+F10` | Menú contextual |
 | `Ctrl+C` | Copiar al portapapeles |
 | `Alt+Del` | Eliminar |
 
-Todos los atajos son personalizables en **Configuración → Atajos**. Compatible con layouts AZERTY, QWERTZ y AltGr. Las etiquetas se actualizan al instante al cambiar con Win+Space.
+Todos los atajos son personalizables en **Configuración → Atajos**. Compatible con layouts AZERTY, QWERTZ y AltGr.
 
 ---
 
@@ -183,10 +193,7 @@ Todos los atajos son personalizables en **Configuración → Atajos**. Compatibl
 Sí. Gratis para uso personal y comercial — sin anuncios, sin pruebas, sin limitaciones, sin telemetría.
 
 **¿Beetroot envía los datos del portapapeles a algún lugar?**
-No. Todo se almacena en una base de datos SQLite local en su máquina. Las transformaciones IA envían solo el texto seleccionado a la API de OpenAI cuando usted elige transformar explícitamente — y solo usando su propia clave API.
-
-**¿Qué se envía exactamente a OpenAI?**
-Solo el texto en el que hace clic derecho → Transformar. La solicitud va directamente desde su máquina a la API de OpenAI. Beetroot nunca ve, almacena ni redirige sus datos. Sin clave API = cero solicitudes de red.
+No. Todo se almacena en una base de datos SQLite local en su máquina. Con un modelo de IA local, nada sale de su equipo. Si usa OpenAI, solo el texto que usted transforma explícitamente se envía — directamente a su API usando su propia clave.
 
 **¿Dónde se almacena mi clave API?**
 En la configuración local de la app (localStorage en el perfil WebView2). Nunca sale de su máquina.
@@ -194,30 +201,14 @@ En la configuración local de la app (localStorage en el perfil WebView2). Nunca
 **¿Dónde se almacenan mis datos?**
 Por defecto en `%LOCALAPPDATA%\com.beetroot.desktop\`. Puede moverlos en Configuración → Datos. La base de datos es un archivo SQLite estándar — haga backup copiando la carpeta.
 
-**¿Funciona Beetroot en Windows 10?**
-Sí. Windows 10 y 11 están soportados. Los efectos Mica y Acrylic están disponibles en Windows 11.
-
-**¿Puedo abrir múltiples ventanas de Beetroot?**
-No. Beetroot es de instancia única — abrirlo de nuevo enfoca la ventana existente.
-
 **¿Funciona la auto-actualización?**
 Sí, desde v1.0.6. Los usuarios de v1.0.5 o anterior necesitan [descargar manualmente](https://github.com/mnardit/beetroot-releases/releases/latest) una vez — después la auto-actualización funciona normalmente. Puede desactivarla en Configuración → General.
 
 ---
 
-## Privacidad y seguridad
-
-Sus datos permanecen en su máquina. Sin telemetría, sin analíticas, sin sincronización en la nube, sin cuenta.
-
-- [Privacy Policy](PRIVACY.md)
-- [Security Policy](SECURITY.md)
-- [Terms of Service](TERMS.md)
-
----
-
 ## Solución de problemas
 
-**La auto-actualización no funciona (v1.0.5 y anterior)**
+**La auto-actualización no funciona (v1.0.5 o anterior)**
 Un cambio único en la clave de firma requiere [descargar la última versión manualmente](https://github.com/mnardit/beetroot-releases/releases/latest). Las actualizaciones futuras funcionarán automáticamente.
 
 **OCR no funciona o baja calidad**
@@ -225,11 +216,11 @@ OCR usa el motor nativo de Windows. Asegúrese de que el paquete de idioma corre
 
 **Beetroot no abre o el atajo no funciona**
 - Verifique si otra app está usando el mismo atajo (ej. `Ctrl+``)
-- Intente ejecutar como administrador una vez
+- Intente ejecutar como administrador una vez para descartar problemas de permisos
 - Reasigne el atajo en Configuración → Atajos
 
 **Aviso de SmartScreen o antivirus**
-Beetroot aún no tiene firma de código (certificado pendiente). Haga clic en "Más información" → "Ejecutar de todas formas" en SmartScreen. Es un falso positivo — la app es segura.
+Beetroot aún no tiene firma de código (certificado pendiente). Haga clic en "Más información" → "Ejecutar de todas formas" en SmartScreen. Puede verificar el hash del .exe con las [sumas de verificación del release](https://github.com/mnardit/beetroot-releases/releases/latest).
 
 ---
 
@@ -249,6 +240,8 @@ Por favor incluya:
 
 Gratis para uso personal y comercial. El código fuente es propietario.
 
+[Privacy Policy](PRIVACY.md) · [Security Policy](SECURITY.md) · [Terms of Service](TERMS.md)
+
 <details>
 <summary>Fuentes de terceros y créditos</summary>
 
@@ -266,7 +259,7 @@ Gratis para uso personal y comercial. El código fuente es propietario.
 ---
 
 <p align="center">
-  ¿Te gusta Beetroot? Una ⭐ ayuda a que otros lo descubran.
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Descargar Beetroot</strong></a> · ¿Te gusta? Una ⭐ ayuda a que otros lo descubran.
 </p>
 
 <p align="center">
