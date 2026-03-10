@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 5, 2026
-**Version:** 1.2
+**Last updated:** March 10, 2026
+**Version:** 1.4
 
 ---
 
@@ -23,10 +23,11 @@ The App captures and stores:
 - **Image data** (screenshots, copied images) saved as PNG files
 - **Rich text / HTML content** for formatted paste
 - **Metadata:** timestamp, content type, content hash, last used timestamp
+- **Source app info:** executable name, display name, window title, and app icon of the application you copied from
 
 This data is stored **exclusively on your device** in:
-- `%APPDATA%/com.beetroot.desktop/clipboard.db` (SQLite database)
-- `%APPDATA%/com.beetroot.desktop/images/` (image files)
+- `%LOCALAPPDATA%/com.beetroot.desktop/clipboard.db` (SQLite database)
+- `%LOCALAPPDATA%/com.beetroot.desktop/images/` (image files)
 
 ### 2.2 Application Settings (Stored Locally)
 
@@ -38,15 +39,19 @@ Settings are stored in the WebView's `localStorage` on your device.
 
 ### 2.3 Data Sent to Third Parties
 
-The App sends data to external servers **only** when you explicitly use AI text transforms:
+The App sends data to external servers **only** when you explicitly use certain features:
 
 | Action | Data sent | Destination | When |
 |--------|-----------|-------------|------|
-| AI Transform | Selected clipboard text + prompt instruction | OpenAI API (`api.openai.com`) | Only when you manually trigger an AI action |
+| AI Transform (OpenAI) | Selected clipboard text + prompt instruction | OpenAI API (`api.openai.com`) | Only when you manually trigger an AI action with OpenAI selected |
+| AI Transform (Local LLM) | Selected clipboard text + prompt instruction | Your local server (`127.0.0.1` / `localhost`) | Only when you manually trigger an AI action with Local LLM selected |
+| Auto-update check | Current version number | GitHub (`github.com`) | Once after startup (if enabled) |
 
-**No data is sent automatically.** AI transforms require your explicit action (right-click menu or keyboard shortcut).
+**No data is sent automatically** except the update check. AI transforms require your explicit action (right-click menu or keyboard shortcut).
 
-If auto-update is enabled (the default), the App connects to GitHub (`github.com`) shortly after startup to check for available updates. This request contains no personal data — only the current version number is compared against published releases. You can disable auto-update in Settings > General, in which case the App makes **no network connections at all** (unless you use AI transforms).
+**Local AI models:** When using Local LLM mode (LM Studio, Ollama, etc.), all AI processing happens on your machine. The App restricts local endpoints to loopback addresses only (127.0.0.1, localhost) — it cannot connect to remote servers in Local LLM mode.
+
+You can disable auto-update in Settings → General, in which case the App makes **no network connections at all** (unless you use OpenAI transforms).
 
 ### 2.4 Data We Do NOT Collect
 
@@ -74,11 +79,11 @@ The App respects clipboard privacy signals from password managers. When a passwo
 - The database is **not encrypted** (stored as a standard SQLite file)
 - Default retention: unlimited (never deleted). You can enable auto-delete in Settings (1 day, 7 days, or 30 days) and set a history size limit (100, 250, 500, 1000, or Unlimited)
 - You can delete individual items, clear all history, or uninstall the App to remove all data
-- Pinned items are excluded from auto-deletion
+- Starred items are excluded from auto-deletion
 
 ### Data Location
 
-By default, all App data is stored in: `%APPDATA%/com.beetroot.desktop/`
+By default, all App data is stored in: `%LOCALAPPDATA%/com.beetroot.desktop/`
 
 You can change the storage location in Settings (e.g., to an external drive or a different partition). The App will move your database and images to the new folder automatically.
 
@@ -86,21 +91,36 @@ To completely remove all data, delete the data folder after uninstalling.
 
 ---
 
-## 5. AI Transforms and OpenAI
+## 5. AI Transforms
 
-When you use AI text transforms, the selected text is sent to OpenAI's API servers in the United States.
+Beetroot supports two AI providers. You choose which one to use in Settings → AI.
 
-- **Your API key:** If you provide your own OpenAI API key (BYOK), you have a direct relationship with OpenAI. Their [Privacy Policy](https://openai.com/privacy) and [Terms](https://openai.com/terms) apply to your usage.
+### 5.1 OpenAI (Cloud)
+
+When you use AI transforms with OpenAI selected, the selected text is sent to OpenAI's API servers in the United States.
+
+- **Your API key:** You provide your own OpenAI API key (BYOK). You have a direct relationship with OpenAI. Their [Privacy Policy](https://openai.com/privacy) and [Terms](https://openai.com/terms) apply to your usage.
 - **Data processing:** OpenAI processes the text to generate the transformation result. Refer to [OpenAI's API data usage policy](https://openai.com/enterprise-privacy) for details on data retention.
 - **No automatic sending:** Text is only sent when you explicitly trigger an AI transform action.
-- **Sensitive data warning:** Do not use AI transforms on text containing passwords, API keys, financial data, medical records, or other sensitive information.
+
+### 5.2 Local LLM
+
+When you use AI transforms with Local LLM selected, the text is sent to a server running on your own machine (e.g., LM Studio, Ollama, llama.cpp).
+
+- **No cloud:** All processing happens locally. No data leaves your device.
+- **Loopback only:** The App only connects to loopback addresses (127.0.0.1, localhost). It cannot send data to remote servers in this mode.
+- **No API key required:** Local models do not require an API key or account.
+
+### 5.3 Sensitive Data Warning
+
+Do not use AI transforms on text containing passwords, API keys, financial data, medical records, or other sensitive information — regardless of which provider you use.
 
 ---
 
 ## 6. Data Security
 
 We implement the following security measures:
-- **Content Security Policy (CSP):** Restricts network access to `self` and `api.openai.com` only
+- **Content Security Policy (CSP):** Restricts network access to `self`, `api.openai.com`, and loopback addresses (`127.0.0.1`, `localhost`) for local AI models
 - **No raw SQL access:** All database operations go through typed Rust IPC commands with parameterized queries
 - **Path validation:** Prevents path traversal attacks on file operations
 - **Size limits:** Maximum 1 MB text, 10 MB images to prevent abuse
@@ -123,7 +143,7 @@ You have complete control over your data:
 |-------|----------------|
 | **Access** | All data is stored locally; open the App to view your clipboard history |
 | **Delete** | Right-click any item to delete it, or configure auto-delete in Settings > General |
-| **Export** | Manually copy the database file from `%APPDATA%/com.beetroot.desktop/` |
+| **Export** | Manually copy the database file from `%LOCALAPPDATA%/com.beetroot.desktop/` |
 | **Restrict processing** | Use the Pause button to stop clipboard monitoring at any time |
 | **Withdraw consent** | Uninstall the App to stop all data collection |
 
@@ -162,9 +182,9 @@ For privacy-related questions or concerns:
 | Question | Answer |
 |----------|--------|
 | Does the App collect my clipboard data? | Yes, it stores everything you copy locally on your device |
-| Is my data sent to any server? | No, unless you manually use AI transforms (sent to OpenAI) |
+| Is my data sent to any server? | No, unless you use OpenAI AI transforms (sent to OpenAI). Local AI stays on your machine |
 | Is my data encrypted? | No, it is stored as a standard SQLite database |
-| Can I delete my data? | Yes, through the App or by deleting `%APPDATA%/com.beetroot.desktop/` |
+| Can I delete my data? | Yes, through the App or by deleting `%LOCALAPPDATA%/com.beetroot.desktop/` |
 | Do you have access to my data? | No, we have no servers and no access to your device |
 | Does the App have analytics? | No |
 | Is an account required? | No |

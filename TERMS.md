@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 5, 2026
-**Version:** 1.1
+**Last updated:** March 10, 2026
+**Version:** 1.4
 
 ---
 
@@ -17,7 +17,7 @@ By downloading, installing, or using Beetroot ("the App"), you agree to these Te
 Beetroot is a desktop clipboard manager for Windows that:
 - Monitors your system clipboard and stores a history of copied content
 - Provides search, filtering, and organization of clipboard history
-- Offers AI-powered text transforms via OpenAI API (requires API key)
+- Offers AI-powered text transforms via OpenAI API (requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
 - Provides OCR text extraction from images
 - Supports pin-on-top and follow-cursor window modes
 - Automatic backup rotation (3 copies) with recovery from database corruption
@@ -58,9 +58,9 @@ The App stores everything you copy to the clipboard. You are responsible for:
 ### 4.2 AI Transforms
 
 When using AI text transforms:
-- You are responsible for not sending sensitive, confidential, or regulated data to OpenAI
-- You must comply with [OpenAI's Usage Policies](https://openai.com/policies/usage-policies)
-- If using your own API key (BYOK), you are responsible for your OpenAI account and associated costs
+- You are responsible for not sending sensitive, confidential, or regulated data to any AI provider
+- When using OpenAI: you must comply with [OpenAI's Usage Policies](https://openai.com/policies/usage-policies) and you are responsible for your API key and associated costs
+- When using Local LLM: you are responsible for the model you run and its output
 - AI-generated output may be inaccurate; verify results before relying on them
 
 ### 4.3 Data Security
@@ -77,7 +77,7 @@ Since all data is stored locally on your device:
 Your privacy is important. Please review our [Privacy Policy](PRIVACY.md) for details on data collection, storage, and processing. Key points:
 - All clipboard data stays on your device
 - No analytics, telemetry, or tracking
-- AI transforms send text to OpenAI only when you explicitly trigger them
+- AI transforms send text to OpenAI only when you explicitly trigger them (or stay fully local with Local LLM)
 - No account or registration required
 
 ---
@@ -130,7 +130,7 @@ OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE APP (WHICH IS $
 ## 10. Termination
 
 - You may stop using the App at any time by uninstalling it
-- Delete `%APPDATA%/com.beetroot.desktop/` to remove all stored data
+- Delete `%LOCALAPPDATA%/com.beetroot.desktop/` to remove all stored data
 - We reserve the right to discontinue the App at any time without notice
 
 ---
@@ -157,4 +157,4 @@ For questions about these Terms:
 | Who is responsible for my data? | You are; all data is stored locally |
 | Is there a warranty? | No, provided "as is" |
 | Can I use it commercially? | Yes |
-| How do I delete everything? | Uninstall + delete `%APPDATA%/com.beetroot.desktop/` |
+| How do I delete everything? | Uninstall + delete `%LOCALAPPDATA%/com.beetroot.desktop/` |
