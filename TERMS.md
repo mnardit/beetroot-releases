@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 10, 2026
-**Version:** 1.4
+**Last updated:** March 12, 2026
+**Version:** 1.5
 
 ---
 
@@ -17,7 +17,7 @@ By downloading, installing, or using Beetroot ("the App"), you agree to these Te
 Beetroot is a desktop clipboard manager for Windows that:
 - Monitors your system clipboard and stores a history of copied content
 - Provides search, filtering, and organization of clipboard history
-- Offers AI-powered text transforms via OpenAI API (requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
+- Offers AI-powered text transforms via cloud providers (OpenAI, Gemini, Anthropic, DeepSeek — requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
 - Provides OCR text extraction from images
 - Supports pin-on-top and follow-cursor window modes
 - Automatic backup rotation (3 copies) with recovery from database corruption
@@ -59,7 +59,7 @@ The App stores everything you copy to the clipboard. You are responsible for:
 
 When using AI text transforms:
 - You are responsible for not sending sensitive, confidential, or regulated data to any AI provider
-- When using OpenAI: you must comply with [OpenAI's Usage Policies](https://openai.com/policies/usage-policies) and you are responsible for your API key and associated costs
+- When using cloud providers (OpenAI, Gemini, Anthropic, DeepSeek): you must comply with each provider's usage policies and you are responsible for your API key and associated costs
 - When using Local LLM: you are responsible for the model you run and its output
 - AI-generated output may be inaccurate; verify results before relying on them
 
@@ -77,7 +77,7 @@ Since all data is stored locally on your device:
 Your privacy is important. Please review our [Privacy Policy](PRIVACY.md) for details on data collection, storage, and processing. Key points:
 - All clipboard data stays on your device
 - No analytics, telemetry, or tracking
-- AI transforms send text to OpenAI only when you explicitly trigger them (or stay fully local with Local LLM)
+- AI transforms send text to cloud providers only when you explicitly trigger them (or stay fully local with Local LLM)
 - No account or registration required
 
 ---

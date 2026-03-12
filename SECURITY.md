@@ -22,9 +22,9 @@ Do not open public issues for security vulnerabilities. We will acknowledge repo
 ## Security Model
 
 - **No servers:** All data is stored locally in `%APPDATA%/com.beetroot.desktop/`
-- **CSP enforced:** `connect-src 'self' https://api.openai.com http://127.0.0.1:* http://localhost:* https://127.0.0.1:* https://localhost:*` — no other outbound connections from the WebView
+- **CSP enforced:** `connect-src 'self' https://api.openai.com https://generativelanguage.googleapis.com https://api.anthropic.com https://api.deepseek.com http://127.0.0.1:* http://localhost:* https://127.0.0.1:* https://localhost:*` — no other outbound connections from the WebView
 - **Loopback-only local AI:** Local LLM endpoints are restricted to 127.0.0.1 and localhost — the App cannot send clipboard data to remote servers in Local LLM mode
-- **Offline mode:** Auto-update can be disabled in Settings — zero network connections without OpenAI. Local AI models require no network access
+- **Offline mode:** Auto-update can be disabled in Settings — zero network connections without cloud AI. Local AI models require no network access
 - **Path validation:** All file operations are validated against path traversal
 - **Size limits:** 1 MB text, 10 MB images
 - **Clipboard throttle:** 300ms minimum between captures

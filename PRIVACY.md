@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 10, 2026
-**Version:** 1.4
+**Last updated:** March 12, 2026
+**Version:** 1.5
 
 ---
 
@@ -44,6 +44,9 @@ The App sends data to external servers **only** when you explicitly use certain 
 | Action | Data sent | Destination | When |
 |--------|-----------|-------------|------|
 | AI Transform (OpenAI) | Selected clipboard text + prompt instruction | OpenAI API (`api.openai.com`) | Only when you manually trigger an AI action with OpenAI selected |
+| AI Transform (Gemini) | Selected clipboard text + prompt instruction | Google API (`generativelanguage.googleapis.com`) | Only when you manually trigger an AI action with Gemini selected |
+| AI Transform (Anthropic) | Selected clipboard text + prompt instruction | Anthropic API (`api.anthropic.com`) | Only when you manually trigger an AI action with Anthropic selected |
+| AI Transform (DeepSeek) | Selected clipboard text + prompt instruction | DeepSeek API (`api.deepseek.com`) | Only when you manually trigger an AI action with DeepSeek selected |
 | AI Transform (Local LLM) | Selected clipboard text + prompt instruction | Your local server (`127.0.0.1` / `localhost`) | Only when you manually trigger an AI action with Local LLM selected |
 | Auto-update check | Current version number | GitHub (`github.com`) | Once after startup (if enabled) |
 
@@ -51,7 +54,7 @@ The App sends data to external servers **only** when you explicitly use certain 
 
 **Local AI models:** When using Local LLM mode (LM Studio, Ollama, etc.), all AI processing happens on your machine. The App restricts local endpoints to loopback addresses only (127.0.0.1, localhost) — it cannot connect to remote servers in Local LLM mode.
 
-You can disable auto-update in Settings → General, in which case the App makes **no network connections at all** (unless you use OpenAI transforms).
+You can disable auto-update in Settings → General, in which case the App makes **no network connections at all** (unless you use a cloud AI provider).
 
 ### 2.4 Data We Do NOT Collect
 
@@ -93,15 +96,20 @@ To completely remove all data, delete the data folder after uninstalling.
 
 ## 5. AI Transforms
 
-Beetroot supports two AI providers. You choose which one to use in Settings → AI.
+Beetroot supports five cloud AI providers and local models. You choose which one to use in Settings → AI. All providers use a Bring Your Own Key (BYOK) model — you provide your own API key and have a direct relationship with the provider.
 
-### 5.1 OpenAI (Cloud)
+### 5.1 Cloud Providers
 
-When you use AI transforms with OpenAI selected, the selected text is sent to OpenAI's API servers in the United States.
+When you use AI transforms with a cloud provider selected, the selected text is sent to that provider's API servers. Text is **only** sent when you explicitly trigger an AI transform action — never automatically.
 
-- **Your API key:** You provide your own OpenAI API key (BYOK). You have a direct relationship with OpenAI. Their [Privacy Policy](https://openai.com/privacy) and [Terms](https://openai.com/terms) apply to your usage.
-- **Data processing:** OpenAI processes the text to generate the transformation result. Refer to [OpenAI's API data usage policy](https://openai.com/enterprise-privacy) for details on data retention.
-- **No automatic sending:** Text is only sent when you explicitly trigger an AI transform action.
+| Provider | API endpoint | Servers | Privacy policy |
+|----------|-------------|---------|----------------|
+| OpenAI | `api.openai.com` | United States | [openai.com/privacy](https://openai.com/privacy) |
+| Google Gemini | `generativelanguage.googleapis.com` | United States | [ai.google/privacy](https://ai.google/responsibility/privacy/) |
+| Anthropic Claude | `api.anthropic.com` | United States | [anthropic.com/privacy](https://www.anthropic.com/privacy) |
+| DeepSeek | `api.deepseek.com` | China | [deepseek.com/privacy](https://www.deepseek.com/privacy) |
+
+Each provider's own privacy policy and terms apply to your API usage. You are responsible for your API key and associated costs.
 
 ### 5.2 Local LLM
 
@@ -120,7 +128,7 @@ Do not use AI transforms on text containing passwords, API keys, financial data,
 ## 6. Data Security
 
 We implement the following security measures:
-- **Content Security Policy (CSP):** Restricts network access to `self`, `api.openai.com`, and loopback addresses (`127.0.0.1`, `localhost`) for local AI models
+- **Content Security Policy (CSP):** Restricts network access to `self`, AI provider APIs (`api.openai.com`, `generativelanguage.googleapis.com`, `api.anthropic.com`, `api.deepseek.com`), and loopback addresses (`127.0.0.1`, `localhost`) for local AI models
 - **No raw SQL access:** All database operations go through typed Rust IPC commands with parameterized queries
 - **Path validation:** Prevents path traversal attacks on file operations
 - **Size limits:** Maximum 1 MB text, 10 MB images to prevent abuse
@@ -130,7 +138,7 @@ We implement the following security measures:
 
 **Known limitations:**
 - The SQLite database is not encrypted. Any process running under your user account can read the clipboard history file.
-- The OpenAI API key is stored in the WebView's localStorage without encryption.
+- API keys are stored in the WebView's localStorage without encryption.
 - Runtime backups are created every 100 clipboard writes. In the unlikely event of both a crash and database corruption between backups, up to 100 recent items could be lost.
 
 ---
@@ -159,7 +167,12 @@ Beetroot is not directed at children under 13 years of age. We do not knowingly 
 
 ## 9. International Data Transfers
 
-The App itself does not transfer data internationally. However, when you use AI transforms, your text is sent to OpenAI servers in the United States. If you are located in the EU/EEA, this constitutes an international data transfer. OpenAI maintains Standard Contractual Clauses (SCCs) for such transfers. See OpenAI's [Data Processing Agreement](https://openai.com/policies/data-processing-agreement).
+The App itself does not transfer data internationally. However, when you use cloud AI transforms, your text is sent to the selected provider's servers:
+
+- **OpenAI, Gemini, Anthropic:** servers in the United States
+- **DeepSeek:** servers in China
+
+If you are located in the EU/EEA, this constitutes an international data transfer. Each provider maintains their own data protection agreements. You choose which provider to use (or none — Local LLM keeps everything on your device).
 
 ---
 
@@ -182,7 +195,7 @@ For privacy-related questions or concerns:
 | Question | Answer |
 |----------|--------|
 | Does the App collect my clipboard data? | Yes, it stores everything you copy locally on your device |
-| Is my data sent to any server? | No, unless you use OpenAI AI transforms (sent to OpenAI). Local AI stays on your machine |
+| Is my data sent to any server? | No, unless you use a cloud AI provider (OpenAI, Gemini, Anthropic, or DeepSeek). Local AI stays on your machine |
 | Is my data encrypted? | No, it is stored as a standard SQLite database |
 | Can I delete my data? | Yes, through the App or by deleting `%APPDATA%/com.beetroot.desktop/` |
 | Do you have access to my data? | No, we have no servers and no access to your device |
