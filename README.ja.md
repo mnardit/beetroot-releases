@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <b>日本語</b>
 </p>
 
-> **v1.4の新機能：** ローカルAIモデル（LM Studio、Ollama）— APIキーなしで変換を実行できます。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.4.0)
+> **v1.5の新機能：** 5つのAIプロバイダー（OpenAI、Gemini、Claude、DeepSeek、ローカルモデル）— よりスマートなアプリ検出。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
 
 ---
 
@@ -115,7 +115,7 @@ choco install beetroot
 
 ### AI変換
 
-- **2つのプロバイダー** — OpenAI（クラウド）またはローカル（LM Studio、Ollamaなど）、ワンクリックで切り替え
+- **5つのクラウドプロバイダー + ローカル** — OpenAI、Gemini、Claude、DeepSeek またはローカル（LM Studio、Ollama）、ワンクリックで切り替え
 - **推論モデル** — Qwen3、DeepSeek R1などに対応（`<think>`タグを自動除去）
 - **10個の組み込みプロンプト** — 文法修正、翻訳、要約、書き換え、データ抽出、コードフォーマットなど
 - **カスタムプロンプト** — 最大20個作成可能、右クリックメニューからアクセス

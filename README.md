@@ -24,7 +24,7 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.4:** Local AI models (LM Studio, Ollama) — run transforms without an API key. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.4.0)
+> **New in v1.5:** 5 AI providers (OpenAI, Gemini, Claude, DeepSeek, Local LLM) — plus smarter app detection. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
 
 ---
 
@@ -115,7 +115,7 @@ choco install beetroot
 
 ### AI transforms
 
-- **Two providers** — OpenAI (cloud) or local (LM Studio, Ollama, etc.), one-click switch
+- **5 cloud providers + local** — OpenAI, Gemini, Claude, DeepSeek, or local (LM Studio, Ollama), one-click switch
 - **Reasoning models** — Qwen3, DeepSeek R1, and similar work out of the box (auto-strips `<think>` tags)
 - **10 built-in prompts** — fix grammar, translate, summarize, rewrite, extract data, format as code, and more
 - **Custom prompts** — create up to 20 of your own, accessible from the right-click menu

@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <b>Русский</b> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Новое в v1.4:** Локальные AI-модели (LM Studio, Ollama) — трансформации без API-ключа. [Что нового →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.4.0)
+> **Новое в v1.5:** 5 AI-провайдеров (OpenAI, Gemini, Claude, DeepSeek, локальные модели) — плюс улучшенное определение приложений. [Что нового →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
 
 ---
 
@@ -115,7 +115,7 @@ choco install beetroot
 
 ### AI-трансформации
 
-- **Два провайдера** — OpenAI (облако) или локальный (LM Studio, Ollama и др.), переключение в один клик
+- **5 облачных провайдеров + локальный** — OpenAI, Gemini, Claude, DeepSeek или локальный (LM Studio, Ollama), переключение в один клик
 - **Reasoning-модели** — Qwen3, DeepSeek R1 и аналогичные работают из коробки (автоматически убирает теги `<think>`)
 - **10 встроенных промптов** — исправление грамматики, перевод, пересказ, переписывание, извлечение данных, форматирование кода и другое
 - **Свои промпты** — до 20 своих, доступны из контекстного меню

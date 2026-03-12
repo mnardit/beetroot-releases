@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <b>Deutsch</b> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Neu in v1.4:** Lokale KI-Modelle (LM Studio, Ollama) — Transformationen ohne API-Schlüssel. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.4.0)
+> **Neu in v1.5:** 5 KI-Anbieter (OpenAI, Gemini, Claude, DeepSeek, Lokal) — plus intelligentere App-Erkennung. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
 
 ---
 
@@ -115,7 +115,7 @@ choco install beetroot
 
 ### KI-Transformationen
 
-- **Zwei Anbieter** — OpenAI (Cloud) oder lokal (LM Studio, Ollama, etc.), mit einem Klick wechselbar
+- **5 Cloud-Anbieter + lokal** — OpenAI, Gemini, Claude, DeepSeek oder lokal (LM Studio, Ollama), mit einem Klick wechselbar
 - **Reasoning-Modelle** — Qwen3, DeepSeek R1 und ähnliche funktionieren sofort (automatisches Entfernen von `<think>`-Tags)
 - **10 integrierte Prompts** — Grammatik korrigieren, übersetzen, zusammenfassen, umschreiben, Daten extrahieren, als Code formatieren und mehr
 - **Eigene Prompts** — bis zu 20 eigene erstellen, erreichbar über das Rechtsklick-Menü

@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.4 新功能：** 本地 AI 模型（LM Studio、Ollama）— 无需 API 密钥即可运行转换。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.4.0)
+> **v1.5 新功能：** 5 个 AI 提供商（OpenAI、Gemini、Claude、DeepSeek、本地模型）— 更智能的应用检测。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
 
 ---
 
@@ -115,7 +115,7 @@ choco install beetroot
 
 ### AI 转换
 
-- **双引擎** — OpenAI（云端）或本地模型（LM Studio、Ollama 等），一键切换
+- **5 个云端提供商 + 本地** — OpenAI、Gemini、Claude、DeepSeek 或本地（LM Studio、Ollama），一键切换
 - **推理模型** — Qwen3、DeepSeek R1 等开箱即用（自动去除 `<think>` 标签）
 - **10 个内置提示词** — 修正语法、翻译、摘要、改写、提取数据、格式化代码等
 - **自定义提示词** — 最多 20 个，可从右键菜单访问
