@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 12, 2026
-**Version:** 1.5
+**Last updated:** March 14, 2026
+**Version:** 1.5.1
 
 ---
 
@@ -56,7 +56,11 @@ The App sends data to external servers **only** when you explicitly use certain 
 
 You can disable auto-update in Settings → General, in which case the App makes **no network connections at all** (unless you use a cloud AI provider).
 
-### 2.4 Data We Do NOT Collect
+### 2.4 On-Device ML Processing
+
+The App uses a TensorFlow.js machine learning model (from VS Code) to detect programming languages in code snippets for syntax highlighting. This model runs entirely within the App's WebView — **no data is sent to any server** for language detection. The model files are bundled with the App.
+
+### 2.5 Data We Do NOT Collect
 
 - No analytics or telemetry
 - No usage tracking
@@ -134,7 +138,7 @@ We implement the following security measures:
 - **Size limits:** Maximum 1 MB text, 10 MB images to prevent abuse
 - **Clipboard throttling:** 300ms minimum between captures
 - **Automatic backups:** 3-copy rotation using SQLite Backup API (point-in-time snapshots), plus a snapshot before each database migration. If corruption is detected at startup, the App automatically restores from the latest backup and notifies you
-- **Cloud sync detection:** The App warns you if your data folder is inside a cloud sync service (OneDrive, Dropbox, Google Drive) because cloud sync can corrupt SQLite databases. It also warns about USB and network drives
+- **Cloud sync detection:** The App warns you if your data folder is inside a cloud sync service (OneDrive, Dropbox, Google Drive, iCloud) because cloud sync can corrupt SQLite databases. It also warns about USB and network drives
 
 **Known limitations:**
 - The SQLite database is not encrypted. Any process running under your user account can read the clipboard history file.

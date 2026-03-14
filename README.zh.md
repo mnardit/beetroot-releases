@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.5 新功能：** 5 个 AI 提供商（OpenAI、Gemini、Claude、DeepSeek、本地模型）— 更智能的应用检测。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
+> **v1.5.1 新功能：** ML 代码检测（54 种语言，使用 VS Code 的 TensorFlow.js 模型）、重写的 5 阶段搜索引擎、长文本片段预览。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | 历史记录 | 25 条 clip，重启后丢失 | 无限制，跨重启永久保存 |
 | 搜索 | 无 | 模糊搜索 + 正则表达式 |
-| AI 转换 | 无 | OpenAI + 本地模型，10 个内置 + 自定义 |
+| AI 转换 | 无 | 5 个云端提供商 + 本地模型，10 个内置 + 自定义 |
 | 来源应用追踪 | 无 | 每条 clip 显示图标、应用名、窗口标题 |
 | OCR | 无 | Windows 原生引擎，本地处理 |
 | 图片历史 | 仅缩略图 | 完整图片，本地存储 |

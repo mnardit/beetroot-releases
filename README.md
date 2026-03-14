@@ -24,7 +24,7 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.5:** 5 AI providers (OpenAI, Gemini, Claude, DeepSeek, Local LLM) — plus smarter app detection. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
+> **New in v1.5.1:** ML code detection (54 languages via VS Code's TensorFlow.js model), rewritten 5-phase search engine, and fragment preview for long clips. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | History | 25 clips, lost on reboot | Unlimited, persists across reboots |
 | Search | No | Fuzzy + regex |
-| AI transforms | No | OpenAI + local models, 10 built-in + custom |
+| AI transforms | No | 5 cloud providers + local models, 10 built-in + custom |
 | Source app tracking | No | Icon, name, window title per clip |
 | OCR | No | Native Windows engine, on-device |
 | Image history | Thumbnails only | Full images, stored locally |
@@ -105,12 +105,12 @@ choco install beetroot
 
 ### Search & workflow
 
-- **Fuzzy search** — find anything with typo tolerance, powered by in-memory index
+- **5-phase search** — exact substring → word-start tokens → metadata → fuzzy. Typo-tolerant with ranked results
 - **Regex mode** — `/pattern/` with match highlighting
 - **Filters** — text, images, starred, notes — one click to narrow down
 - **Quick paste** — `Ctrl+1..9` to paste recent clips without opening the window
 - **Batch operations** — multi-select with `Ctrl+Click`, then copy (custom separator) or delete
-- **Content detection** — auto-badges for URLs, emails, code, JSON, colors
+- **Content detection** — auto-badges for URLs, emails, code, JSON, colors. ML-powered language detection (54 languages) for code preview
 - **Single instance** — launching Beetroot again brings the existing window to focus
 
 ### AI transforms
@@ -193,7 +193,7 @@ All shortcuts are customizable in **Settings → Shortcuts**. Works with AZERTY,
 Yes. Free for personal and commercial use — no ads, no trials, no feature gates, no telemetry.
 
 **Does Beetroot send my clipboard data anywhere?**
-No. Everything stays in a local SQLite database on your machine. With a local AI model, nothing ever leaves your machine. If you use OpenAI, only the text you explicitly transform is sent — directly to their API using your own key.
+No. Everything stays in a local SQLite database on your machine. With a local AI model, nothing ever leaves your machine. If you use a cloud AI provider (OpenAI, Gemini, Anthropic, or DeepSeek), only the text you explicitly transform is sent — directly to their API using your own key.
 
 **Where is my API key stored?**
 In the app's local settings (localStorage in the WebView2 profile). It never leaves your machine.

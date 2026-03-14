@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <b>Deutsch</b> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Neu in v1.5:** 5 KI-Anbieter (OpenAI, Gemini, Claude, DeepSeek, Lokal) — plus intelligentere App-Erkennung. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
+> **Neu in v1.5.1:** ML-Codeerkennung (54 Sprachen via VS Codes TensorFlow.js-Modell), überarbeitete 5-Phasen-Suchmaschine und Fragment-Vorschau für lange Clips. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | Historie | 25 Clips, nach Neustart weg | Unbegrenzt, bleibt über Neustarts erhalten |
 | Suche | Nein | Unscharf + Regex |
-| KI-Transformationen | Nein | OpenAI + lokale Modelle, 10 integrierte + eigene |
+| KI-Transformationen | Nein | 5 Cloud-Anbieter + lokale Modelle, 10 integrierte + eigene |
 | Quell-App-Erkennung | Nein | Icon, Name und Fenstertitel pro Clip |
 | OCR | Nein | Native Windows-Engine, lokal |
 | Bildhistorie | Nur Miniaturansichten | Vollbilder, lokal gespeichert |

@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <b>Español</b> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Nuevo en v1.5:** 5 proveedores de IA (OpenAI, Gemini, Claude, DeepSeek, Local) — además de mejor detección de apps. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
+> **Nuevo en v1.5.1:** Detección ML de código (54 lenguajes via modelo TensorFlow.js de VS Code), motor de búsqueda de 5 fases reescrito y vista previa de fragmentos para clips largos. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | Historial | 25 clips, se pierden al reiniciar | Ilimitado, persistente entre reinicios |
 | Búsqueda | No | Difusa + regex |
-| Transformaciones IA | No | OpenAI + modelos locales, 10 integradas + personalizadas |
+| Transformaciones IA | No | 5 proveedores cloud + modelos locales, 10 integradas + personalizadas |
 | Seguimiento de app origen | No | Icono, nombre y título de ventana por clip |
 | OCR | No | Motor nativo de Windows, local |
 | Historial de imágenes | Solo miniaturas | Imágenes completas, almacenadas localmente |

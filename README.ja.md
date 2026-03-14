@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <b>日本語</b>
 </p>
 
-> **v1.5の新機能：** 5つのAIプロバイダー（OpenAI、Gemini、Claude、DeepSeek、ローカルモデル）— よりスマートなアプリ検出。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.0)
+> **v1.5.1の新機能：** MLコード検出（VS CodeのTensorFlow.jsモデルで54言語対応）、5フェーズ検索エンジンの書き直し、長いクリップのフラグメントプレビュー。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | 履歴 | 25クリップ、再起動で消失 | 無制限、再起動後も保持 |
 | 検索 | なし | あいまい検索 + 正規表現 |
-| AI変換 | なし | OpenAI + ローカルモデル、10個の組み込み + カスタム |
+| AI変換 | なし | 5つのクラウドプロバイダー + ローカルモデル、10個の組み込み + カスタム |
 | ソースアプリ追跡 | なし | アイコン、アプリ名、ウィンドウタイトルをクリップごとに記録 |
 | OCR | なし | Windows標準エンジン、ローカル処理 |
 | 画像履歴 | サムネイルのみ | フル画像、ローカル保存 |

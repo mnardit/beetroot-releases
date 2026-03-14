@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 12, 2026
-**Version:** 1.5
+**Last updated:** March 14, 2026
+**Version:** 1.5.1
 
 ---
 
@@ -16,11 +16,12 @@ By downloading, installing, or using Beetroot ("the App"), you agree to these Te
 
 Beetroot is a desktop clipboard manager for Windows that:
 - Monitors your system clipboard and stores a history of copied content
-- Provides search, filtering, and organization of clipboard history
+- Provides search (5-phase ranked scoring with fuzzy fallback), filtering, and organization of clipboard history
 - Offers AI-powered text transforms via cloud providers (OpenAI, Gemini, Anthropic, DeepSeek — requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
 - Provides OCR text extraction from images
 - Supports pin-on-top and follow-cursor window modes
 - Automatic backup rotation (3 copies) with recovery from database corruption
+- Uses on-device ML model for programming language detection (54 languages, no network required)
 - Stores all data locally on your device
 
 ---
@@ -111,7 +112,7 @@ TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL THE DEVELOPER BE LIABL
 - Loss of data or profits
 - Data breaches resulting from the unencrypted local database
 - Unauthorized access to clipboard history by third-party software
-- Costs incurred from OpenAI API usage
+- Costs incurred from cloud AI provider API usage (OpenAI, Gemini, Anthropic, DeepSeek)
 - Any AI-generated content used in error
 
 OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE APP (WHICH IS $0 FOR THE FREE VERSION).
