@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/screenshots/main-dark-new.png" alt="Beetroot — Zwischenablage-Manager für Windows" width="700" />
+  <img src="docs/screenshots/main.png" alt="Beetroot — Zwischenablage-Manager für Windows" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
@@ -61,7 +61,7 @@
 
 | Dunkles Theme | Helles Theme |
 |---|---|
-| ![Dunkel](docs/screenshots/main-dark-new.png) | ![Hell](docs/screenshots/main-light-filters.png) |
+| ![Dunkel](docs/screenshots/main.png) | ![Hell](docs/screenshots/main-light-filters.png) |
 
 | Kontextmenü & KI | Code-Vorschau |
 |---|---|

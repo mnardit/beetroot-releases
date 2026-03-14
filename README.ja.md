@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/screenshots/main-dark-new.png" alt="Beetroot — Windows用クリップボードマネージャー" width="700" />
+  <img src="docs/screenshots/main.png" alt="Beetroot — Windows用クリップボードマネージャー" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
@@ -61,7 +61,7 @@
 
 | ダークテーマ | ライトテーマ |
 |---|---|
-| ![ダーク](docs/screenshots/main-dark-new.png) | ![ライト](docs/screenshots/main-light-filters.png) |
+| ![ダーク](docs/screenshots/main.png) | ![ライト](docs/screenshots/main-light-filters.png) |
 
 | コンテキストメニューとAI | コードプレビュー |
 |---|---|

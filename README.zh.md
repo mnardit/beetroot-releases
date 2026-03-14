@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/screenshots/main-dark-new.png" alt="Beetroot — Windows 剪贴板管理器" width="700" />
+  <img src="docs/screenshots/main.png" alt="Beetroot — Windows 剪贴板管理器" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
@@ -61,7 +61,7 @@
 
 | 深色主题 | 浅色主题 |
 |---|---|
-| ![深色](docs/screenshots/main-dark-new.png) | ![浅色](docs/screenshots/main-light-filters.png) |
+| ![深色](docs/screenshots/main.png) | ![浅色](docs/screenshots/main-light-filters.png) |
 
 | 右键菜单与 AI | 代码预览 |
 |---|---|

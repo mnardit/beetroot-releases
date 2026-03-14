@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/screenshots/main-dark-new.png" alt="Beetroot — менеджер буфера обмена для Windows" width="700" />
+  <img src="docs/screenshots/main.png" alt="Beetroot — менеджер буфера обмена для Windows" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
@@ -61,7 +61,7 @@
 
 | Тёмная тема | Светлая тема |
 |---|---|
-| ![Тёмная](docs/screenshots/main-dark-new.png) | ![Светлая](docs/screenshots/main-light-filters.png) |
+| ![Тёмная](docs/screenshots/main.png) | ![Светлая](docs/screenshots/main-light-filters.png) |
 
 | Контекстное меню и AI | Предпросмотр кода |
 |---|---|

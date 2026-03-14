@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/screenshots/main-dark-new.png" alt="Beetroot clipboard manager for Windows" width="700" />
+  <img src="docs/screenshots/main.png" alt="Beetroot clipboard manager for Windows" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
@@ -61,7 +61,7 @@
 
 | Dark theme | Light theme |
 |---|---|
-| ![Dark](docs/screenshots/main-dark-new.png) | ![Light](docs/screenshots/main-light-filters.png) |
+| ![Dark](docs/screenshots/main.png) | ![Light](docs/screenshots/main-light-filters.png) |
 
 | Context menu & AI | Code preview |
 |---|---|
