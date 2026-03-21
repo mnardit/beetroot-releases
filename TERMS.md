@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 14, 2026
-**Version:** 1.5.1
+**Last updated:** March 21, 2026
+**Version:** 1.6.0
 
 ---
 
@@ -16,10 +16,10 @@ By downloading, installing, or using Beetroot ("the App"), you agree to these Te
 
 Beetroot is a desktop clipboard manager for Windows that:
 - Monitors your system clipboard and stores a history of copied content
-- Provides search (5-phase ranked scoring with fuzzy fallback), filtering, and organization of clipboard history
+- Provides search (5-phase ranked scoring with accent folding and typo tolerance), filtering, and organization of clipboard history
 - Offers AI-powered text transforms via cloud providers (OpenAI, Gemini, Anthropic, DeepSeek — requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
 - Provides OCR text extraction from images
-- Supports pin-on-top and follow-cursor window modes
+- Supports no-focus window mode (no focus stealing), pin-on-top, and follow-cursor window modes
 - Automatic backup rotation (3 copies) with recovery from database corruption
 - Uses on-device ML model for programming language detection (54 languages, no network required)
 - Stores all data locally on your device

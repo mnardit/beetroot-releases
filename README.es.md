@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <b>Español</b> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Nuevo en v1.5.1:** Detección ML de código (54 lenguajes via modelo TensorFlow.js de VS Code), motor de búsqueda de 5 fases reescrito y vista previa de fragmentos para clips largos. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
+> **Nuevo en v1.6.0:** Ventana sin foco — Beetroot ya no roba el foco al abrirse. Nuevo motor de búsqueda en Rust con normalización de acentos y tolerancia a errores. Preajustes de posición de ventana. 4 nuevas transformaciones de texto. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
 
 ---
 
@@ -105,7 +105,7 @@ choco install beetroot
 
 ### Búsqueda y flujo de trabajo
 
-- **Búsqueda difusa** — encuentra cualquier cosa con tolerancia a errores, impulsada por un índice en memoria
+- **Búsqueda de 5 fases** — subcadena exacta → inicio de palabra → metadatos → difusa. Tolerancia a errores con resultados clasificados
 - **Modo regex** — `/pattern/` con resaltado de coincidencias
 - **Filtros** — texto, imágenes, favoritos, notas — un clic para filtrar
 - **Pegado rápido** — `Ctrl+1..9` para pegar clips recientes sin abrir la ventana
@@ -193,7 +193,7 @@ Todos los atajos son personalizables en **Configuración → Atajos**. Compatibl
 Sí. Gratis para uso personal y comercial — sin anuncios, sin pruebas, sin limitaciones, sin telemetría.
 
 **¿Beetroot envía los datos del portapapeles a algún lugar?**
-No. Todo se almacena en una base de datos SQLite local en su máquina. Con un modelo de IA local, nada sale de su equipo. Si usa OpenAI, solo el texto que usted transforma explícitamente se envía — directamente a su API usando su propia clave.
+No. Todo se almacena en una base de datos SQLite local en su máquina. Con un modelo de IA local, nada sale de su equipo. Si usa un proveedor en la nube (OpenAI, Gemini, Anthropic o DeepSeek), solo el texto que usted transforma explícitamente se envía — directamente a su API usando su propia clave.
 
 **¿Dónde se almacena mi clave API?**
 En la configuración local de la app (localStorage en el perfil WebView2). Nunca sale de su máquina.

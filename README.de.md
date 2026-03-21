@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <b>Deutsch</b> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Neu in v1.5.1:** ML-Codeerkennung (54 Sprachen via VS Codes TensorFlow.js-Modell), überarbeitete 5-Phasen-Suchmaschine und Fragment-Vorschau für lange Clips. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
+> **Neu in v1.6.0:** Fenster ohne Fokus — Beetroot stiehlt beim Öffnen keinen Fokus mehr. Neue Rust-Suchmaschine mit Akzent-Normalisierung und Tippfehler-Toleranz. Fensterpositions-Voreinstellungen. 4 neue Text-Transformationen. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
 
 ---
 
@@ -105,7 +105,7 @@ choco install beetroot
 
 ### Suche & Workflow
 
-- **Unscharfe Suche** — findet alles trotz Tippfehlern, dank In-Memory-Index
+- **5-Phasen-Suche** — exakter Substring → Wortanfang → Metadaten → unscharf. Tippfehlertoleranz mit gewichteten Ergebnissen
 - **Regex-Modus** — `/pattern/` mit Treffer-Hervorhebung
 - **Filter** — Text, Bilder, Favoriten, Notizen — ein Klick zum Eingrenzen
 - **Schnelles Einfügen** — `Ctrl+1..9` für die letzten Clips, ohne das Fenster zu öffnen
@@ -193,7 +193,7 @@ Alle Tastenkombinationen sind anpassbar unter **Einstellungen → Tastenkombinat
 Ja. Kostenlos für private und gewerbliche Nutzung — keine Werbung, keine Testversionen, keine Funktionseinschränkungen, keine Telemetrie.
 
 **Sendet Beetroot meine Zwischenablage-Daten irgendwohin?**
-Nein. Alles bleibt in einer lokalen SQLite-Datenbank auf deinem Rechner. Mit einem lokalen KI-Modell verlässt nie etwas deinen Rechner. Bei OpenAI wird nur der Text gesendet, den du explizit transformierst — direkt an deren API mit deinem eigenen Schlüssel.
+Nein. Alles bleibt in einer lokalen SQLite-Datenbank auf deinem Rechner. Mit einem lokalen KI-Modell verlässt nie etwas deinen Rechner. Bei Cloud-Anbietern (OpenAI, Gemini, Anthropic oder DeepSeek) wird nur der Text gesendet, den du explizit transformierst — direkt an deren API mit deinem eigenen Schlüssel.
 
 **Wo wird mein API-Schlüssel gespeichert?**
 In den lokalen App-Einstellungen (localStorage im WebView2-Profil). Er verlässt nie deinen Rechner.

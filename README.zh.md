@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.5.1 新功能：** ML 代码检测（54 种语言，使用 VS Code 的 TensorFlow.js 模型）、重写的 5 阶段搜索引擎、长文本片段预览。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
+> **v1.6.0 新功能：** 无焦点窗口 — 打开时不再抢占焦点。全新 Rust 搜索引擎，支持重音规范化和容错搜索。窗口位置预设。4 个新文本转换。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
 
 ---
 
@@ -105,7 +105,7 @@ choco install beetroot
 
 ### 搜索与工作流
 
-- **模糊搜索** — 容错查找任何内容，基于内存索引
+- **5 阶段搜索** — 精确子串 → 词首匹配 → 元数据 → 模糊。容错搜索，结果按相关性排序
 - **正则模式** — `/pattern/` 支持匹配高亮
 - **过滤器** — 文本、图片、收藏、备注 — 一键筛选
 - **快速粘贴** — `Ctrl+1..9` 无需打开窗口即可粘贴最近的 clip
@@ -193,7 +193,7 @@ choco install beetroot
 是的。个人和商业使用均免费 — 无广告、无试用、无功能限制、无遥测。
 
 **Beetroot 会发送我的剪贴板数据吗？**
-不会。所有数据存储在本地 SQLite 数据库中。使用本地 AI 模型时，任何数据都不会离开您的电脑。如果使用 OpenAI，仅在您明确选择转换时将选中文本发送到其 API — 且使用您自己的密钥。
+不会。所有数据存储在本地 SQLite 数据库中。使用本地 AI 模型时，任何数据都不会离开您的电脑。如果使用云 AI 服务（OpenAI、Gemini、Anthropic 或 DeepSeek），仅在您明确选择转换时将选中文本发送到其 API — 且使用您自己的密钥。
 
 **我的 API 密钥存储在哪里？**
 在应用的本地设置中（WebView2 配置文件中的 localStorage）。它绝不会离开您的电脑。

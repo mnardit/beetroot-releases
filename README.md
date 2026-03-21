@@ -24,7 +24,7 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.5.1:** ML code detection (54 languages via VS Code's TensorFlow.js model), rewritten 5-phase search engine, and fragment preview for long clips. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.5.1)
+> **New in v1.6.0:** No-focus window — Beetroot no longer steals focus when opened. New Rust search engine with accent folding and typo tolerance. Window position presets. 4 new text transforms. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
 
 ---
 
