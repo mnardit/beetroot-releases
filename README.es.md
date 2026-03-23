@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <b>Español</b> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Nuevo en v1.6.0:** Ventana sin foco — Beetroot ya no roba el foco al abrirse. Nuevo motor de búsqueda en Rust con normalización de acentos y tolerancia a errores. Preajustes de posición de ventana. 4 nuevas transformaciones de texto. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
+> **Nuevo en v1.6.2:** Reescritura del sistema de teclado para entrada fiable en modo sin foco. Panel de vista previa renovado con navegación por flechas. Múltiples mejoras de estabilidad y rendimiento. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | Historial | 25 clips, se pierden al reiniciar | Ilimitado, persistente entre reinicios |
 | Búsqueda | No | Difusa + regex |
-| Transformaciones IA | No | 5 proveedores cloud + modelos locales, 10 integradas + personalizadas |
+| Transformaciones IA | No | 4 proveedores cloud + modelos locales, 10 integradas + personalizadas |
 | Seguimiento de app origen | No | Icono, nombre y título de ventana por clip |
 | OCR | No | Motor nativo de Windows, local |
 | Historial de imágenes | Solo miniaturas | Imágenes completas, almacenadas localmente |
@@ -110,12 +110,12 @@ choco install beetroot
 - **Filtros** — texto, imágenes, favoritos, notas — un clic para filtrar
 - **Pegado rápido** — `Ctrl+1..9` para pegar clips recientes sin abrir la ventana
 - **Operaciones por lotes** — selección múltiple con `Ctrl+Click`, luego copiar (separador personalizable) o eliminar
-- **Detección de contenido** — badges automáticos para URLs, emails, código, JSON, colores
+- **Detección de contenido** — badges automáticos para URLs, emails, código, JSON, colores. Detección de lenguajes de programación con ML (54 idiomas) para vista previa de código
 - **Instancia única** — abrir Beetroot de nuevo enfoca la ventana existente
 
 ### Transformaciones IA
 
-- **5 proveedores en la nube + local** — OpenAI, Gemini, Claude, DeepSeek o local (LM Studio, Ollama), cambio con un clic
+- **4 proveedores en la nube + local** — OpenAI, Gemini, Claude, DeepSeek o local (LM Studio, Ollama), cambio con un clic
 - **Modelos de razonamiento** — Qwen3, DeepSeek R1 y similares funcionan directamente (elimina automáticamente las etiquetas `<think>`)
 - **10 prompts integrados** — corregir gramática, traducir, resumir, reescribir, extraer datos, formatear como código y más
 - **Prompts personalizados** — cree hasta 20 propios, accesibles desde el menú contextual

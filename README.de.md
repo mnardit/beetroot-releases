@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <b>Deutsch</b> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Neu in v1.6.0:** Fenster ohne Fokus — Beetroot stiehlt beim Öffnen keinen Fokus mehr. Neue Rust-Suchmaschine mit Akzent-Normalisierung und Tippfehler-Toleranz. Fensterpositions-Voreinstellungen. 4 neue Text-Transformationen. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
+> **Neu in v1.6.2:** Überarbeitete Tastaturverarbeitung für zuverlässige Eingabe im Fokus-frei-Modus. Aufgefrischtes Vorschau-Panel mit Pfeiltasten-Navigation. Zahlreiche Stabilitäts- und Leistungsverbesserungen. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | Historie | 25 Clips, nach Neustart weg | Unbegrenzt, bleibt über Neustarts erhalten |
 | Suche | Nein | Unscharf + Regex |
-| KI-Transformationen | Nein | 5 Cloud-Anbieter + lokale Modelle, 10 integrierte + eigene |
+| KI-Transformationen | Nein | 4 Cloud-Anbieter + lokale Modelle, 10 integrierte + eigene |
 | Quell-App-Erkennung | Nein | Icon, Name und Fenstertitel pro Clip |
 | OCR | Nein | Native Windows-Engine, lokal |
 | Bildhistorie | Nur Miniaturansichten | Vollbilder, lokal gespeichert |
@@ -110,12 +110,12 @@ choco install beetroot
 - **Filter** — Text, Bilder, Favoriten, Notizen — ein Klick zum Eingrenzen
 - **Schnelles Einfügen** — `Ctrl+1..9` für die letzten Clips, ohne das Fenster zu öffnen
 - **Stapeloperationen** — Mehrfachauswahl mit `Ctrl+Click`, dann kopieren (eigenes Trennzeichen) oder löschen
-- **Inhaltserkennung** — Auto-Badges für URLs, E-Mails, Code, JSON, Farben
+- **Inhaltserkennung** — Auto-Badges für URLs, E-Mails, Code, JSON, Farben. ML-gestützte Programmiersprachenerkennung (54 Sprachen) für die Code-Vorschau
 - **Einzelinstanz** — erneutes Starten bringt das bestehende Fenster in den Vordergrund
 
 ### KI-Transformationen
 
-- **5 Cloud-Anbieter + lokal** — OpenAI, Gemini, Claude, DeepSeek oder lokal (LM Studio, Ollama), mit einem Klick wechselbar
+- **4 Cloud-Anbieter + lokal** — OpenAI, Gemini, Claude, DeepSeek oder lokal (LM Studio, Ollama), mit einem Klick wechselbar
 - **Reasoning-Modelle** — Qwen3, DeepSeek R1 und ähnliche funktionieren sofort (automatisches Entfernen von `<think>`-Tags)
 - **10 integrierte Prompts** — Grammatik korrigieren, übersetzen, zusammenfassen, umschreiben, Daten extrahieren, als Code formatieren und mehr
 - **Eigene Prompts** — bis zu 20 eigene erstellen, erreichbar über das Rechtsklick-Menü

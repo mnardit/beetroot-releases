@@ -24,7 +24,7 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.6.0:** No-focus window — Beetroot no longer steals focus when opened. New Rust search engine with accent folding and typo tolerance. Window position presets. 4 new text transforms. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
+> **New in v1.6.2:** Rewritten keyboard handling for reliable no-focus input. Refreshed preview panel with arrow navigation. Multiple stability and performance fixes. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | History | 25 clips, lost on reboot | Unlimited, persists across reboots |
 | Search | No | Fuzzy + regex |
-| AI transforms | No | 5 cloud providers + local models, 10 built-in + custom |
+| AI transforms | No | 4 cloud providers + local models, 10 built-in + custom |
 | Source app tracking | No | Icon, name, window title per clip |
 | OCR | No | Native Windows engine, on-device |
 | Image history | Thumbnails only | Full images, stored locally |
@@ -115,7 +115,7 @@ choco install beetroot
 
 ### AI transforms
 
-- **5 cloud providers + local** — OpenAI, Gemini, Claude, DeepSeek, or local (LM Studio, Ollama), one-click switch
+- **4 cloud + local** — OpenAI, Gemini, Claude, DeepSeek, or local (LM Studio, Ollama), one-click switch
 - **Reasoning models** — Qwen3, DeepSeek R1, and similar work out of the box (auto-strips `<think>` tags)
 - **10 built-in prompts** — fix grammar, translate, summarize, rewrite, extract data, format as code, and more
 - **Custom prompts** — create up to 20 of your own, accessible from the right-click menu

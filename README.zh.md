@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.6.0 新功能：** 无焦点窗口 — 打开时不再抢占焦点。全新 Rust 搜索引擎，支持重音规范化和容错搜索。窗口位置预设。4 个新文本转换。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.0)
+> **v1.6.2 新功能：** 重写键盘处理，无焦点模式输入更可靠。全新预览面板支持方向键导航。多项稳定性和性能改进。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
 
 ---
 
@@ -34,7 +34,7 @@
 |---|---|---|
 | 历史记录 | 25 条 clip，重启后丢失 | 无限制，跨重启永久保存 |
 | 搜索 | 无 | 模糊搜索 + 正则表达式 |
-| AI 转换 | 无 | 5 个云端提供商 + 本地模型，10 个内置 + 自定义 |
+| AI 转换 | 无 | 4 个云端提供商 + 本地模型，10 个内置 + 自定义 |
 | 来源应用追踪 | 无 | 每条 clip 显示图标、应用名、窗口标题 |
 | OCR | 无 | Windows 原生引擎，本地处理 |
 | 图片历史 | 仅缩略图 | 完整图片，本地存储 |
@@ -110,12 +110,12 @@ choco install beetroot
 - **过滤器** — 文本、图片、收藏、备注 — 一键筛选
 - **快速粘贴** — `Ctrl+1..9` 无需打开窗口即可粘贴最近的 clip
 - **批量操作** — `Ctrl+Click` 多选，然后复制（自定义分隔符）或删除
-- **内容检测** — 自动识别 URL、邮箱、代码、JSON、颜色
+- **内容检测** — 自动识别 URL、邮箱、代码、JSON、颜色。ML 驱动的编程语言检测（54 种语言），用于代码预览
 - **单实例** — 再次启动 Beetroot 将聚焦现有窗口
 
 ### AI 转换
 
-- **5 个云端提供商 + 本地** — OpenAI、Gemini、Claude、DeepSeek 或本地（LM Studio、Ollama），一键切换
+- **4 个云端提供商 + 本地** — OpenAI、Gemini、Claude、DeepSeek 或本地（LM Studio、Ollama），一键切换
 - **推理模型** — Qwen3、DeepSeek R1 等开箱即用（自动去除 `<think>` 标签）
 - **10 个内置提示词** — 修正语法、翻译、摘要、改写、提取数据、格式化代码等
 - **自定义提示词** — 最多 20 个，可从右键菜单访问
