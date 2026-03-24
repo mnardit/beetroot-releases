@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.6.2 新功能：** 重写键盘处理，无焦点模式输入更可靠。全新预览面板支持方向键导航。多项稳定性和性能改进。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
+> **v1.6.3 新功能：** 全系统「已复制」提示在光标附近确认每次复制。修复 Explorer 图片复制问题。OpenAI 模型升级至 GPT-5.4。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
 
 ---
 

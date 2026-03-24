@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <b>Español</b> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Nuevo en v1.6.2:** Reescritura del sistema de teclado para entrada fiable en modo sin foco. Panel de vista previa renovado con navegación por flechas. Múltiples mejoras de estabilidad y rendimiento. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
+> **Nuevo en v1.6.3:** Superposición "Copiado" a nivel de sistema confirma cada captura junto al cursor. Corregida la copia de imágenes del Explorer. Modelos OpenAI actualizados a GPT-5.4. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
 
 ---
 

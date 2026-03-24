@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 23, 2026
-**Version:** 1.6.2
+**Last updated:** March 24, 2026
+**Version:** 1.6.3
 
 ---
 
@@ -140,6 +140,7 @@ We implement the following security measures:
 - **Automatic backups:** 3-copy rotation using SQLite Backup API (point-in-time snapshots), plus a snapshot before each database migration. If corruption is detected at startup, the App automatically restores from the latest backup and notifies you
 - **Cloud sync detection:** The App warns you if your data folder is inside a cloud sync service (OneDrive, Dropbox, Google Drive, iCloud) because cloud sync can corrupt SQLite databases. It also warns about USB and network drives
 - **Keyboard hook (no-focus mode only):** When the no-focus window is visible, the App installs a low-level keyboard hook (WH_KEYBOARD_LL) to intercept navigation keys (arrows, Enter, Escape, etc.) directed at the App. No keystrokes are logged or stored — the hook is used solely for UI navigation and is removed when the window is hidden
+- **"Copied" overlay:** When enabled (Settings > General), a small visual indicator appears near the cursor for one second after each clipboard capture, confirming Beetroot recorded it. The overlay displays the content type label (e.g., "Text", "Image") but never the content itself. It does not collect, log, or store any data. You can disable it in Settings > General
 
 **Known limitations:**
 - The SQLite database is not encrypted. Any process running under your user account can read the clipboard history file.

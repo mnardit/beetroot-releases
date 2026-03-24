@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <b>Русский</b> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Новое в v1.6.2:** Переписана обработка клавиатуры для надёжного ввода в режиме без фокуса. Обновлённая панель предпросмотра с навигацией стрелками. Множество исправлений стабильности и производительности. [Что нового →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
+> **Новое в v1.6.3:** Системный оверлей «Скопировано» подтверждает каждый захват рядом с курсором. Исправлено копирование изображений из Explorer. Модели OpenAI обновлены до GPT-5.4. [Что нового →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
 
 ---
 

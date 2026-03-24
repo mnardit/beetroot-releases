@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <b>日本語</b>
 </p>
 
-> **v1.6.2の新機能：** キーボード処理を書き直し、フォーカスなしモードの入力がより確実に。プレビューパネルが一新され、矢印キーでクリップ間を移動可能に。安定性とパフォーマンスの改善。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
+> **v1.6.3の新機能：** システムワイド「コピー済み」オーバーレイでカーソル付近にコピーを確認。エクスプローラー画像コピーを修正。OpenAIモデルをGPT-5.4に更新。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
 
 ---
 

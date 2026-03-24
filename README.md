@@ -24,7 +24,7 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.6.2:** Rewritten keyboard handling for reliable no-focus input. Refreshed preview panel with arrow navigation. Multiple stability and performance fixes. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.2)
+> **New in v1.6.3:** System-wide "Copied" overlay confirms every capture near your cursor. Fixed Explorer image copy. Updated OpenAI models to GPT-5.4. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
 
 ---
 

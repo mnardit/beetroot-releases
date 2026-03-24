@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 23, 2026
-**Version:** 1.6.2
+**Last updated:** March 24, 2026
+**Version:** 1.6.3
 
 ---
 
