@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Beetroot herunterladen (kostenlos)</strong></a> · <a href="https://max.nardit.com/beetroot">Website</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Beetroot herunterladen (kostenlos)</strong></a> · <a href="https://apps.microsoft.com/detail/9ng50mkds58x">Microsoft Store</a> · <a href="https://max.nardit.com/beetroot">Website</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
 </p>
 
 <p align="center">
@@ -81,7 +81,7 @@
 
 ## Installation
 
-**[Neueste .exe von GitHub Releases herunterladen](https://github.com/mnardit/beetroot-releases/releases/latest)**
+**[Neueste .exe von GitHub Releases herunterladen](https://github.com/mnardit/beetroot-releases/releases/latest)** oder im **[Microsoft Store](https://apps.microsoft.com/detail/9ng50mkds58x)** installieren.
 
 Oder über einen Paketmanager:
 

@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Beetrootをダウンロード（無料）</strong></a> · <a href="https://max.nardit.com/beetroot">ウェブサイト</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">変更履歴</a>
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Beetrootをダウンロード（無料）</strong></a> · <a href="https://apps.microsoft.com/detail/9ng50mkds58x">Microsoft Store</a> · <a href="https://max.nardit.com/beetroot">ウェブサイト</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">変更履歴</a>
 </p>
 
 <p align="center">
@@ -81,7 +81,7 @@
 
 ## インストール
 
-**[GitHub Releasesから最新の.exeをダウンロード](https://github.com/mnardit/beetroot-releases/releases/latest)**
+**[GitHub Releasesから最新の.exeをダウンロード](https://github.com/mnardit/beetroot-releases/releases/latest)**、または **[Microsoft Store](https://apps.microsoft.com/detail/9ng50mkds58x)** からインストール。
 
 またはパッケージマネージャーを使用：
 

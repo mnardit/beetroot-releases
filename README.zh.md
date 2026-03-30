@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>下载 Beetroot（免费）</strong></a> · <a href="https://max.nardit.com/beetroot">官网</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">更新日志</a>
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>下载 Beetroot（免费）</strong></a> · <a href="https://apps.microsoft.com/detail/9ng50mkds58x">Microsoft Store</a> · <a href="https://max.nardit.com/beetroot">官网</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">更新日志</a>
 </p>
 
 <p align="center">
@@ -81,7 +81,7 @@
 
 ## 安装
 
-**[从 GitHub Releases 下载最新 .exe](https://github.com/mnardit/beetroot-releases/releases/latest)**
+**[从 GitHub Releases 下载最新 .exe](https://github.com/mnardit/beetroot-releases/releases/latest)**，或从 **[Microsoft Store](https://apps.microsoft.com/detail/9ng50mkds58x)** 安装。
 
 或使用包管理器：
 

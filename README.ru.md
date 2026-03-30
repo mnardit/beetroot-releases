@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Скачать Beetroot (бесплатно)</strong></a> · <a href="https://max.nardit.com/beetroot">Сайт</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
+  <a href="https://github.com/mnardit/beetroot-releases/releases/latest"><strong>Скачать Beetroot (бесплатно)</strong></a> · <a href="https://apps.microsoft.com/detail/9ng50mkds58x">Microsoft Store</a> · <a href="https://max.nardit.com/beetroot">Сайт</a> · <a href="https://github.com/mnardit/beetroot-releases/releases">Changelog</a>
 </p>
 
 <p align="center">
@@ -81,7 +81,7 @@
 
 ## Установка
 
-**[Скачайте последнюю версию .exe из GitHub Releases](https://github.com/mnardit/beetroot-releases/releases/latest)**
+**[Скачайте последнюю версию .exe из GitHub Releases](https://github.com/mnardit/beetroot-releases/releases/latest)** или установите из **[Microsoft Store](https://apps.microsoft.com/detail/9ng50mkds58x)**.
 
 Или через пакетный менеджер:
 
