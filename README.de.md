@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <b>Deutsch</b> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Neu in v1.6.3:** Systemweite „Kopiert"-Einblendung bestätigt jeden Kopiervorgang am Cursor. Explorer-Bildkopie repariert. OpenAI-Modelle auf GPT-5.4 aktualisiert. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
+> **Neu in v1.6.5:** KI-Vision — Bilder mit KI analysieren (Handschrift lesen, Daten extrahieren, beschreiben). KI-Warteschlange im Hintergrund — Transformationen blockieren die Oberfläche nicht mehr. Gesamte KI-Verarbeitung in nativem Rust. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
 
 ---
 
@@ -34,7 +34,8 @@
 |---|---|---|
 | Historie | 25 Clips, nach Neustart weg | Unbegrenzt, bleibt über Neustarts erhalten |
 | Suche | Nein | Unscharf + Regex |
-| KI-Transformationen | Nein | 4 Cloud-Anbieter + lokale Modelle, 10 integrierte + eigene |
+| KI-Transformationen | Nein | 4 Cloud-Anbieter + lokale Modelle, 10 Text + 5 Vision + benutzerdefinierte |
+| KI-Vision | Nein | Text lesen, beschreiben, Daten aus Bildern per KI extrahieren |
 | Quell-App-Erkennung | Nein | Icon, Name und Fenstertitel pro Clip |
 | OCR | Nein | Native Windows-Engine, lokal |
 | Bildhistorie | Nur Miniaturansichten | Vollbilder, lokal gespeichert |
@@ -116,10 +117,20 @@ choco install beetroot
 ### KI-Transformationen
 
 - **4 Cloud-Anbieter + lokal** — OpenAI, Gemini, Claude, DeepSeek oder lokal (LM Studio, Ollama), mit einem Klick wechselbar
+- **Hintergrundverarbeitung** — Prompt anklicken, Menü schließt sofort, Benachrichtigung bei Fertigstellung. Mehrere Transformationen in die Warteschlange stellen
 - **Reasoning-Modelle** — Qwen3, DeepSeek R1 und ähnliche funktionieren sofort (automatisches Entfernen von `<think>`-Tags)
-- **10 integrierte Prompts** — Grammatik korrigieren, übersetzen, zusammenfassen, umschreiben, Daten extrahieren, als Code formatieren und mehr
+- **10 Text-Prompts** — Grammatik korrigieren, übersetzen, zusammenfassen, umschreiben, Daten extrahieren, als Code formatieren und mehr
 - **Eigene Prompts** — bis zu 20 eigene erstellen, erreichbar über das Rechtsklick-Menü
 - **BYOK** — eigenen OpenAI-Schlüssel verwenden, oder mit einem lokalen Modell ganz ohne Schlüssel arbeiten
+- **Natives Rust** — alle KI-API-Aufrufe laufen in nativem Code, nicht in der Browser-Engine. Keine CORS-Probleme, funktioniert auch bei verborgenem Fenster
+
+### KI-Vision
+
+- **5 integrierte Vision-Prompts** — Text lesen, Bild beschreiben, Daten extrahieren, Bild zusammenfassen, Bildtext übersetzen
+- **Funktioniert mit jedem Bild in der Historie** — Screenshots, Fotos, Scans, handschriftliche Notizen
+- **Cloud + lokal** — GPT-5.4, Claude, Gemini oder lokale Modelle (Ollama llava/bakllava/moondream, LM Studio)
+- **Eigene Vision-Prompts** — unter Einstellungen → KI → Typ „Bild" erstellen
+- **Anwendungsfälle:** handschriftliche Rezepte lesen, Daten aus Quittungen extrahieren, fremdsprachige Screenshots per OCR erfassen, Diagramme und Grafiken beschreiben
 
 <details>
 <summary>Empfohlene lokale Modelle für Text-Transformationen</summary>
@@ -193,7 +204,13 @@ Alle Tastenkombinationen sind anpassbar unter **Einstellungen → Tastenkombinat
 Ja. Kostenlos für private und gewerbliche Nutzung — keine Werbung, keine Testversionen, keine Funktionseinschränkungen, keine Telemetrie.
 
 **Sendet Beetroot meine Zwischenablage-Daten irgendwohin?**
-Nein. Alles bleibt in einer lokalen SQLite-Datenbank auf deinem Rechner. Mit einem lokalen KI-Modell verlässt nie etwas deinen Rechner. Bei Cloud-Anbietern (OpenAI, Gemini, Anthropic oder DeepSeek) wird nur der Text gesendet, den du explizit transformierst — direkt an deren API mit deinem eigenen Schlüssel.
+Nein. Alles bleibt in einer lokalen SQLite-Datenbank auf deinem Rechner. Mit einem lokalen KI-Modell verlässt nie etwas deinen Rechner. Bei Cloud-Anbietern (OpenAI, Gemini, Anthropic oder DeepSeek) wird nur der Text oder das Bild gesendet, das du explizit transformierst — direkt an deren API mit deinem eigenen Schlüssel.
+
+**Kann Beetroot Text aus Bildern lesen?**
+Ja. Rechtsklick auf ein Bild in der Zwischenablage-Historie → KI → Text lesen. Funktioniert mit Cloud-Anbietern (GPT-5.4, Claude, Gemini) und lokalen Vision-Modellen (Ollama llava, LM Studio). Für einfache Texterkennung ohne KI gibt es die integrierte OCR-Funktion (native Windows-Engine, komplett offline).
+
+**Funktioniert KI-Vision offline?**
+Ja, mit einem lokalen Vision-Modell (z.B. Ollama mit llava oder moondream). Es werden keine Daten übertragen.
 
 **Wo wird mein API-Schlüssel gespeichert?**
 In den lokalen App-Einstellungen (localStorage im WebView2-Profil). Er verlässt nie deinen Rechner.

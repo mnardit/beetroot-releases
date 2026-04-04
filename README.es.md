@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <b>Español</b> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Nuevo en v1.6.3:** Superposición "Copiado" a nivel de sistema confirma cada captura junto al cursor. Corregida la copia de imágenes del Explorer. Modelos OpenAI actualizados a GPT-5.4. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
+> **Nuevo en v1.6.5:** AI Vision — analiza imágenes con IA (lee escritura a mano, extrae datos, describe). Cola de IA en segundo plano — las transformaciones ya no bloquean la interfaz. Toda la IA migrada a Rust nativo. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
 
 ---
 
@@ -34,7 +34,8 @@
 |---|---|---|
 | Historial | 25 clips, se pierden al reiniciar | Ilimitado, persistente entre reinicios |
 | Búsqueda | No | Difusa + regex |
-| Transformaciones IA | No | 4 proveedores cloud + modelos locales, 10 integradas + personalizadas |
+| Transformaciones IA | No | 4 proveedores cloud + modelos locales, 10 de texto + 5 de visión integradas + personalizadas |
+| AI Vision | No | Leer texto, describir, extraer datos de imágenes con IA |
 | Seguimiento de app origen | No | Icono, nombre y título de ventana por clip |
 | OCR | No | Motor nativo de Windows, local |
 | Historial de imágenes | Solo miniaturas | Imágenes completas, almacenadas localmente |
@@ -116,10 +117,20 @@ choco install beetroot
 ### Transformaciones IA
 
 - **4 proveedores en la nube + local** — OpenAI, Gemini, Claude, DeepSeek o local (LM Studio, Ollama), cambio con un clic
+- **Procesamiento en segundo plano** — haga clic en un prompt, el menú se cierra al instante, notificación cuando termine. Encole varias transformaciones
 - **Modelos de razonamiento** — Qwen3, DeepSeek R1 y similares funcionan directamente (elimina automáticamente las etiquetas `<think>`)
-- **10 prompts integrados** — corregir gramática, traducir, resumir, reescribir, extraer datos, formatear como código y más
+- **10 prompts de texto** — corregir gramática, traducir, resumir, reescribir, extraer datos, formatear como código y más
 - **Prompts personalizados** — cree hasta 20 propios, accesibles desde el menú contextual
 - **BYOK** — use su propia clave de OpenAI, o prescinda de ella con un modelo local
+- **Rust nativo** — todas las llamadas a APIs de IA se ejecutan en código nativo, no en el motor del navegador. Sin problemas de CORS, funciona con la ventana oculta
+
+### AI Vision
+
+- **5 prompts de visión integrados** — Leer Texto, Describir Imagen, Extraer Datos, Resumir Imagen, Traducir Texto de Imagen
+- **Funciona con cualquier imagen del historial** — capturas de pantalla, fotos, escaneos, notas manuscritas
+- **Cloud + local** — GPT-5.4, Claude, Gemini o modelos locales (Ollama llava/bakllava/moondream, LM Studio)
+- **Prompts de visión personalizados** — cree los suyos en Configuración → IA → tipo "Imagen"
+- **Casos de uso:** leer recetas manuscritas, extraer datos de recibos, OCR de capturas en otros idiomas, describir gráficos y diagramas
 
 <details>
 <summary>Modelos locales recomendados para transformaciones de texto</summary>
@@ -193,7 +204,13 @@ Todos los atajos son personalizables en **Configuración → Atajos**. Compatibl
 Sí. Gratis para uso personal y comercial — sin anuncios, sin pruebas, sin limitaciones, sin telemetría.
 
 **¿Beetroot envía los datos del portapapeles a algún lugar?**
-No. Todo se almacena en una base de datos SQLite local en su máquina. Con un modelo de IA local, nada sale de su equipo. Si usa un proveedor en la nube (OpenAI, Gemini, Anthropic o DeepSeek), solo el texto que usted transforma explícitamente se envía — directamente a su API usando su propia clave.
+No. Todo se almacena en una base de datos SQLite local en su máquina. Con un modelo de IA local, nada sale de su equipo. Si usa un proveedor en la nube (OpenAI, Gemini, Anthropic o DeepSeek), solo el texto o la imagen que usted transforma explícitamente se envía — directamente a su API usando su propia clave.
+
+**¿Puede Beetroot leer texto en imágenes?**
+Sí. Haga clic derecho en cualquier imagen del historial → IA → Leer Texto. Funciona con proveedores en la nube (GPT-5.4, Claude, Gemini) y modelos de visión locales (Ollama llava, LM Studio). Para OCR simple sin IA, use la función de OCR integrada (motor nativo de Windows, completamente offline).
+
+**¿AI Vision funciona sin conexión?**
+Sí, con un modelo de visión local (por ejemplo, Ollama con llava o moondream). Ningún dato sale de su máquina.
 
 **¿Dónde se almacena mi clave API?**
 En la configuración local de la app (localStorage en el perfil WebView2). Nunca sale de su máquina.

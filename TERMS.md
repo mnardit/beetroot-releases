@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 24, 2026
-**Version:** 1.6.3
+**Last updated:** April 4, 2026
+**Version:** 1.6.5
 
 ---
 
@@ -17,7 +17,8 @@ By downloading, installing, or using Beetroot ("the App"), you agree to these Te
 Beetroot is a desktop clipboard manager for Windows that:
 - Monitors your system clipboard and stores a history of copied content
 - Provides search (5-phase ranked scoring with accent folding and typo tolerance), filtering, and organization of clipboard history
-- Offers AI-powered text transforms via cloud providers (OpenAI, Gemini, Anthropic, DeepSeek — requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
+- Offers AI-powered text and image transforms (AI Vision) via cloud providers (OpenAI, Gemini, Anthropic, DeepSeek — requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
+- AI Vision: analyze images with AI — read text, describe, extract data, summarize, translate text in images
 - Provides OCR text extraction from images
 - Supports no-focus window mode (no focus stealing), pin-on-top, and follow-cursor window modes
 - Automatic backup rotation (3 copies) with recovery from database corruption
@@ -59,7 +60,8 @@ The App stores everything you copy to the clipboard. You are responsible for:
 ### 4.2 AI Transforms
 
 When using AI text transforms:
-- You are responsible for not sending sensitive, confidential, or regulated data to any AI provider
+- You are responsible for not sending sensitive, confidential, or regulated data (text or images) to any AI provider
+- AI Vision sends images to cloud providers when triggered — do not use on images containing sensitive information
 - When using cloud providers (OpenAI, Gemini, Anthropic, DeepSeek): you must comply with each provider's usage policies and you are responsible for your API key and associated costs
 - When using Local LLM: you are responsible for the model you run and its output
 - AI-generated output may be inaccurate; verify results before relying on them

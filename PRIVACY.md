@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Beetroot Clipboard Manager**
-**Last updated:** March 24, 2026
-**Version:** 1.6.3
+**Last updated:** April 4, 2026
+**Version:** 1.6.5
 
 ---
 
@@ -43,10 +43,11 @@ The App sends data to external servers **only** when you explicitly use certain 
 
 | Action | Data sent | Destination | When |
 |--------|-----------|-------------|------|
-| AI Transform (OpenAI) | Selected clipboard text + prompt instruction | OpenAI API (`api.openai.com`) | Only when you manually trigger an AI action with OpenAI selected |
-| AI Transform (Gemini) | Selected clipboard text + prompt instruction | Google API (`generativelanguage.googleapis.com`) | Only when you manually trigger an AI action with Gemini selected |
-| AI Transform (Anthropic) | Selected clipboard text + prompt instruction | Anthropic API (`api.anthropic.com`) | Only when you manually trigger an AI action with Anthropic selected |
-| AI Transform (DeepSeek) | Selected clipboard text + prompt instruction | DeepSeek API (`api.deepseek.com`) | Only when you manually trigger an AI action with DeepSeek selected |
+| AI Transform (OpenAI) | Selected clipboard text or image + prompt instruction | OpenAI API (`api.openai.com`) | Only when you manually trigger an AI action with OpenAI selected |
+| AI Transform (Gemini) | Selected clipboard text or image + prompt instruction | Google API (`generativelanguage.googleapis.com`) | Only when you manually trigger an AI action with Gemini selected |
+| AI Transform (Anthropic) | Selected clipboard text or image + prompt instruction | Anthropic API (`api.anthropic.com`) | Only when you manually trigger an AI action with Anthropic selected |
+| AI Transform (DeepSeek) | Selected clipboard text + prompt instruction (text only, no vision) | DeepSeek API (`api.deepseek.com`) | Only when you manually trigger an AI action with DeepSeek selected |
+| AI Vision (Local LLM) | Selected clipboard image + prompt instruction | Your local server (`127.0.0.1` / `localhost`) | Only when you manually trigger a vision action with Local LLM selected |
 | AI Transform (Local LLM) | Selected clipboard text + prompt instruction | Your local server (`127.0.0.1` / `localhost`) | Only when you manually trigger an AI action with Local LLM selected |
 | Auto-update check | Current version number | GitHub (`github.com`) | Once after startup (if enabled) |
 
@@ -123,9 +124,15 @@ When you use AI transforms with Local LLM selected, the text is sent to a server
 - **Loopback only:** The App only connects to loopback addresses (127.0.0.1, localhost). It cannot send data to remote servers in this mode.
 - **No API key required:** Local models do not require an API key or account.
 
-### 5.3 Sensitive Data Warning
+### 5.3 AI Vision
 
-Do not use AI transforms on text containing passwords, API keys, financial data, medical records, or other sensitive information — regardless of which provider you use.
+When you use AI Vision transforms on an image, the image is sent as base64-encoded data to the selected provider's API. The same rules apply as for text transforms: data is sent only when you explicitly trigger a vision action, and local models keep everything on your device.
+
+**Image data sent:** The full image (as captured in clipboard history) plus the prompt instruction. Images may contain sensitive information visible in screenshots or photos.
+
+### 5.4 Sensitive Data Warning
+
+Do not use AI transforms on text or images containing passwords, API keys, financial data, medical records, or other sensitive information — regardless of which provider you use.
 
 ---
 
@@ -201,7 +208,7 @@ For privacy-related questions or concerns:
 | Question | Answer |
 |----------|--------|
 | Does the App collect my clipboard data? | Yes, it stores everything you copy locally on your device |
-| Is my data sent to any server? | No, unless you use a cloud AI provider (OpenAI, Gemini, Anthropic, or DeepSeek). Local AI stays on your machine |
+| Is my data sent to any server? | No, unless you use a cloud AI provider (OpenAI, Gemini, Anthropic, or DeepSeek) for text or vision transforms. Local AI stays on your machine |
 | Is my data encrypted? | No, it is stored as a standard SQLite database |
 | Can I delete my data? | Yes, through the App or by deleting `%APPDATA%/com.beetroot.desktop/` |
 | Do you have access to my data? | No, we have no servers and no access to your device |

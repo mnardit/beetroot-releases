@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.6.3 新功能：** 全系统「已复制」提示在光标附近确认每次复制。修复 Explorer 图片复制问题。OpenAI 模型升级至 GPT-5.4。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
+> **v1.6.5 新功能：** AI 视觉 — 用 AI 分析图片（识别手写、提取数据、描述内容）。后台 AI 队列 — 转换操作不再冻结界面。所有 AI 调用迁移至原生 Rust。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
 
 ---
 
@@ -34,7 +34,8 @@
 |---|---|---|
 | 历史记录 | 25 条 clip，重启后丢失 | 无限制，跨重启永久保存 |
 | 搜索 | 无 | 模糊搜索 + 正则表达式 |
-| AI 转换 | 无 | 4 个云端提供商 + 本地模型，10 个内置 + 自定义 |
+| AI 转换 | 无 | 4 个云端提供商 + 本地模型，10 个文本 + 5 个视觉内置 + 自定义 |
+| AI 视觉 | 无 | 用 AI 识别文字、描述内容、从图片中提取数据 |
 | 来源应用追踪 | 无 | 每条 clip 显示图标、应用名、窗口标题 |
 | OCR | 无 | Windows 原生引擎，本地处理 |
 | 图片历史 | 仅缩略图 | 完整图片，本地存储 |
@@ -116,10 +117,20 @@ choco install beetroot
 ### AI 转换
 
 - **4 个云端提供商 + 本地** — OpenAI、Gemini、Claude、DeepSeek 或本地（LM Studio、Ollama），一键切换
+- **后台处理** — 点击提示词后菜单立即关闭，处理完成后通知。支持多个转换排队
 - **推理模型** — Qwen3、DeepSeek R1 等开箱即用（自动去除 `<think>` 标签）
-- **10 个内置提示词** — 修正语法、翻译、摘要、改写、提取数据、格式化代码等
+- **10 个文本提示词** — 修正语法、翻译、摘要、改写、提取数据、格式化代码等
 - **自定义提示词** — 最多 20 个，可从右键菜单访问
 - **BYOK** — 使用您自己的 OpenAI 密钥，或使用本地模型无需密钥
+- **原生 Rust** — 所有 AI API 调用在原生代码中执行，不经过浏览器引擎。无 CORS 问题，窗口隐藏时也能正常工作
+
+### AI 视觉
+
+- **5 个内置视觉提示词** — 识别文字、描述图片、提取数据、总结图片内容、翻译图片文字
+- **适用于历史记录中的所有图片** — 截图、照片、扫描件、手写笔记
+- **云端 + 本地** — GPT-5.4、Claude、Gemini，或本地模型（Ollama llava/bakllava/moondream、LM Studio）
+- **自定义视觉提示词** — 在设置 → AI 中创建，类型选择"图片"
+- **应用场景：** 识别手写处方、从收据中提取数据、OCR 外语截图、描述图表和图示
 
 <details>
 <summary>推荐的本地文本转换模型</summary>
@@ -193,7 +204,13 @@ choco install beetroot
 是的。个人和商业使用均免费 — 无广告、无试用、无功能限制、无遥测。
 
 **Beetroot 会发送我的剪贴板数据吗？**
-不会。所有数据存储在本地 SQLite 数据库中。使用本地 AI 模型时，任何数据都不会离开您的电脑。如果使用云 AI 服务（OpenAI、Gemini、Anthropic 或 DeepSeek），仅在您明确选择转换时将选中文本发送到其 API — 且使用您自己的密钥。
+不会。所有数据存储在本地 SQLite 数据库中。使用本地 AI 模型时，任何数据都不会离开您的电脑。如果使用云 AI 服务（OpenAI、Gemini、Anthropic 或 DeepSeek），仅在您明确选择转换时将选中的文本或图片发送到其 API — 且使用您自己的密钥。
+
+**Beetroot 能识别图片中的文字吗？**
+可以。右键点击剪贴板历史中的图片 → AI → 识别文字。支持云端提供商（GPT-5.4、Claude、Gemini）和本地视觉模型（Ollama llava、LM Studio）。如果只需要简单 OCR 而不需要 AI，可以使用内置 OCR 功能（Windows 原生引擎，完全离线）。
+
+**AI 视觉可以离线使用吗？**
+可以，使用本地视觉模型即可（例如 Ollama 配合 llava 或 moondream）。数据不会离开您的电脑。
 
 **我的 API 密钥存储在哪里？**
 在应用的本地设置中（WebView2 配置文件中的 localStorage）。它绝不会离开您的电脑。

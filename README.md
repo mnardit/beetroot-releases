@@ -24,7 +24,7 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.6.3:** System-wide "Copied" overlay confirms every capture near your cursor. Fixed Explorer image copy. Updated OpenAI models to GPT-5.4. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.3)
+> **New in v1.6.5:** AI Vision — analyze images with AI (read handwriting, extract data, describe). Background AI queue — transforms no longer freeze the UI. All AI moved to native Rust. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
 
 ---
 
@@ -34,7 +34,8 @@
 |---|---|---|
 | History | 25 clips, lost on reboot | Unlimited, persists across reboots |
 | Search | No | Fuzzy + regex |
-| AI transforms | No | 4 cloud providers + local models, 10 built-in + custom |
+| AI transforms | No | 4 cloud providers + local models, 10 text + 5 vision built-in + custom |
+| AI Vision | No | Read text, describe, extract data from images via AI |
 | Source app tracking | No | Icon, name, window title per clip |
 | OCR | No | Native Windows engine, on-device |
 | Image history | Thumbnails only | Full images, stored locally |
@@ -116,10 +117,20 @@ choco install beetroot
 ### AI transforms
 
 - **4 cloud + local** — OpenAI, Gemini, Claude, DeepSeek, or local (LM Studio, Ollama), one-click switch
+- **Background processing** — click a prompt, menu closes instantly, notification when done. Queue multiple transforms
 - **Reasoning models** — Qwen3, DeepSeek R1, and similar work out of the box (auto-strips `<think>` tags)
-- **10 built-in prompts** — fix grammar, translate, summarize, rewrite, extract data, format as code, and more
+- **10 text prompts** — fix grammar, translate, summarize, rewrite, extract data, format as code, and more
 - **Custom prompts** — create up to 20 of your own, accessible from the right-click menu
 - **BYOK** — bring your own OpenAI key, or skip it with a local model
+- **Native Rust** — all AI API calls run in native code, not the browser engine. No CORS issues, works when window is hidden
+
+### AI Vision
+
+- **5 built-in vision prompts** — Read Text, Describe Image, Extract Data, Summarize Image, Translate Image Text
+- **Works with any image in your history** — screenshots, photos, scans, handwritten notes
+- **Cloud + local** — GPT-5.4, Claude, Gemini, or local models (Ollama llava/bakllava/moondream, LM Studio)
+- **Custom vision prompts** — create your own in Settings → AI → type "Image"
+- **Use cases:** read handwritten prescriptions, extract data from receipts, OCR foreign-language screenshots, describe charts and diagrams
 
 <details>
 <summary>Recommended local models for text transforms</summary>
@@ -193,7 +204,13 @@ All shortcuts are customizable in **Settings → Shortcuts**. Works with AZERTY,
 Yes. Free for personal and commercial use — no ads, no trials, no feature gates, no telemetry.
 
 **Does Beetroot send my clipboard data anywhere?**
-No. Everything stays in a local SQLite database on your machine. With a local AI model, nothing ever leaves your machine. If you use a cloud AI provider (OpenAI, Gemini, Anthropic, or DeepSeek), only the text you explicitly transform is sent — directly to their API using your own key.
+No. Everything stays in a local SQLite database on your machine. With a local AI model, nothing ever leaves your machine. If you use a cloud AI provider (OpenAI, Gemini, Anthropic, or DeepSeek), only the text or image you explicitly transform is sent — directly to their API using your own key.
+
+**Can Beetroot read text from images?**
+Yes. Right-click any image in your clipboard history → AI → Read Text. Works with cloud providers (GPT-5.4, Claude, Gemini) and local vision models (Ollama llava, LM Studio). For simple OCR without AI, use the built-in OCR feature (native Windows engine, fully offline).
+
+**Does AI Vision work offline?**
+Yes, with a local vision model (e.g., Ollama with llava or moondream). No data leaves your machine.
 
 **Where is my API key stored?**
 In the app's local settings (localStorage in the WebView2 profile). It never leaves your machine.
