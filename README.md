@@ -24,7 +24,7 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.6.5:** AI Vision — analyze images with AI (read handwriting, extract data, describe). Background AI queue — transforms no longer freeze the UI. All AI moved to native Rust. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
+> **New in v1.6.6:** Excel / Word / PowerPoint cells now save as text (no more screenshots). 1Password & KeePass entries reliably skipped. Microsoft Store autostart fix. Readable text on any custom accent color. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
 
 ---
 
