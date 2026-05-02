@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <b>Deutsch</b> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Neu in v1.6.5:** KI-Vision — Bilder mit KI analysieren (Handschrift lesen, Daten extrahieren, beschreiben). KI-Warteschlange im Hintergrund — Transformationen blockieren die Oberfläche nicht mehr. Gesamte KI-Verarbeitung in nativem Rust. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
+> **Neu in v1.6.6:** Excel- / Word- / PowerPoint-Zellen werden jetzt als Text gespeichert (keine Screenshots mehr). 1Password- und KeePass-Einträge werden zuverlässig übersprungen. Autostart-Fix für den Microsoft Store. Lesbarer Text bei jeder Akzentfarbe. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
 
 ---
 
