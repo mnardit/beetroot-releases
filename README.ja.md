@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <b>日本語</b>
 </p>
 
-> **v1.6.5の新機能：** AIビジョン — 画像をAIで分析（手書き文字の読み取り、データ抽出、画像の説明）。バックグラウンドAIキュー — 変換中もUIがフリーズしません。すべてのAI処理をネイティブRustに移行。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
+> **v1.6.6の新機能：** Excel / Word / PowerPoint のセルがテキストとして保存されます（スクリーンショットではなく）。1Password と KeePass のエントリは確実にスキップ。Microsoft Store 版の自動起動を修正。どのアクセントカラーでも読みやすいテキスト。[新機能を見る →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
 
 ---
 
