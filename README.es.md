@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <b>Español</b> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Nuevo en v1.6.5:** AI Vision — analiza imágenes con IA (lee escritura a mano, extrae datos, describe). Cola de IA en segundo plano — las transformaciones ya no bloquean la interfaz. Toda la IA migrada a Rust nativo. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
+> **Nuevo en v1.6.6:** Las celdas de Excel / Word / PowerPoint ahora se guardan como texto (sin más capturas). Las entradas de 1Password y KeePass se omiten de forma fiable. Corrección del autoarranque en Microsoft Store. Texto legible con cualquier color de acento. [Ver novedades →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
 
 ---
 
