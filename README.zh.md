@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.6.5 新功能：** AI 视觉 — 用 AI 分析图片（识别手写、提取数据、描述内容）。后台 AI 队列 — 转换操作不再冻结界面。所有 AI 调用迁移至原生 Rust。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
+> **v1.6.6 新功能：** Excel / Word / PowerPoint 单元格现在保存为文本（不再是截图）。1Password 和 KeePass 条目可靠跳过。修复 Microsoft Store 版本的自启动。任何强调色下文本均可读。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
 
 ---
 
