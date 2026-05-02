@@ -24,7 +24,7 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <b>Русский</b> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Новое в v1.6.5:** AI Vision — анализ изображений с помощью AI (распознавание рукописного текста, извлечение данных, описание). Фоновая очередь AI — трансформации больше не блокируют интерфейс. Все AI-вызовы перенесены в нативный Rust. [Что нового →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.5)
+> **Новое в v1.6.6:** Ячейки Excel / Word / PowerPoint теперь сохраняются как текст (без скриншотов). Записи 1Password и KeePass надёжно игнорируются. Исправлен автозапуск для Microsoft Store. Читаемый текст на любом акцентном цвете. [Что нового →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
 
 ---
 
