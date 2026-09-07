@@ -1,0 +1,29 @@
+/* Empty state */
+.empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+}
+
+.empty-state__illustration {
+  color: var(--border-base);
+  margin-bottom: var(--space-1);
+  opacity: 0.6;
+}
+
+.empty-state__title {
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--text-muted);
+}
+
+.empty-state__hint {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-disabled);
+}

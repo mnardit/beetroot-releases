@@ -1,0 +1,8 @@
+* text=auto
+*.sh text eol=lf
+
+*.png -text
+*.ico -text
+*.icns -text
+*.woff2 -text
+*.bin -text

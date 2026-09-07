@@ -1,0 +1,263 @@
+<!doctype html>
+<!--
+  WARNING: This overlay is driven entirely by Rust via win.eval().
+  It does NOT use Tauri IPC (no invoke, no listen). If you add either,
+  you MUST grant the corresponding permissions in
+  src-tauri/capabilities/overlay.json — see that file's description.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background: transparent;
+        overflow: hidden;
+        user-select: none;
+        -webkit-user-select: none;
+        pointer-events: none;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 18px;
+        background: var(--pill-bg, rgba(20, 20, 22, 0.95));
+        border: var(--pill-border, 1px solid rgba(255, 255, 255, 0.1));
+        font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--pill-fg, rgba(255, 255, 255, 0.92));
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        opacity: 0;
+      }
+      .pill.enter {
+        animation: pill-enter 180ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+      .pill.pulse {
+        animation: pill-pulse 150ms ease-in-out;
+        opacity: 1;
+      }
+      .pill.exit-fade-down {
+        animation: exit-fade-down var(--fade-ms, 300ms) ease-in forwards;
+      }
+      .pill.exit-fade-up {
+        animation: exit-fade-up var(--fade-ms, 300ms) ease-in forwards;
+      }
+      .pill.exit-fade {
+        animation: exit-fade var(--fade-ms, 300ms) ease-in forwards;
+      }
+      .pill.exit-scale-down {
+        animation: exit-scale-down var(--fade-ms, 300ms) ease-in forwards;
+      }
+      .pill.exit-pop {
+        animation: exit-pop var(--fade-ms, 300ms) ease-out forwards;
+      }
+      .pill.exit-blur {
+        animation: exit-blur var(--fade-ms, 300ms) ease-in forwards;
+      }
+
+      .check {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+      }
+      .check polyline {
+        stroke: var(--pill-accent, #4ade80);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        stroke-dasharray: 20;
+        stroke-dashoffset: 20;
+      }
+      .pill.enter .check polyline {
+        animation: check-draw 200ms ease-out 80ms forwards;
+      }
+      .pill.pulse .check polyline {
+        stroke-dashoffset: 0;
+      }
+
+      @keyframes pill-enter {
+        0% {
+          opacity: 0;
+          transform: translateY(6px) scale(0.92);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(-1px) scale(1.01);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+      @keyframes pill-pulse {
+        0% {
+          transform: scale(1);
+        }
+        40% {
+          transform: scale(1.04);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes exit-fade-down {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+      }
+      @keyframes exit-fade-up {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+      }
+      @keyframes exit-fade {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      @keyframes exit-scale-down {
+        from {
+          opacity: 1;
+          transform: scale(1);
+        }
+        to {
+          opacity: 0;
+          transform: scale(0.85);
+        }
+      }
+      @keyframes exit-pop {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        30% {
+          opacity: 1;
+          transform: scale(1.08);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+      }
+      @keyframes exit-blur {
+        from {
+          opacity: 1;
+          filter: blur(0);
+        }
+        to {
+          opacity: 0;
+          filter: blur(8px);
+        }
+      }
+      @keyframes check-draw {
+        from {
+          stroke-dashoffset: 20;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pill.enter {
+          animation: none;
+          opacity: 1;
+        }
+        .pill.pulse {
+          animation: none;
+          opacity: 1;
+        }
+        .pill[class*="exit-"] {
+          animation: exit-fade 0ms forwards;
+        }
+        .pill.enter .check polyline {
+          animation: none;
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pill" class="pill">
+      <svg class="check" viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+      <span id="label">Copied</span>
+    </div>
+    <script>
+      const pill = document.getElementById("pill");
+      const label = document.getElementById("label");
+      let isVisible = false;
+      let currentAnim = "fade-down";
+
+      // Called from Rust via win.eval()
+      // Parse hex color luminance (0–255) to detect light vs dark theme
+      function lum(hex) {
+        if (!hex || hex.length < 7) return 0;
+        const r = parseInt(hex.slice(1, 3), 16);
+        const g = parseInt(hex.slice(3, 5), 16);
+        const b = parseInt(hex.slice(5, 7), 16);
+        return r * 0.299 + g * 0.587 + b * 0.114;
+      }
+
+      window.__overlay_show = function (text, bg, fg, accent, fadeMs, anim) {
+        if (anim) currentAnim = anim;
+        label.textContent = text || "Copied";
+        // Apply theme colors with adaptive shadow/border based on luminance
+        const isLight = lum(bg) > 140;
+        const root = document.documentElement.style;
+        if (bg) root.setProperty("--pill-bg", bg + "f2");
+        if (fg) root.setProperty("--pill-fg", fg);
+        if (accent) root.setProperty("--pill-accent", accent);
+        // Light themes: darker border for contrast. Dark themes: light border.
+        root.setProperty(
+          "--pill-border",
+          isLight ? "1px solid rgba(0,0,0,0.12)" : "1px solid rgba(255,255,255,0.1)",
+        );
+        // Sync CSS exit animation with Rust fade duration
+        if (fadeMs) root.setProperty("--fade-ms", fadeMs + "ms");
+
+        if (isVisible) {
+          pill.className = "pill";
+          void pill.offsetHeight;
+          pill.className = "pill pulse";
+        } else {
+          pill.className = "pill";
+          void pill.offsetHeight;
+          pill.className = "pill enter";
+          isVisible = true;
+        }
+      };
+
+      window.__overlay_hide = function () {
+        if (!isVisible) return;
+        pill.className = "pill exit-" + currentAnim;
+        isVisible = false;
+      };
+    </script>
+  </body>
+</html>

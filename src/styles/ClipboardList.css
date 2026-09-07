@@ -1,0 +1,33 @@
+/* Clipboard list */
+.clip-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-disabled) transparent;
+}
+
+.clip-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.clip-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.clip-list::-webkit-scrollbar-thumb {
+  background: var(--text-disabled);
+  border-radius: var(--radius-xs);
+}
+
+.clip-list__group-label {
+  padding: var(--space-3) var(--space-4) 0;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-hint);
+  height: 28px;
+  display: flex;
+  align-items: center;
+}

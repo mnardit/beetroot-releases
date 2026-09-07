@@ -1,0 +1,123 @@
+name: CI
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Manifest versions
+        run: node scripts/check-versions.mjs
+
+      - name: Third-party attribution
+        run: npm run check:licenses
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      - name: Format check (Prettier)
+        run: npm run format:check
+
+      - name: Type check (TypeScript)
+        run: npx tsc --noEmit
+
+      - name: Frontend tests and coverage (Vitest)
+        run: npm run test:coverage
+
+      - name: Production language-model bundle
+        run: npm run check:model
+
+      - name: npm audit (informational)
+        run: npm audit --audit-level=critical || true
+
+  rust-check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: dtolnay/rust-toolchain@1.89.0
+        with:
+          components: clippy, rustfmt
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Rust format check
+        run: cargo fmt --manifest-path src-tauri/Cargo.toml -- --check
+
+      - name: Rust clippy
+        run: cargo clippy --manifest-path src-tauri/Cargo.toml --locked --all-targets -- -D warnings
+
+      - name: Rust tests
+        run: cargo test --manifest-path src-tauri/Cargo.toml --locked
+
+      - name: Smoke harness unit tests (no native app launch)
+        shell: pwsh
+        run: |
+          Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser -Force
+          Import-Module Pester -RequiredVersion 5.7.1
+          $result = Invoke-Pester tests/smoke/Harness.Tests.ps1 -PassThru
+          if ($result.Result -ne 'Passed') { exit 1 }
+
+      - name: cargo audit (informational)
+        run: |
+          cargo install cargo-audit --quiet
+          cargo audit --file src-tauri/Cargo.lock || true
+
+  build:
+    needs: [lint-and-test, rust-check]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - uses: dtolnay/rust-toolchain@1.89.0
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - run: npm ci
+
+      - name: Build unsigned Tauri app
+        run: npm run build:desktop -- --config src-tauri/tauri.unsigned.conf.json -- --locked
+
+      - name: Upload MSI
+        uses: actions/upload-artifact@v6
+        with:
+          name: beetroot-msi
+          path: src-tauri/target/release/bundle/msi/*.msi
+          retention-days: 14
+
+      - name: Upload NSIS installer
+        uses: actions/upload-artifact@v6
+        with:
+          name: beetroot-setup
+          path: src-tauri/target/release/bundle/nsis/*.exe
+          retention-days: 14

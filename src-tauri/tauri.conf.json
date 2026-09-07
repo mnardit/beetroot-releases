@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Beetroot",
+  "version": "1.6.6",
+  "identifier": "com.beetroot.desktop",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://asset.localhost",
+      "assetProtocol": {
+        "scope": ["$RESOURCE/**"]
+      }
+    },
+    "windows": [
+      {
+        "label": "main",
+        "title": "Beetroot",
+        "width": 680,
+        "height": 480,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "center": true,
+        "resizable": true
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": {
+      "../LICENSE": "resources/LICENSE",
+      "../NOTICE": "resources/NOTICE",
+      "../THIRD_PARTY_NOTICES.md": "resources/THIRD_PARTY_NOTICES.md",
+      "../THIRD_PARTY_LICENSES.txt": "resources/THIRD_PARTY_LICENSES.txt",
+      "../src/fonts/OFL.txt": "resources/src/fonts/OFL.txt",
+      "../public/model/LICENSE": "resources/public/model/LICENSE",
+      "../public/model/RUNTIME-NOTICES.txt": "resources/public/model/RUNTIME-NOTICES.txt"
+    },
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"],
+    "createUpdaterArtifacts": true,
+    "windows": {
+      "nsis": {
+        "installMode": "both"
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "https://github.com/mnardit/beetroot-releases/releases/latest/download/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDYwM0MyQTE2RTc4NDA0RjIKUldUeUJJVG5GaW84WVA0ZkJPWlVGb2xJVGh1L0xyNm91eUMwb0hxY0pOY1JiaDlKVE11MlkyVzcK"
+    }
+  }
+}

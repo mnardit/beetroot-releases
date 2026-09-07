@@ -1,8 +1,12 @@
 <p align="center">
-  <img src="docs/screenshots/main.png" alt="Beetroot — Zwischenablage-Manager für Windows" width="700" />
+  <img src="docs/screenshots/main-dark.png" alt="Beetroot — Zwischenablage-Manager für Windows" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
+
+<p align="center">
+  <a href="https://github.com/mnardit/beetroot-releases">Quellcode</a> · <a href="CONTRIBUTING.md">Mitwirken</a> · <a href="https://max.nardit.com">Max Nardit</a>
+</p>
 
 <p align="center">
   Der Zwischenablage-Manager, den Windows längst hätte einbauen sollen.<br/>
@@ -14,6 +18,7 @@
   <a href="https://github.com/mnardit/beetroot-releases/releases"><img src="https://img.shields.io/github/downloads/mnardit/beetroot-releases/total" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4" alt="Windows 10/11">
   <img src="https://img.shields.io/badge/price-free-brightgreen" alt="Kostenlos">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue" alt="Apache 2.0"></a>
 </p>
 
 <p align="center">
@@ -24,57 +29,51 @@
   <a href="README.md">English</a> · <b>Deutsch</b> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **Neu in v1.6.6:** Excel- / Word- / PowerPoint-Zellen werden jetzt als Text gespeichert (keine Screenshots mehr). 1Password- und KeePass-Einträge werden zuverlässig übersprungen. Autostart-Fix für den Microsoft Store. Lesbarer Text bei jeder Akzentfarbe. [Neuerungen ansehen →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
+> **Beetroot ist jetzt Open Source unter [Apache 2.0](LICENSE).** Entdecke den Code, melde Fehler oder hilf bei der Entwicklung. Erstellt von [Max Nardit](https://max.nardit.com).
+>
+> **Release-Status:** Die aktuelle Installationsversion ist [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6). Dieses README beschreibt den Quellcode im Repository. Änderungen unter [Unreleased](CHANGELOG.md#unreleased), einschließlich der neuen Schlüsselspeicherung, sind für 1.6.7 vorgesehen und noch nicht in diesem Download enthalten.
 
 ---
 
 ## Warum nicht Win+V?
 
-| Funktion | Win+V | Beetroot |
-|---|---|---|
-| Historie | 25 Clips, nach Neustart weg | Unbegrenzt, bleibt über Neustarts erhalten |
-| Suche | Nein | Unscharf + Regex |
-| KI-Transformationen | Nein | 4 Cloud-Anbieter + lokale Modelle, 10 Text + 5 Vision + benutzerdefinierte |
-| KI-Vision | Nein | Text lesen, beschreiben, Daten aus Bildern per KI extrahieren |
-| Quell-App-Erkennung | Nein | Icon, Name und Fenstertitel pro Clip |
-| OCR | Nein | Native Windows-Engine, lokal |
-| Bildhistorie | Nur Miniaturansichten | Vollbilder, lokal gespeichert |
-| Themes | Nein | 9 Themes + Auto-Modus + Akzentfarbe |
-| Nur-Text einfügen | Nein | Eigene Tastenkombination |
-| Multi-Monitor | Nein | Fenster folgt dem Cursor |
-| Anheften | Nein | Anheften + überall hinziehen |
-| Notizen | Nein | Durchsuchbare Anmerkungen |
+| Funktion            | Win+V                       | Beetroot                                                                   |
+| ------------------- | --------------------------- | -------------------------------------------------------------------------- |
+| Historie            | 25 Clips, nach Neustart weg | Unbegrenzt, bleibt über Neustarts erhalten                                 |
+| Suche               | Nein                        | Unscharf + Regex                                                           |
+| KI-Transformationen | Nein                        | 4 Cloud-Anbieter + lokale Modelle, 10 Text + 5 Vision + benutzerdefinierte |
+| KI-Vision           | Nein                        | Text lesen, beschreiben, Daten aus Bildern per KI extrahieren              |
+| Quell-App-Erkennung | Nein                        | Icon, Name und Fenstertitel pro Clip                                       |
+| OCR                 | Nein                        | Native Windows-Engine, lokal                                               |
+| Bildhistorie        | Nur Miniaturansichten       | Vollbilder, lokal gespeichert                                              |
+| Themes              | Nein                        | 9 Themes + Auto-Modus + Akzentfarbe                                        |
+| Nur-Text einfügen   | Nein                        | Eigene Tastenkombination                                                   |
+| Multi-Monitor       | Nein                        | Fenster folgt dem Cursor                                                   |
+| Anheften            | Nein                        | Anheften + überall hinziehen                                               |
+| Notizen             | Nein                        | Durchsuchbare Anmerkungen                                                  |
 
 ---
 
-## In Aktion
+## Screenshots
 
 <p align="center">
-  <img src="docs/gif/search-demo.gif" alt="Beetroot — unscharfe Suche in der Zwischenablage-Historie" width="600">
+  <img src="docs/screenshots/search.png" alt="Beetroot — unscharfe Suche in der Zwischenablage-Historie" width="600">
 </p>
 
-| KI-Transformationen | Themes |
-|---|---|
-| <img src="docs/gif/ai-transform.gif" alt="KI-Übersetzung und Grammatikkorrektur" width="400"> | <img src="docs/gif/theme-switching.gif" alt="Theme-Wechsel" width="400"> |
+| KI-Aktionen                                                                    | Darstellung                                                                        |
+| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| <img src="docs/screenshots/context-menu-ai.png" alt="KI-Aktionen" width="400"> | <img src="docs/screenshots/settings-appearance.png" alt="Darstellung" width="400"> |
 
 <details>
 <summary>Weitere Screenshots</summary>
 
-| Dunkles Theme | Helles Theme |
-|---|---|
-| ![Dunkel](docs/screenshots/main.png) | ![Hell](docs/screenshots/main-light-filters.png) |
+| Dunkles Theme                             | Helles Theme                             |
+| ----------------------------------------- | ---------------------------------------- |
+| ![Dunkel](docs/screenshots/main-dark.png) | ![Hell](docs/screenshots/main-light.png) |
 
-| Kontextmenü & KI | Code-Vorschau |
-|---|---|
-| ![Kontextmenü](docs/screenshots/context-menu.jpg) | ![Vorschau](docs/screenshots/preview-code.png) |
-
-| Suche | KI-Transformationsmenü |
-|---|---|
-| ![Suche](docs/screenshots/search-results.png) | ![Transformationen](docs/screenshots/transform-menu.png) |
-
-| Einstellungen | Sprachen |
-|---|---|
-| ![Einstellungen](docs/screenshots/settings-general-new.png) | ![Sprachen](docs/screenshots/settings-languages.png) |
+| Kontextmenü und KI                                   | JSON-Vorschau                                  |
+| ---------------------------------------------------- | ---------------------------------------------- |
+| ![Kontextmenü](docs/screenshots/context-menu-ai.png) | ![Vorschau](docs/screenshots/preview-json.png) |
 
 </details>
 
@@ -109,7 +108,7 @@ choco install beetroot
 - **5-Phasen-Suche** — exakter Substring → Wortanfang → Metadaten → unscharf. Tippfehlertoleranz mit gewichteten Ergebnissen
 - **Regex-Modus** — `/pattern/` mit Treffer-Hervorhebung
 - **Filter** — Text, Bilder, Favoriten, Notizen — ein Klick zum Eingrenzen
-- **Schnelles Einfügen** — `Ctrl+1..9` für die letzten Clips, ohne das Fenster zu öffnen
+- **Schnelles Einfügen**: `Ctrl+1..9` wählt einen der letzten Clips, während die Beetroot-Liste aktiv ist; bei verborgenem Fenster ist dies kein globales Kürzel.
 - **Stapeloperationen** — Mehrfachauswahl mit `Ctrl+Click`, dann kopieren (eigenes Trennzeichen) oder löschen
 - **Inhaltserkennung** — Auto-Badges für URLs, E-Mails, Code, JSON, Farben. ML-gestützte Programmiersprachenerkennung (54 Sprachen) für die Code-Vorschau
 - **Einzelinstanz** — erneutes Starten bringt das bestehende Fenster in den Vordergrund
@@ -135,14 +134,14 @@ choco install beetroot
 <details>
 <summary>Empfohlene lokale Modelle für Text-Transformationen</summary>
 
-| Modell | Größe | Geschwindigkeit | Ideal für |
-|-------|------|-------|----------|
-| **Qwen3 8B** (Q4_K) | ~5 GB | Schnell | Grammatik, Übersetzung, Umschreiben |
-| **Gemma 3 4B** (Q4_K) | ~3 GB | Sehr schnell | Tippfehler korrigieren, einfache Umformulierungen |
-| **Phi-4 Mini 3.8B** (Q4_K) | ~2,5 GB | Sehr schnell | Code und strukturierter Text |
-| **Llama 3.1 8B** (Q4_K) | ~5 GB | Schnell | Allzweck |
-| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB | Langsam (16+ GB VRAM) | Premium-Qualität |
-| **DeepSeek R1 7B** (Q4_K) | ~5 GB | Schnell | Komplexe Umformulierungen, Zusammenfassungen |
+| Modell                           | Größe   | Geschwindigkeit       | Ideal für                                         |
+| -------------------------------- | ------- | --------------------- | ------------------------------------------------- |
+| **Qwen3 8B** (Q4_K)              | ~5 GB   | Schnell               | Grammatik, Übersetzung, Umschreiben               |
+| **Gemma 3 4B** (Q4_K)            | ~3 GB   | Sehr schnell          | Tippfehler korrigieren, einfache Umformulierungen |
+| **Phi-4 Mini 3.8B** (Q4_K)       | ~2,5 GB | Sehr schnell          | Code und strukturierter Text                      |
+| **Llama 3.1 8B** (Q4_K)          | ~5 GB   | Schnell               | Allzweck                                          |
+| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB  | Langsam (16+ GB VRAM) | Premium-Qualität                                  |
+| **DeepSeek R1 7B** (Q4_K)        | ~5 GB   | Schnell               | Komplexe Umformulierungen, Zusammenfassungen      |
 
 Getestet mit [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com) und [llama.cpp](https://github.com/ggml-org/llama.cpp). Einrichtung unter Einstellungen → KI → Lokales LLM.
 
@@ -171,28 +170,28 @@ Getestet mit [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com) und 
 
 ### Zuverlässigkeit
 
-- **Automatische Backups** — 3-Kopien-Rotation + Snapshot vor jedem Update
-- **Auto-Wiederherstellung** — erkennt Beschädigungen, stellt aus Backup wieder her
+- **Datenbank-Backups**: bis zu 3 rotierende Kopien und ein Snapshot vor einer Datenbankmigration. Bilder und Einstellungen müssen separat gesichert werden.
+- **Wiederherstellung mit Hinweis**: stellt eine beschädigte Datenbank nach Möglichkeit aus einem gültigen Backup wieder her und bewahrt das Original. Neueste Einträge können fehlen.
 - **Cloud-Sync-Warnungen** — warnt, wenn der Datenordner in OneDrive, Dropbox oder Google Drive liegt
-- **Laufwerkserkennung** — warnt vor dem Schreiben auf USB- oder Netzlaufwerke
+- **Laufwerksprüfung**: warnt bei Wechseldatenträgern und Cloud-Ordnern; Netzlaufwerke werden als Datenbankort abgelehnt.
 - **Auto-Update** — integrierter Updater, oder deaktivierbar für komplett offline Betrieb
 
 ---
 
 ## Tastenkombinationen
 
-| Kürzel | Aktion |
-|---|---|
+| Kürzel       | Aktion                        |
+| ------------ | ----------------------------- |
 | `` Ctrl+` `` | Beetroot anzeigen / verbergen |
-| `Enter` | Ausgewählten Clip einfügen |
-| `Ctrl+1..9` | Schnelles Einfügen |
-| `Space` | Vorschau |
-| `Alt+T` | KI-Transformation |
-| `Alt+P` | Fenster anheften |
-| `Alt+F` | Cursor-Folgemodus |
-| `Shift+F10` | Kontextmenü |
-| `Ctrl+C` | In Zwischenablage kopieren |
-| `Alt+Del` | Löschen |
+| `Enter`      | Ausgewählten Clip einfügen    |
+| `Ctrl+1..9`  | Schnelles Einfügen            |
+| `Space`      | Vorschau                      |
+| `Alt+T`      | KI-Transformation             |
+| `Alt+P`      | Fenster anheften              |
+| `Alt+F`      | Cursor-Folgemodus             |
+| `Shift+F10`  | Kontextmenü                   |
+| `Ctrl+C`     | In Zwischenablage kopieren    |
+| `Alt+Del`    | Löschen                       |
 
 Alle Tastenkombinationen sind anpassbar unter **Einstellungen → Tastenkombinationen**. Funktioniert mit AZERTY, QWERTZ und AltGr-Layouts.
 
@@ -204,19 +203,19 @@ Alle Tastenkombinationen sind anpassbar unter **Einstellungen → Tastenkombinat
 Ja. Kostenlos für private und gewerbliche Nutzung — keine Werbung, keine Testversionen, keine Funktionseinschränkungen, keine Telemetrie.
 
 **Sendet Beetroot meine Zwischenablage-Daten irgendwohin?**
-Nein. Alles bleibt in einer lokalen SQLite-Datenbank auf deinem Rechner. Mit einem lokalen KI-Modell verlässt nie etwas deinen Rechner. Bei Cloud-Anbietern (OpenAI, Gemini, Anthropic oder DeepSeek) wird nur der Text oder das Bild gesendet, das du explizit transformierst — direkt an deren API mit deinem eigenen Schlüssel.
+Die Historie wird lokal gespeichert. Cloud-KI erhält nur ausgewählte Inhalte und den Prompt, wenn du eine Transformation anforderst. Lokale KI nutzt einen Loopback-Server; dessen Protokollierung und Netzwerkverhalten hängen von seiner Konfiguration ab. Updates und Schlüsseltests senden ebenfalls Anfragen. Siehe [PRIVACY.md](PRIVACY.md).
 
 **Kann Beetroot Text aus Bildern lesen?**
 Ja. Rechtsklick auf ein Bild in der Zwischenablage-Historie → KI → Text lesen. Funktioniert mit Cloud-Anbietern (GPT-5.4, Claude, Gemini) und lokalen Vision-Modellen (Ollama llava, LM Studio). Für einfache Texterkennung ohne KI gibt es die integrierte OCR-Funktion (native Windows-Engine, komplett offline).
 
 **Funktioniert KI-Vision offline?**
-Ja, mit einem lokalen Vision-Modell (z.B. Ollama mit llava oder moondream). Es werden keine Daten übertragen.
+Ja, mit einem heruntergeladenen Modell auf einem lokalen Server. Beetroot verbindet sich über Loopback; prüfe die Einstellungen des Servers für den Offline-Betrieb.
 
 **Wo wird mein API-Schlüssel gespeichert?**
-In den lokalen App-Einstellungen (localStorage im WebView2-Profil). Er verlässt nie deinen Rechner.
+In der Windows-Anmeldeinformationsverwaltung (Windows Credential Manager), getrennt von den App-Einstellungen. Der Schlüssel wird an den ausgewählten KI-Anbieter gesendet, wenn du eine KI-Funktion aufrufst oder den gespeicherten Schlüssel prüfst. Details zur Migration älterer Schlüssel findest du in [PRIVACY.md](PRIVACY.md).
 
 **Wo werden meine Daten gespeichert?**
-Standardmäßig in `%APPDATA%\com.beetroot.desktop\`. Der Speicherort lässt sich ändern unter Einstellungen → Daten. Die Datenbank ist eine Standard-SQLite-Datei — Backup durch Kopieren des Ordners.
+Standardmäßig in `%APPDATA%\com.beetroot.desktop\`; den gewählten Ordner findest du unter Einstellungen > Daten. Beende Beetroot über das Tray-Menü, bevor du den gesamten Ordner sicherst. Einstellungen und API-Schlüssel liegen separat. Siehe die [Backup-Anleitung](PRIVACY.md#exporting-clipboard-history).
 
 **Funktioniert Auto-Update?**
 Ja, ab v1.0.6. Nutzer von v1.0.5 oder früher müssen einmal [manuell herunterladen](https://github.com/mnardit/beetroot-releases/releases/latest) — danach funktioniert Auto-Update normal. Auto-Update kann unter Einstellungen → Allgemein deaktiviert werden.
@@ -232,12 +231,13 @@ Eine einmalige Änderung des Signaturschlüssels erfordert das [manuelle Herunte
 OCR nutzt die native Windows-Engine. Stelle sicher, dass das entsprechende Sprachpaket installiert ist: Einstellungen → Zeit und Sprache → Sprache → Sprache hinzufügen → „Sprache" oder „Einfache Eingabe" aktivieren.
 
 **Beetroot öffnet sich nicht oder Hotkey funktioniert nicht**
+
 - Prüfe, ob eine andere App den gleichen Hotkey nutzt (z.B. `Ctrl+``)
-- Versuche einen einmaligen Start als Administrator
+- Prüfe, ob Beetroot in derselben Windows-Sitzung wie die Ziel-App läuft; ein normaler Prozess kann keine Eingaben an eine App mit erhöhten Rechten senden.
 - Ändere den Hotkey unter Einstellungen → Tastenkombinationen
 
 **SmartScreen- oder Antivirus-Warnung**
-Beetroot ist noch nicht code-signiert (Zertifikat in Bearbeitung). Klicke auf „Weitere Informationen" → „Trotzdem ausführen" in SmartScreen. Die .exe-Prüfsumme lässt sich mit den [Release-Checksummen](https://github.com/mnardit/beetroot-releases/releases/latest) abgleichen.
+Windows kann bei Installern ohne etablierte Herausgeberreputation eine SmartScreen-Warnung zeigen. Nutze die [offizielle Release-Seite](https://github.com/mnardit/beetroot-releases/releases/latest) und prüfe die Herkunft der Datei vor dem Start. Tauri-Update-Signaturen sind nicht dasselbe wie Windows Authenticode.
 
 ---
 
@@ -246,6 +246,7 @@ Beetroot ist noch nicht code-signiert (Zertifikat in Bearbeitung). Klicke auf �
 Fehler gefunden oder Feature-Wunsch? [Erstelle ein Issue](https://github.com/mnardit/beetroot-releases/issues).
 
 Bitte gib folgendes an:
+
 - Beetroot-Version (Einstellungen → Über)
 - Windows-Version (`winver`)
 - Schritte zur Reproduktion
@@ -253,9 +254,17 @@ Bitte gib folgendes an:
 
 ---
 
+## Entwicklung & Beiträge
+
+[CONTRIBUTING.md](CONTRIBUTING.md) beschreibt Einrichtung, Tests und den ersten PR. Native Entwicklung benötigt Windows; Frontend-Prüfungen laufen auch unter Linux und macOS. Für lokale Builds sind keine Signaturschlüssel nötig. Die [Architektur](docs/architecture.md) zeigt die Zuständigkeiten im Code.
+
+Fehlermeldungen, Übersetzungen und gezielte Korrekturen sind willkommen. Größere Funktionen bitte zuerst besprechen. Sicherheitslücken über den privaten Kanal in [SECURITY.md](SECURITY.md) melden, nicht in öffentlichen Issues.
+
+---
+
 ## Lizenz
 
-Kostenlos für private und gewerbliche Nutzung. Quellcode ist proprietär.
+Lizenziert unter der [Apache License 2.0](LICENSE). Private und gewerbliche Nutzung, Änderungen und Weiterverbreitung sind unter den Lizenzbedingungen erlaubt. Angaben zur Urheberschaft: [NOTICE](NOTICE). Für Drittanbieterkomponenten gelten ihre [jeweiligen Lizenzen](THIRD_PARTY_NOTICES.md).
 
 [Privacy Policy](PRIVACY.md) · [Security Policy](SECURITY.md) · [Terms of Service](TERMS.md)
 
@@ -263,6 +272,7 @@ Kostenlos für private und gewerbliche Nutzung. Quellcode ist proprietär.
 <summary>Drittanbieter-Schriftarten & Credits</summary>
 
 **Schriftarten** (SIL Open Font License 1.1):
+
 - [Inter](https://github.com/rsms/inter) — Copyright 2020 The Inter Project Authors
 - [Open Sans](https://github.com/googlefonts/opensans) — Copyright 2020 The Open Sans Project Authors
 - [Montserrat](https://github.com/JulietaUla/montserrat) — Copyright 2011 The Montserrat Project Authors

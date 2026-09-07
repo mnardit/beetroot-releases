@@ -1,8 +1,12 @@
 <p align="center">
-  <img src="docs/screenshots/main.png" alt="Beetroot clipboard manager for Windows" width="700" />
+  <img src="docs/screenshots/main-dark.png" alt="Beetroot clipboard manager for Windows" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
+
+<p align="center">
+  <a href="https://github.com/mnardit/beetroot-releases">Source code</a> · <a href="CONTRIBUTING.md">Contribute</a> · <a href="https://max.nardit.com">Max Nardit</a>
+</p>
 
 <p align="center">
   The clipboard manager Windows should have built.<br/>
@@ -14,6 +18,7 @@
   <a href="https://github.com/mnardit/beetroot-releases/releases"><img src="https://img.shields.io/github/downloads/mnardit/beetroot-releases/total" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4" alt="Windows 10/11">
   <img src="https://img.shields.io/badge/price-free-brightgreen" alt="Free">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue" alt="Apache 2.0"></a>
 </p>
 
 <p align="center">
@@ -24,57 +29,51 @@
   <b>English</b> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <a href="README.zh.md">中文</a> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **New in v1.6.6:** Excel / Word / PowerPoint cells now save as text (no more screenshots). 1Password & KeePass entries reliably skipped. Microsoft Store autostart fix. Readable text on any custom accent color. [See what's new →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
+> **Beetroot is now open source under [Apache 2.0](LICENSE).** Explore the code, report bugs or help improve it. Created by [Max Nardit](https://max.nardit.com).
+>
+> **Release status:** The current packaged release is [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6). This README describes the source in this repository; changes in [Unreleased](CHANGELOG.md#unreleased), including the new key storage, are planned for 1.6.7 and are not yet in that download.
 
 ---
 
 ## Why not Win+V?
 
-| Feature | Win+V | Beetroot |
-|---|---|---|
-| History | 25 clips, lost on reboot | Unlimited, persists across reboots |
-| Search | No | Fuzzy + regex |
-| AI transforms | No | 4 cloud providers + local models, 10 text + 5 vision built-in + custom |
-| AI Vision | No | Read text, describe, extract data from images via AI |
-| Source app tracking | No | Icon, name, window title per clip |
-| OCR | No | Native Windows engine, on-device |
-| Image history | Thumbnails only | Full images, stored locally |
-| Themes | No | 9 themes + Auto mode + accent color |
-| Plain text paste | No | Dedicated hotkey |
-| Multi-monitor | No | Window follows your cursor |
-| Pin on top | No | Pin + drag anywhere |
-| Notes | No | Searchable annotations |
+| Feature             | Win+V                    | Beetroot                                                               |
+| ------------------- | ------------------------ | ---------------------------------------------------------------------- |
+| History             | 25 clips, lost on reboot | Unlimited, persists across reboots                                     |
+| Search              | No                       | Fuzzy + regex                                                          |
+| AI transforms       | No                       | 4 cloud providers + local models, 10 text + 5 vision built-in + custom |
+| AI Vision           | No                       | Read text, describe, extract data from images via AI                   |
+| Source app tracking | No                       | Icon, name, window title per clip                                      |
+| OCR                 | No                       | Native Windows engine, on-device                                       |
+| Image history       | Thumbnails only          | Full images, stored locally                                            |
+| Themes              | No                       | 9 themes + Auto mode + accent color                                    |
+| Plain text paste    | No                       | Dedicated hotkey                                                       |
+| Multi-monitor       | No                       | Window follows your cursor                                             |
+| Pin on top          | No                       | Pin + drag anywhere                                                    |
+| Notes               | No                       | Searchable annotations                                                 |
 
 ---
 
-## See it in action
+## Screenshots
 
 <p align="center">
-  <img src="docs/gif/search-demo.gif" alt="Beetroot — fuzzy search across clipboard history" width="600">
+  <img src="docs/screenshots/search.png" alt="Beetroot — fuzzy search across clipboard history" width="600">
 </p>
 
-| AI Transforms | Themes |
-|---|---|
-| <img src="docs/gif/ai-transform.gif" alt="AI translate and fix grammar" width="400"> | <img src="docs/gif/theme-switching.gif" alt="Theme switching" width="400"> |
+| AI commands                                                                    | Appearance                                                                        |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| <img src="docs/screenshots/context-menu-ai.png" alt="AI commands" width="400"> | <img src="docs/screenshots/settings-appearance.png" alt="Appearance" width="400"> |
 
 <details>
 <summary>More screenshots</summary>
 
-| Dark theme | Light theme |
-|---|---|
-| ![Dark](docs/screenshots/main.png) | ![Light](docs/screenshots/main-light-filters.png) |
+| Dark theme                              | Light theme                               |
+| --------------------------------------- | ----------------------------------------- |
+| ![Dark](docs/screenshots/main-dark.png) | ![Light](docs/screenshots/main-light.png) |
 
-| Context menu & AI | Code preview |
-|---|---|
-| ![Context menu](docs/screenshots/context-menu.jpg) | ![Preview](docs/screenshots/preview-code.png) |
-
-| Search | AI Transform menu |
-|---|---|
-| ![Search](docs/screenshots/search-results.png) | ![Transforms](docs/screenshots/transform-menu.png) |
-
-| Settings | Languages |
-|---|---|
-| ![Settings](docs/screenshots/settings-general-new.png) | ![Languages](docs/screenshots/settings-languages.png) |
+| Context menu and AI                                   | JSON preview                                  |
+| ----------------------------------------------------- | --------------------------------------------- |
+| ![Context menu](docs/screenshots/context-menu-ai.png) | ![Preview](docs/screenshots/preview-json.png) |
 
 </details>
 
@@ -109,7 +108,7 @@ choco install beetroot
 - **5-phase search** — exact substring → word-start tokens → metadata → fuzzy. Typo-tolerant with ranked results
 - **Regex mode** — `/pattern/` with match highlighting
 - **Filters** — text, images, starred, notes — one click to narrow down
-- **Quick paste** — `Ctrl+1..9` to paste recent clips without opening the window
+- **Quick paste**: `Ctrl+1..9` selects a recent clip while Beetroot's list is active; it is not a global shortcut when the popup is hidden.
 - **Batch operations** — multi-select with `Ctrl+Click`, then copy (custom separator) or delete
 - **Content detection** — auto-badges for URLs, emails, code, JSON, colors. ML-powered language detection (54 languages) for code preview
 - **Single instance** — launching Beetroot again brings the existing window to focus
@@ -135,14 +134,14 @@ choco install beetroot
 <details>
 <summary>Recommended local models for text transforms</summary>
 
-| Model | Size | Speed | Best for |
-|-------|------|-------|----------|
-| **Qwen3 8B** (Q4_K) | ~5 GB | Fast | Grammar, translation, rewriting |
-| **Gemma 3 4B** (Q4_K) | ~3 GB | Very fast | Fixing typos, simple rewrites |
-| **Phi-4 Mini 3.8B** (Q4_K) | ~2.5 GB | Very fast | Code and structured text |
-| **Llama 3.1 8B** (Q4_K) | ~5 GB | Fast | General-purpose |
-| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB | Slow (16+ GB VRAM) | Premium quality |
-| **DeepSeek R1 7B** (Q4_K) | ~5 GB | Fast | Complex rewrites, summarization |
+| Model                            | Size    | Speed              | Best for                        |
+| -------------------------------- | ------- | ------------------ | ------------------------------- |
+| **Qwen3 8B** (Q4_K)              | ~5 GB   | Fast               | Grammar, translation, rewriting |
+| **Gemma 3 4B** (Q4_K)            | ~3 GB   | Very fast          | Fixing typos, simple rewrites   |
+| **Phi-4 Mini 3.8B** (Q4_K)       | ~2.5 GB | Very fast          | Code and structured text        |
+| **Llama 3.1 8B** (Q4_K)          | ~5 GB   | Fast               | General-purpose                 |
+| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB  | Slow (16+ GB VRAM) | Premium quality                 |
+| **DeepSeek R1 7B** (Q4_K)        | ~5 GB   | Fast               | Complex rewrites, summarization |
 
 Tested with [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com), and [llama.cpp](https://github.com/ggml-org/llama.cpp). Set up in Settings → AI → Local LLM.
 
@@ -171,28 +170,28 @@ Tested with [LM Studio](https://lmstudio.ai), [Ollama](https://ollama.com), and 
 
 ### Reliability
 
-- **Automatic backups** — 3-copy rotation + snapshot before every update
-- **Auto-recovery** — detects corruption, restores from backup silently
+- **Automatic database backups**: up to 3 rotating copies, plus a snapshot before a database migration. Image files and settings need a separate backup.
+- **Recovery with feedback**: when possible, restores a corrupt database from a valid backup after preserving the original; recent items may be missing.
 - **Cloud sync warnings** — alerts if data folder is inside OneDrive, Dropbox, or Google Drive
-- **Drive detection** — warns before writing to USB or network drives
+- **Drive checks**: warns about removable drives and cloud-sync folders; network drives are rejected for database storage.
 - **Auto-update** — built-in updater, or disable for fully offline operation
 
 ---
 
 ## Keyboard shortcuts
 
-| Shortcut | Action |
-|---|---|
+| Shortcut     | Action               |
+| ------------ | -------------------- |
 | `` Ctrl+` `` | Show / hide Beetroot |
-| `Enter` | Paste selected clip |
-| `Ctrl+1..9` | Quick paste |
-| `Space` | Preview |
-| `Alt+T` | Transform with AI |
-| `Alt+P` | Pin window on top |
-| `Alt+F` | Follow cursor mode |
-| `Shift+F10` | Context menu |
-| `Ctrl+C` | Copy to clipboard |
-| `Alt+Del` | Delete |
+| `Enter`      | Paste selected clip  |
+| `Ctrl+1..9`  | Quick paste          |
+| `Space`      | Preview              |
+| `Alt+T`      | Transform with AI    |
+| `Alt+P`      | Pin window on top    |
+| `Alt+F`      | Follow cursor mode   |
+| `Shift+F10`  | Context menu         |
+| `Ctrl+C`     | Copy to clipboard    |
+| `Alt+Del`    | Delete               |
 
 All shortcuts are customizable in **Settings → Shortcuts**. Works with AZERTY, QWERTZ, and AltGr layouts.
 
@@ -204,19 +203,19 @@ All shortcuts are customizable in **Settings → Shortcuts**. Works with AZERTY,
 Yes. Free for personal and commercial use — no ads, no trials, no feature gates, no telemetry.
 
 **Does Beetroot send my clipboard data anywhere?**
-No. Everything stays in a local SQLite database on your machine. With a local AI model, nothing ever leaves your machine. If you use a cloud AI provider (OpenAI, Gemini, Anthropic, or DeepSeek), only the text or image you explicitly transform is sent — directly to their API using your own key.
+Clipboard history is stored locally. Cloud AI sends only the selected content and prompt to your chosen provider when you request a transform. Local AI uses a loopback server; that server's own logging and network behavior depend on its configuration. Updates and key tests also make requests. See [PRIVACY.md](PRIVACY.md).
 
 **Can Beetroot read text from images?**
 Yes. Right-click any image in your clipboard history → AI → Read Text. Works with cloud providers (GPT-5.4, Claude, Gemini) and local vision models (Ollama llava, LM Studio). For simple OCR without AI, use the built-in OCR feature (native Windows engine, fully offline).
 
 **Does AI Vision work offline?**
-Yes, with a local vision model (e.g., Ollama with llava or moondream). No data leaves your machine.
+Yes, with a downloaded vision model running locally. Beetroot connects to that server over loopback; check the server's own settings for offline operation.
 
 **Where is my API key stored?**
-In the app's local settings (localStorage in the WebView2 profile). It never leaves your machine.
+In Windows Credential Manager, separately from app settings. The key is sent to the selected AI provider when you request an AI operation or validate the saved key. See [PRIVACY.md](PRIVACY.md) for legacy-key migration details.
 
 **Where is my data stored?**
-By default in `%APPDATA%\com.beetroot.desktop\`. You can move it in Settings → Data. The database is a standard SQLite file — back it up by copying the folder.
+By default in `%APPDATA%\com.beetroot.desktop\`; see Settings > Data for your actual selected folder. Quit Beetroot from the tray before copying the whole folder for a history backup. Settings and API keys are separate. Follow the [backup instructions](PRIVACY.md#exporting-clipboard-history).
 
 **Does auto-update work?**
 Yes, for v1.0.6+. Users on v1.0.5 or earlier need to [download manually](https://github.com/mnardit/beetroot-releases/releases/latest) once — after that, auto-update works normally. You can disable auto-update in Settings → General.
@@ -232,12 +231,13 @@ A one-time signing key change means you need to [download the latest version man
 OCR uses the native Windows engine. Make sure the relevant language pack is installed: Settings → Time & Language → Language → Add a language → check "Speech" or "Basic typing".
 
 **Beetroot doesn't open or hotkey doesn't work**
+
 - Check if another app is using the same hotkey (e.g. `Ctrl+``)
-- Try running as administrator once to rule out permission issues
+- Check that Beetroot is running in the same Windows session as the target app; a normal process cannot inject input into an elevated app.
 - Remap the hotkey in Settings → Shortcuts
 
 **SmartScreen or antivirus warning**
-Beetroot is not code-signed yet (certificate pending). Click "More info" → "Run anyway" in SmartScreen. You can verify the .exe hash against the [release checksums](https://github.com/mnardit/beetroot-releases/releases/latest).
+Windows may show a SmartScreen warning for an installer without an established publisher reputation. Use the [official release page](https://github.com/mnardit/beetroot-releases/releases/latest) and check the file's origin before running it. Tauri updater signatures are separate from Windows Authenticode signing.
 
 ---
 
@@ -246,6 +246,7 @@ Beetroot is not code-signed yet (certificate pending). Click "More info" → "Ru
 Found a bug or have a feature request? [Open an issue](https://github.com/mnardit/beetroot-releases/issues).
 
 Please include:
+
 - Beetroot version (Settings → About)
 - Windows version (`winver`)
 - Steps to reproduce
@@ -253,9 +254,17 @@ Please include:
 
 ---
 
+## Development & contributions
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md) for setup, tests and your first PR. Native development requires Windows; frontend checks also run on Linux and macOS. Signing keys are not needed for contributor builds. [Architecture](docs/architecture.md) explains where to make changes.
+
+Bug reports, translations and focused fixes are welcome. Please discuss larger features before implementing them. For vulnerabilities, use the private channel in [SECURITY.md](SECURITY.md), not a public issue.
+
+---
+
 ## License
 
-Free for personal and commercial use. Source code is proprietary.
+Licensed under [Apache License 2.0](LICENSE). Personal and commercial use, modification, and redistribution are permitted under its terms. Author attribution: [NOTICE](NOTICE). Third-party components retain their [respective licenses](THIRD_PARTY_NOTICES.md).
 
 [Privacy Policy](PRIVACY.md) · [Security Policy](SECURITY.md) · [Terms of Service](TERMS.md)
 
@@ -263,6 +272,7 @@ Free for personal and commercial use. Source code is proprietary.
 <summary>Third-party fonts & credits</summary>
 
 **Fonts** (SIL Open Font License 1.1):
+
 - [Inter](https://github.com/rsms/inter) — Copyright 2020 The Inter Project Authors
 - [Open Sans](https://github.com/googlefonts/opensans) — Copyright 2020 The Open Sans Project Authors
 - [Montserrat](https://github.com/JulietaUla/montserrat) — Copyright 2011 The Montserrat Project Authors
