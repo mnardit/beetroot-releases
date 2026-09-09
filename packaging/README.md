@@ -2,7 +2,9 @@
 
 This directory contains manifests for distributing Beetroot through Windows package managers.
 
-The checked-in package-manager manifests still describe the previously published 1.6.6 binaries, including their original proprietary license. They are not manifests for the Apache-2.0 source snapshot. For the first release built from this source, update the version, artifact URLs, hashes and license metadata together. Use `Apache-2.0` and a LICENSE URL pinned to that new release tag; do not relabel or replace old release artifacts.
+The checked-in manifests describe the published 1.6.6 binaries and their original proprietary license, not the current Apache-2.0 source. Manifest metadata must match the distributed binary.
+
+For each new release, update the version, artifact URLs, hashes and license metadata together. Pin license URLs to the corresponding release tag and leave previously published artifacts unchanged.
 
 Package availability and approval status live in the package-manager repositories and registries, not in this source snapshot. Check the target registry before announcing a package release.
 

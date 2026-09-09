@@ -1,27 +1,9 @@
-# E2E — Inactive Scaffold
+# E2E Scaffold (Inactive)
 
-**Status (as of 2026-05-01):** scaffold only. Not run by CI, not part of the pre-release gate, and the `@playwright/test` package is **not installed** — `npm test` and `./scripts/pre-release-check.sh` ignore this directory entirely (Vitest excludes `e2e/**` in [`vite.config.ts`](../vite.config.ts)).
+This directory contains unfinished Playwright specs. They are not run by CI or the pre-release gate. Vitest excludes `e2e/**` in [`vite.config.ts`](../vite.config.ts), and `@playwright/test` is not installed.
 
-[`playwright.config.ts`](../playwright.config.ts) imports `@playwright/test`, so trying to run it without first installing the dep will fail with `Cannot find module '@playwright/test'`.
+[`playwright.config.ts`](../playwright.config.ts) targets the Vite frontend at `localhost:1420`; it does not attach to a native Tauri process. Starting the desktop app alone does not connect these specs to its Rust backend.
 
-## To resurrect
+Restoring the suite requires adding Playwright and browser binaries, defining the IPC test setup, and updating the specs before including them in CI.
 
-1. `npm install --save-dev @playwright/test`
-2. `npx playwright install` (browser binaries)
-3. Add a `"test:e2e": "playwright test"` script to [`package.json`](../package.json).
-4. Decide harness for native Tauri behavior — Playwright drives the WebView, not the Rust shell. For full-stack flows (clipboard capture via OS, hotkey, paste via SendInput, MSIX) you need either:
-   - `npm run tauri dev` running in a separate terminal, OR
-   - A built binary launched as a child process, OR
-   - WebDriver via `tauri-driver` (separate setup).
-
-## To explicitly retire
-
-If E2E is not coming back, delete:
-
-- `e2e/` (this directory)
-- `playwright.config.ts`
-- The `playwright` references inside `package.json` if any creep in.
-
-## Why it's still here
-
-The specs were written when E2E was an active goal but `npm install @playwright/test` never landed. Rather than delete the work, we keep it as a starting point in case browser-driven E2E is reconsidered (vs. native Tauri smoke harnesses, which are usually a better fit for this app).
+For the supported checks, see [testing](../docs/testing.md). For Windows clipboard, hotkey, paste and MSIX behavior, use the [native harness](../tests/smoke/README.md) in an isolated VM.

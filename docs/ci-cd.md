@@ -28,10 +28,10 @@ These are caller- and feature-specific assessments, not a guarantee of safety. R
 
 `.github/workflows/release.yml` runs for a new `v*` tag. Checks must finish before the signed build. The publishing job uses the `release` environment and the current repository's `GITHUB_TOKEN` with `contents: write`.
 
-The environment must be configured by the maintainer with the existing `TAURI_SIGNING_PRIVATE_KEY` and `TAURI_SIGNING_PRIVATE_KEY_PASSWORD`. Restrict release tags and environment access before enabling official publishing. Repository configuration is not created merely by adding the workflow file.
+Maintainers configure `TAURI_SIGNING_PRIVATE_KEY` and `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` as secrets in the protected `release` environment. Release tags and environment access must be restricted; signing credentials stay outside the source tree.
 
 The release action uses `scripts/build-desktop.mjs`: after the actual Tauri build, native dependency and installer-toolchain attribution must pass before the command succeeds and the action uploads artifacts. The output is a draft release with EXE, MSI, updater signatures and `latest.json`. NSIS is preferred for the updater. Publishing the draft is a separate maintainer decision.
 
-`scripts/release.sh` only prepares version files locally. It does not push, commit, sign, publish or update external package-manager repositories. There is no cross-repository publication token.
+`scripts/release.sh` runs source checks and prepares version files locally. It does not commit or publish changes; submit the prepared version through a PR before tagging.
 
 See the [release checklist](release-checklist.md). Do not replace existing release assets or move published tags.
