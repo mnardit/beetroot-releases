@@ -964,12 +964,53 @@ pub(crate) fn get_file_description_pub(exe_path: &str) -> Option<String> {
     get_file_description(exe_path)
 }
 
-/// Extract icon from an executable using SHGetFileInfoW and convert to base64 PNG.
+/// Accept file hints only; directories must not shadow a matching executable.
+#[cfg(target_os = "windows")]
+fn resolve_icon_path(exe_name: &str, exe_path_hint: Option<&str>) -> String {
+    match exe_path_hint {
+        Some(path) if std::path::Path::new(path).is_file() => path.to_string(),
+        _ => find_exe_path(exe_name),
+    }
+}
+
+#[cfg(target_os = "windows")]
+fn extract_resource_icon(exe_path: &str) -> Option<String> {
+    use windows::Win32::UI::Shell::ExtractIconExW;
+    use windows::Win32::UI::WindowsAndMessaging::{DestroyIcon, HICON};
+
+    if !std::path::Path::new(exe_path).is_file() {
+        return None;
+    }
+    let path: Vec<u16> = exe_path.encode_utf16().chain(std::iter::once(0)).collect();
+    let mut icon = HICON::default();
+    // SAFETY: The terminated path and single output slot outlive the call. Every
+    // returned owned HICON is destroyed directly or by hicon_to_base64, never shared.
+    unsafe {
+        let count = ExtractIconExW(
+            windows::core::PCWSTR(path.as_ptr()),
+            0,
+            Some(&mut icon),
+            None,
+            1,
+        );
+        if icon.is_invalid() {
+            return None;
+        }
+        if count != 1 {
+            let _ = DestroyIcon(icon);
+            return None;
+        }
+        hicon_to_base64(icon, true)
+    }
+}
+
+/// Prefer Shell metadata; read the executable resource if Shell returns no icon.
 #[cfg(target_os = "windows")]
 fn extract_app_icon(exe_name: &str, exe_path_hint: Option<&str>) -> (String, Option<String>) {
     use windows::Win32::Foundation::RPC_E_CHANGED_MODE;
     use windows::Win32::System::Com::{CoInitializeEx, CoUninitialize, COINIT_MULTITHREADED};
     use windows::Win32::UI::Shell::{SHGetFileInfoW, SHFILEINFOW, SHGFI_DISPLAYNAME, SHGFI_ICON};
+    use windows::Win32::UI::WindowsAndMessaging::DestroyIcon;
 
     struct ComScope(bool);
     impl Drop for ComScope {
@@ -1001,14 +1042,10 @@ fn extract_app_icon(exe_name: &str, exe_path_hint: Option<&str>) -> (String, Opt
 
     // SAFETY: `wide_path` is a NUL-terminated UTF-16 path that outlives the
     // block. SHGetFileInfoW fills `info` (properly zeroed beforehand);
-    // `info.hIcon` is owned by the call and destroyed via hicon_to_base64
+    // `info.hIcon` is owned and destroyed here or via hicon_to_base64
     // (destroy_icon=true). The function is Windows-only.
     unsafe {
-        // Use exe_path hint if available, otherwise search
-        let exe_path = match exe_path_hint {
-            Some(p) if !p.is_empty() && std::path::Path::new(p).exists() => p.to_string(),
-            _ => find_exe_path(exe_name),
-        };
+        let exe_path = resolve_icon_path(exe_name, exe_path_hint);
         info!(exe_name = %exe_name, resolved_path = %exe_path, "extract_app_icon: resolved exe path");
         let wide_path: Vec<u16> = exe_path.encode_utf16().chain(std::iter::once(0)).collect();
 
@@ -1023,11 +1060,14 @@ fn extract_app_icon(exe_name: &str, exe_path_hint: Option<&str>) -> (String, Opt
 
         if result == 0 || info.hIcon.is_invalid() {
             info!(exe_name = %exe_name, shgetfileinfo_result = result, "extract_app_icon: SHGetFileInfoW failed");
+            if !info.hIcon.is_invalid() {
+                let _ = DestroyIcon(info.hIcon);
+            }
             let fallback_name = exe_name
                 .strip_suffix(".exe")
                 .unwrap_or(exe_name)
                 .to_string();
-            return (fallback_name, None);
+            return (fallback_name, extract_resource_icon(&exe_path));
         }
 
         let display_name = {
@@ -1048,7 +1088,8 @@ fn extract_app_icon(exe_name: &str, exe_path_hint: Option<&str>) -> (String, Opt
         };
 
         // SHGetFileInfoW gives us an owned icon — destroy_icon = true
-        let icon_b64 = hicon_to_base64(info.hIcon, true);
+        let icon_b64 =
+            hicon_to_base64(info.hIcon, true).or_else(|| extract_resource_icon(&exe_path));
         (display_name, icon_b64)
     }
 }
@@ -1077,20 +1118,20 @@ fn find_exe_path(exe_name: &str) -> String {
 
     for name in &names {
         // First try: use the name as-is (might be a full path already)
-        if std::path::Path::new(name).exists() {
+        if std::path::Path::new(name).is_file() {
             return name.clone();
         }
 
         // Try Windows root (explorer.exe lives here)
         let system_root = env::var("SystemRoot").unwrap_or_else(|_| "C:\\Windows".to_string());
         let winroot_path = format!("{}\\{}", system_root, name);
-        if std::path::Path::new(&winroot_path).exists() {
+        if std::path::Path::new(&winroot_path).is_file() {
             return winroot_path;
         }
 
         // Try System32
         let system32_path = format!("{}\\System32\\{}", system_root, name);
-        if std::path::Path::new(&system32_path).exists() {
+        if std::path::Path::new(&system32_path).is_file() {
             return system32_path;
         }
 
@@ -1107,7 +1148,7 @@ fn find_exe_path(exe_name: &str) -> String {
             if let Ok(key) = root.open_subkey(&app_paths_key) {
                 if let Ok(path) = key.get_value::<String, _>("") {
                     let path = path.trim_matches('"').to_string();
-                    if std::path::Path::new(&path).exists() {
+                    if std::path::Path::new(&path).is_file() {
                         return path;
                     }
                 }
@@ -1118,7 +1159,7 @@ fn find_exe_path(exe_name: &str) -> String {
         if let Ok(path_var) = env::var("PATH") {
             for dir in path_var.split(';') {
                 let candidate = format!("{}\\{}", dir.trim(), name);
-                if std::path::Path::new(&candidate).exists() {
+                if std::path::Path::new(&candidate).is_file() {
                     return candidate;
                 }
             }
@@ -1138,7 +1179,7 @@ fn find_exe_path(exe_name: &str) -> String {
                 continue;
             }
             let candidate = format!("{}\\{}\\{}", pf, base, name);
-            if std::path::Path::new(&candidate).exists() {
+            if std::path::Path::new(&candidate).is_file() {
                 return candidate;
             }
         }
@@ -1146,7 +1187,7 @@ fn find_exe_path(exe_name: &str) -> String {
         // Try AppData\Roaming\{base}\{name} (Telegram Desktop, etc.)
         if let Ok(appdata) = env::var("APPDATA") {
             let candidate = format!("{}\\{}\\{}", appdata, base, name);
-            if std::path::Path::new(&candidate).exists() {
+            if std::path::Path::new(&candidate).is_file() {
                 return candidate;
             }
         }
@@ -1154,7 +1195,7 @@ fn find_exe_path(exe_name: &str) -> String {
         // Try LocalAppData\Programs\{base}\{name} (VS Code pattern)
         if let Ok(local) = env::var("LOCALAPPDATA") {
             let candidate = format!("{}\\Programs\\{}\\{}", local, base, name);
-            if std::path::Path::new(&candidate).exists() {
+            if std::path::Path::new(&candidate).is_file() {
                 return candidate;
             }
         }
@@ -1175,14 +1216,14 @@ fn find_exe_path(exe_name: &str) -> String {
                     continue;
                 }
                 let candidate = format!("{}\\{}\\{}", dir, exe_base, name);
-                if std::path::Path::new(&candidate).exists() {
+                if std::path::Path::new(&candidate).is_file() {
                     return candidate;
                 }
             }
             // Also try LocalAppData\Programs with full name folder
             if let Ok(local) = env::var("LOCALAPPDATA") {
                 let candidate = format!("{}\\Programs\\{}\\{}", local, exe_base, name);
-                if std::path::Path::new(&candidate).exists() {
+                if std::path::Path::new(&candidate).is_file() {
                     return candidate;
                 }
             }
@@ -1191,7 +1232,7 @@ fn find_exe_path(exe_name: &str) -> String {
         // Try WindowsApps (UWP / Store app aliases)
         if let Ok(local) = env::var("LOCALAPPDATA") {
             let candidate = format!("{}\\Microsoft\\WindowsApps\\{}", local, name);
-            if std::path::Path::new(&candidate).exists() {
+            if std::path::Path::new(&candidate).is_file() {
                 return candidate;
             }
         }
@@ -1210,7 +1251,7 @@ fn find_exe_path(exe_name: &str) -> String {
                 for entry in entries.flatten() {
                     if entry.file_type().map(|t| t.is_dir()).unwrap_or(false) {
                         let candidate = entry.path().join(name);
-                        if candidate.exists() {
+                        if candidate.is_file() {
                             return candidate.to_string_lossy().to_string();
                         }
                     }
@@ -1228,7 +1269,7 @@ fn find_exe_path(exe_name: &str) -> String {
                 if entry.file_type().map(|t| t.is_dir()).unwrap_or(false) {
                     for name in &names {
                         let candidate = entry.path().join(name);
-                        if candidate.exists() {
+                        if candidate.is_file() {
                             return candidate.to_string_lossy().to_string();
                         }
                     }
@@ -1264,7 +1305,7 @@ fn find_exe_path(exe_name: &str) -> String {
                 .output();
             if let Ok(output) = ps_result {
                 let found_path = String::from_utf8_lossy(&output.stdout).trim().to_string();
-                if !found_path.is_empty() && std::path::Path::new(&found_path).exists() {
+                if !found_path.is_empty() && std::path::Path::new(&found_path).is_file() {
                     info!(exe_name = %exe_name, path = %found_path, "find_exe_path: found via Get-AppxPackage");
                     return found_path;
                 }
@@ -1376,6 +1417,87 @@ mod tests {
             "should find explorer.exe, got: {}",
             path
         );
+    }
+
+    #[test]
+    fn find_exe_path_rejects_shadowing_directory() {
+        let local_appdata = tempfile::tempdir().unwrap();
+        std::fs::create_dir_all(local_appdata.path().join("Microsoft").join("explorer")).unwrap();
+        // Run the real resolver with an isolated profile, not process-global env changes.
+        let output = std::process::Command::new(std::env::current_exe().unwrap())
+            .args([
+                "--exact",
+                "commands::source_app::tests::find_exe_path_finds_explorer_without_extension",
+                "--nocapture",
+            ])
+            .env("LOCALAPPDATA", local_appdata.path())
+            .output()
+            .unwrap();
+        let stdout = String::from_utf8_lossy(&output.stdout);
+        assert!(
+            output.status.success(),
+            "resolver child failed:\n{stdout}\n{}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        assert!(stdout.contains("1 passed; 0 failed"), "{stdout}");
+    }
+
+    #[test]
+    fn extract_icon_rejects_directory_hint() {
+        let _trace = tracing::subscriber::set_default(
+            tracing_subscriber::fmt()
+                .with_test_writer()
+                .with_max_level(tracing::Level::INFO)
+                .finish(),
+        );
+        let directory = tempfile::tempdir().unwrap();
+        let expected = super::find_exe_path("explorer.exe");
+        assert!(std::path::Path::new(&expected).is_file());
+        assert_eq!(
+            super::resolve_icon_path("explorer.exe", directory.path().to_str()),
+            expected,
+            "a directory is not an executable hint"
+        );
+        let actual = super::extract_app_icon("explorer.exe", directory.path().to_str());
+        assert!(
+            actual.1.is_some(),
+            "resolved executable should produce an icon"
+        );
+    }
+
+    #[test]
+    fn resource_icon_decodes_on_workers_without_com() {
+        use base64::Engine;
+
+        let path = super::find_exe_path("explorer.exe");
+        let workers: Vec<_> = (0..8)
+            .map(|_| {
+                let path = path.clone();
+                std::thread::spawn(move || {
+                    let icon =
+                        super::extract_resource_icon(&path).expect("executable resource icon");
+                    let png = base64::engine::general_purpose::STANDARD
+                        .decode(icon)
+                        .unwrap();
+                    let image = image::load_from_memory(&png).unwrap();
+                    assert!(image.width() > 0 && image.height() > 0);
+                })
+            })
+            .collect();
+        for worker in workers {
+            worker.join().unwrap();
+        }
+    }
+
+    #[test]
+    fn resource_icon_rejects_missing_file_directory_and_non_icon_file() {
+        let dir = tempfile::tempdir().unwrap();
+        assert!(super::extract_resource_icon(dir.path().to_str().unwrap()).is_none());
+        let missing = dir.path().join("missing.exe");
+        assert!(super::extract_resource_icon(missing.to_str().unwrap()).is_none());
+        let text = dir.path().join("no-icon.exe");
+        std::fs::write(&text, b"not an executable").unwrap();
+        assert!(super::extract_resource_icon(text.to_str().unwrap()).is_none());
     }
 
     #[test]
