@@ -968,7 +968,7 @@ pub(crate) fn get_file_description_pub(exe_path: &str) -> Option<String> {
 #[cfg(target_os = "windows")]
 fn extract_app_icon(exe_name: &str, exe_path_hint: Option<&str>) -> (String, Option<String>) {
     use windows::Win32::Foundation::RPC_E_CHANGED_MODE;
-    use windows::Win32::System::Com::{CoInitializeEx, CoUninitialize, COINIT_APARTMENTTHREADED};
+    use windows::Win32::System::Com::{CoInitializeEx, CoUninitialize, COINIT_MULTITHREADED};
     use windows::Win32::UI::Shell::{SHGetFileInfoW, SHFILEINFOW, SHGFI_DISPLAYNAME, SHGFI_ICON};
 
     struct ComScope(bool);
@@ -983,9 +983,10 @@ fn extract_app_icon(exe_name: &str, exe_path_hint: Option<&str>) -> (String, Opt
     }
 
     // SAFETY: No reserved pointer is supplied. The guard cannot escape this
-    // synchronous function or move to another thread. An existing MTA is reused
+    // synchronous function or move to another thread. An existing STA is reused
     // without uninitializing the caller's COM apartment.
-    let com_result = unsafe { CoInitializeEx(None, COINIT_APARTMENTTHREADED) };
+    // Background workers do not pump messages, so they must not create an STA.
+    let com_result = unsafe { CoInitializeEx(None, COINIT_MULTITHREADED) };
     let _com = ComScope(com_result.is_ok());
     if com_result.is_err() && com_result != RPC_E_CHANGED_MODE {
         info!(exe_name = %exe_name, hresult = com_result.0, "extract_app_icon: COM initialization failed");
@@ -1411,15 +1412,20 @@ mod tests {
     fn extract_icon_on_fresh_worker_threads() {
         use base64::Engine;
 
+        let barrier = std::sync::Arc::new(std::sync::Barrier::new(8));
         let workers: Vec<_> = (0..8)
             .map(|_| {
-                std::thread::spawn(|| {
-                    let (_, icon) = super::extract_app_icon("explorer", None);
-                    let png = base64::engine::general_purpose::STANDARD
-                        .decode(icon.expect("worker should extract an icon"))
-                        .unwrap();
-                    let image = image::load_from_memory(&png).unwrap();
-                    assert!(image.width() > 0 && image.height() > 0);
+                let barrier = barrier.clone();
+                std::thread::spawn(move || {
+                    barrier.wait();
+                    for _ in 0..4 {
+                        let (_, icon) = super::extract_app_icon("explorer", None);
+                        let png = base64::engine::general_purpose::STANDARD
+                            .decode(icon.expect("worker should extract an icon"))
+                            .unwrap();
+                        let image = image::load_from_memory(&png).unwrap();
+                        assert!(image.width() > 0 && image.height() > 0);
+                    }
                 })
             })
             .collect();
