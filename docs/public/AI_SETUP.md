@@ -2,7 +2,7 @@
 
 Beetroot can transform your clipboard text using AI -- translate, summarize, fix grammar, rewrite, and more. You bring your own API key (BYOK). Beetroot stores clipboard history locally. For AI transforms, it sends the selected clipboard content and prompt to the AI provider you choose only when you explicitly ask for a transform.
 
-**Documentation scope:** Current source, including changes planned for 1.6.7. See the [release status](index.md); this is not the documentation bundled with the current 1.6.6 installer.
+**Documentation scope:** Current source and the 1.6.7 GitHub installers. See the [release status](index.md) for distribution channels.
 **Last updated:** 2026-09-08
 
 ---

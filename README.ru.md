@@ -31,7 +31,7 @@
 
 > **Beetroot теперь с открытым кодом под [Apache 2.0](LICENSE).** Изучайте исходники, сообщайте об ошибках и участвуйте в разработке. Автор: [Max Nardit](https://max.nardit.com).
 >
-> **Статус релиза:** Текущая версия для установки: [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6). Этот README описывает код репозитория; изменения из [Unreleased](CHANGELOG.md#unreleased), включая новое хранение ключей, готовятся для 1.6.7 и ещё не входят в эту загрузку.
+> **Версия 1.6.7 доступна:** более надёжная вставка и история, хранение AI-ключей в Windows Credential Manager. [Скачать и посмотреть изменения](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.7). Microsoft Store и пакетные менеджеры обновляются отдельно.
 
 ---
 

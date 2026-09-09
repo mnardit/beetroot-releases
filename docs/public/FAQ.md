@@ -2,7 +2,7 @@
 
 Answers to the most common questions about Beetroot.
 
-**Documentation scope:** Current source, including changes planned for 1.6.7. See the [release status](index.md); this is not the documentation bundled with the current 1.6.6 installer.
+**Documentation scope:** Current source and the 1.6.7 GitHub installers. See the [release status](index.md) for distribution channels.
 **Last updated:** 2026-09-08
 
 ---
