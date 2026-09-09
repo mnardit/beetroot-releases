@@ -4,7 +4,7 @@
   "inputs": {
     "npm": "c3a2b91c47a4df4300247a09b7a6b6f5a9725096463007aeb614e9ca4c6c690c",
     "cargo": "7468c167506a73a12dffc9eb58b81636385cff83ae23e6d5725264d1f2871319",
-    "cargoManifest": "789264e3bf5a992cb9bcdd17071f5f20ae5f719c934156dd5b2d775afa96a9ff"
+    "cargoManifest": "4d0a1a0fb7d9d240f576a82b6c8ec9e2d2d30954f59033d94cec8165f8ed4750"
   },
   "native": {
     "rust": "1.89.0",
