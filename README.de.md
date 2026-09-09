@@ -31,7 +31,7 @@
 
 > **Beetroot ist jetzt Open Source unter [Apache 2.0](LICENSE).** Entdecke den Code, melde Fehler oder hilf bei der Entwicklung. Erstellt von [Max Nardit](https://max.nardit.com).
 >
-> **Release-Status:** Die aktuelle Installationsversion ist [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6). Dieses README beschreibt den Quellcode im Repository. Änderungen unter [Unreleased](CHANGELOG.md#unreleased), einschließlich der neuen Schlüsselspeicherung, sind für 1.6.7 vorgesehen und noch nicht in diesem Download enthalten.
+> **Version 1.6.7 ist verfügbar:** zuverlässigeres Einfügen und ein robusterer Verlauf; KI-Schlüssel werden in der Windows-Anmeldeinformationsverwaltung gespeichert. [Download und Versionshinweise](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.7). Microsoft Store und Paketmanager werden separat aktualisiert.
 
 ---
 

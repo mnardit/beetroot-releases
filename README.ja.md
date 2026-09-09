@@ -31,7 +31,7 @@
 
 > **Beetroot は [Apache 2.0](LICENSE) のオープンソースになりました。** コードの閲覧、不具合の報告、開発への参加を歓迎します。作者: [Max Nardit](https://max.nardit.com)。
 >
-> **リリース状況:** 現在のインストール版は [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6) です。この README はリポジトリのコードを説明しています。新しいキー保存方式などの [Unreleased](CHANGELOG.md#unreleased) の変更は 1.6.7 向けで、現在のダウンロードにはまだ含まれません。
+> **バージョン 1.6.7 を公開しました:** 貼り付けと履歴の信頼性が向上し、AI キーは Windows 資格情報マネージャーに保存されます。[ダウンロードとリリースノート](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.7)。Microsoft Store とパッケージマネージャーは別途更新されます。
 
 ---
 

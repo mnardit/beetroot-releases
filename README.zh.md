@@ -31,7 +31,7 @@
 
 > **Beetroot 现已采用 [Apache 2.0](LICENSE) 开源。** 欢迎查看代码、报告问题或参与开发。作者：[Max Nardit](https://max.nardit.com)。
 >
-> **发布状态：** 当前安装版为 [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)。本 README 描述仓库中的代码；[Unreleased](CHANGELOG.md#unreleased) 中的更改（包括新的密钥存储方式）计划随 1.6.7 发布，尚未包含在该下载中。
+> **1.6.7 版本现已发布：** 粘贴和历史记录更加可靠，AI 密钥存储在 Windows 凭据管理器中。[下载和发行说明](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.7)。Microsoft Store 和软件包管理器将另行更新。
 
 ---
 

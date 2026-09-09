@@ -2,7 +2,7 @@
 
 **Beetroot** is a free, open-source clipboard manager for Windows, created by [Max Nardit](https://max.nardit.com). It keeps supported clipboard content in a searchable local history, with optional AI transforms and native OCR.
 
-**Documentation scope:** Current source, including changes planned for 1.6.7. The current packaged release is [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6); changes in [Unreleased](../../CHANGELOG.md#unreleased), including the new key storage, are not yet in that installer.
+**Documentation scope:** Current source and the [1.6.7 GitHub release](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.7), including Windows Credential Manager key storage. Microsoft Store and package-manager updates are handled separately.
 **Platform:** Windows 10 and Windows 11
 
 ---

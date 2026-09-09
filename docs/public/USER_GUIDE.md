@@ -2,7 +2,7 @@
 
 Beetroot is a clipboard manager for Windows. While monitoring is enabled it saves supported text and images, subject to exclusions and limits, so you can search, preview, transform and reuse them later.
 
-**Documentation scope:** Current source, including changes planned for 1.6.7. See the [release status](index.md); this is not the documentation bundled with the current 1.6.6 installer.
+**Documentation scope:** Current source and the 1.6.7 GitHub installers. See the [release status](index.md) for distribution channels.
 **Platform:** Windows 10 and Windows 11
 **Price:** Free
 **Last updated:** 2026-09-08
