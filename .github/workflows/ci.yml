@@ -95,6 +95,7 @@ jobs:
           if ($audit.vulnerabilities.found) {
             Write-Warning 'Rust advisories are present; see the report above.'
           }
+          Write-Warning 'Registry yanked checks are best-effort; cargo-audit does not verify their completeness.'
           exit 0
 
   build:

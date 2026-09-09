@@ -8,7 +8,7 @@ PR jobs have read-only repository permissions and receive no signing secrets. Th
 
 ## Dependency Audits
 
-The npm and Rust audits are informational: a successful workflow is not a claim that their reports are empty. Rust audit installation, database access and invalid reports fail the job; actual advisories remain visible for maintainer review. Do not suppress an advisory solely to make CI green.
+The npm and Rust audits are informational: a successful workflow is not a claim that their reports are empty. Rust audit installation, RustSec advisory database access and invalid advisory reports fail the job; actual advisories remain visible for maintainer review. Yanked-package lookups are best-effort: cargo-audit can omit failed registry lookups without failing, so CI explicitly reports that their completeness is unverified. This limitation does not disable RustSec advisory matching. Do not suppress an advisory solely to make CI green.
 
 The Windows `x86_64-pc-windows-msvc` dependency graph and callers were reviewed on 2026-09-09. `rustls-webpki` was updated to 0.103.13, including the upstream certificate name-constraint fixes. The remaining Rust reports have the following scope:
 
