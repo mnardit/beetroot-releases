@@ -2,7 +2,7 @@
 
 This directory contains manifests for distributing Beetroot through Windows package managers.
 
-The checked-in manifests describe the published 1.6.6 binaries and their original proprietary license, not the current Apache-2.0 source. Manifest metadata must match the distributed binary.
+The checked-in manifests describe the published 1.6.7 binaries under Apache-2.0. Manifest metadata must match the distributed binary.
 
 For each new release, update the version, artifact URLs, hashes and license metadata together. Pin license URLs to the corresponding release tag and leave previously published artifacts unchanged.
 
@@ -30,13 +30,26 @@ Files in `winget/`:
 **Bucket repo:** [mnardit/scoop-bucket](https://github.com/mnardit/scoop-bucket)
 **Source manifest:** `scoop/beetroot.json` (copy lives in bucket repo as `bucket/beetroot.json`)
 
-The manifest includes `checkver` and `autoupdate` — Scoop can auto-detect new releases.
+The manifest includes `checkver` and `autoupdate` templates. Maintainers must run the updater and publish the resulting manifest; these fields alone do not update the bucket on GitHub.
 
 ### Update Process
 
-1. Update `scoop/beetroot.json` here (version, hash)
-2. Copy to `mnardit/scoop-bucket` repo: `bucket/beetroot.json`
-3. Push to scoop-bucket
+1. Update `scoop/beetroot.json` here (version, URL, hash and pinned license URL).
+2. Copy to `mnardit/scoop-bucket`: `bucket/beetroot.json` and the retained root-level `beetroot.json` compatibility copy. Keep both identical.
+3. Verify installation/update and push the reviewed bucket changes.
+
+### Existing Scoop Installations
+
+Exit Beetroot from its tray menu before updating. The manifests through 1.6.6 named the wrong uninstaller. Scoop caches that manifest locally and runs its uninstaller before loading the new version, so an affected installation needs a one-time repair:
+
+```powershell
+scoop update
+$scoopRoot = if ($env:SCOOP) { $env:SCOOP } else { Join-Path $env:USERPROFILE 'scoop' }
+& (Join-Path $scoopRoot 'buckets/beetroot/scripts/repair-beetroot.ps1') -AppDirectory (scoop prefix beetroot)
+scoop update beetroot
+```
+
+The [repair script](scoop/repair-beetroot.ps1) only corrects the known cached uninstaller field after validating the application path and manifest. It preserves an exact backup and does not delete application data. It refuses unfamiliar or incomplete installations. Maintainers keep the bucket's script identical to this copy and run `Invoke-Pester packaging/scoop/Repair.Tests.ps1` before publication.
 
 ## Chocolatey
 
@@ -52,6 +65,18 @@ Files in `chocolatey/`:
 2. Update version + checksum in `nuspec` and `chocolateyinstall.ps1`
 3. Build package: `choco pack`
 4. Push: `choco push beetroot.X.Y.Z.nupkg --source https://push.chocolatey.org/`
+
+## User Updates
+
+After the respective registry has accepted the package:
+
+```powershell
+winget upgrade --id MNardit.Beetroot --exact --source winget
+scoop update beetroot
+choco upgrade beetroot
+```
+
+Winget PR validation/merge and Chocolatey moderation are separate from the GitHub release. Scoop updates become available after the bucket is published and refreshed. Do not announce all three as available based only on a successful submission.
 
 ## After Each Release
 

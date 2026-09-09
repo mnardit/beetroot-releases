@@ -79,7 +79,7 @@ jobs:
         run: |
           Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser -Force
           Import-Module Pester -RequiredVersion 5.7.1
-          $result = Invoke-Pester tests/smoke/Harness.Tests.ps1 -PassThru
+          $result = Invoke-Pester -Path tests/smoke/Harness.Tests.ps1,packaging/scoop/Repair.Tests.ps1 -PassThru
           if ($result.Result -ne 'Passed') { exit 1 }
 
       - name: cargo audit (informational)

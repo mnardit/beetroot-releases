@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>beetroot</id>
-    <version>1.6.6</version>
+    <version>1.6.7</version>
     <title>Beetroot</title>
-    <authors>MNardit</authors>
+    <authors>Max Nardit</authors>
     <owners>MNardit</owners>
     <projectUrl>https://github.com/mnardit/beetroot-releases</projectUrl>
-    <licenseUrl>https://github.com/mnardit/beetroot-releases/blob/4fcfbfbbaf6aa9a4e864331faffc51b3b15c5c9e/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/mnardit/beetroot-releases/blob/v1.6.7/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Lightweight clipboard manager for Windows with AI-powered text transforms.
 
@@ -17,7 +17,7 @@ Features:
 - Fuzzy and regex search
 - AI-powered text transforms (OpenAI, Anthropic, Google, Ollama/Local LLM)
 - System-wide "Copied" overlay (customizable position, duration, 6 exit animations)
-- No-focus window mode (type anywhere while browsing history)
+- Clipboard popup that preserves focus in the target application until a control needs input
 - Preview panel with 3 content modes (text, code with line numbers, image with zoom)
 - OCR text extraction from images
 - Notes on clipboard items
@@ -33,7 +33,7 @@ Features:
     <docsUrl>https://github.com/mnardit/beetroot-releases/blob/main/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/mnardit/beetroot-releases/issues</bugTrackerUrl>
     <iconUrl>https://raw.githubusercontent.com/mnardit/beetroot-releases/main/icons/icon.png</iconUrl>
-    <releaseNotes>https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6</releaseNotes>
+    <releaseNotes>https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.7</releaseNotes>
     <dependencies>
       <dependency id="webview2-runtime" />
     </dependencies>
