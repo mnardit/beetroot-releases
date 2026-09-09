@@ -1,0 +1,117 @@
+/* Context menu */
+.context-menu {
+  position: fixed;
+  z-index: var(--z-context);
+  background: var(--bg-app);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-1) 0;
+  min-width: 220px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  animation: context-menu-in 0.1s ease;
+}
+
+@keyframes context-menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.context-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.context-menu__item:hover,
+.context-menu__item:focus {
+  background: var(--bg-hover);
+  outline: none;
+}
+
+.context-menu__item--danger {
+  color: var(--state-danger);
+}
+
+.context-menu__icon {
+  width: 16px;
+  text-align: center;
+  font-size: var(--font-size);
+  flex-shrink: 0;
+}
+
+.context-menu__hint {
+  margin-left: auto;
+  color: var(--text-hint);
+  font-size: var(--text-caption);
+}
+
+.context-menu__separator {
+  height: 1px;
+  background: var(--border-base);
+  margin: var(--space-1) var(--space-2);
+}
+
+.context-menu__item--ai-loading {
+  color: var(--text-muted);
+  cursor: wait;
+}
+
+.context-menu__item--ai-loading .context-menu__icon {
+  animation: ctx-ai-pulse 1s ease-in-out infinite;
+}
+
+@keyframes ctx-ai-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Exit animation */
+.context-menu--exiting {
+  animation: context-menu-out 0.1s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes context-menu-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .context-menu {
+    animation: none;
+  }
+
+  .context-menu--exiting {
+    animation: none;
+    opacity: 0;
+  }
+}

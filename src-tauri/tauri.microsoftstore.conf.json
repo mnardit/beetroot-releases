@@ -1,0 +1,10 @@
+{
+  "bundle": {
+    "publisher": "Max Nardit",
+    "windows": {
+      "webviewInstallMode": {
+        "type": "offlineInstaller"
+      }
+    }
+  }
+}

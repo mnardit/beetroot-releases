@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "overlay",
+  "description": "Capabilities for the copied-toast overlay window. The overlay's HTML/JS makes zero Tauri IPC calls — Rust drives it entirely via `win.eval()`, which bypasses the capability system. Therefore the permissions array is intentionally empty. If you ever add `invoke()` or `listen()` to public/overlay.html, you MUST add the corresponding permissions here.",
+  "windows": ["overlay"],
+  "permissions": []
+}

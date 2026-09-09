@@ -1,0 +1,107 @@
+/* Onboarding */
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-bg);
+  z-index: var(--z-onboarding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  animation: overlay-in 0.15s ease-out;
+}
+
+.onboarding {
+  background: var(--bg-app);
+  border: 1px solid var(--border-base);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) 28px var(--space-5);
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: overlay-panel-in 0.15s ease-out;
+}
+
+.onboarding__icon {
+  font-size: 40px;
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+
+.onboarding__title {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.onboarding__desc {
+  font-size: var(--font-size);
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.onboarding__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.onboarding__skip {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  padding: 6px var(--space-3);
+  font-family: inherit;
+  transition: color 0.15s;
+}
+
+.onboarding__skip:hover {
+  color: var(--text-primary);
+}
+
+.onboarding__nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.onboarding__next {
+  background: var(--accent-main);
+  border: none;
+  color: var(--text-on-accent);
+  font-size: var(--font-size);
+  font-weight: 400;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.onboarding__next:hover {
+  filter: brightness(0.92);
+}
+
+.onboarding__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.onboarding__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-base);
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.onboarding__dot--active {
+  background: var(--accent-main);
+  transform: scale(1.3);
+}

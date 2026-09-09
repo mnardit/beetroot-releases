@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+src-tauri/target/
+src-tauri/gen/
+public/model/
+package-lock.json
+# Generated with its own serializer; validated by check:licenses.
+licenses/third-party.json

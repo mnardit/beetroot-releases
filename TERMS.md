@@ -1,163 +1,55 @@
-# Terms of Service
+# License and Usage Terms
 
 **Beetroot Clipboard Manager**
-**Last updated:** April 4, 2026
-**Version:** 1.6.5
 
----
+**Last updated:** September 8, 2026
 
-## 1. Acceptance of Terms
+## License
 
-By downloading, installing, or using Beetroot ("the App"), you agree to these Terms of Service ("Terms"). If you do not agree, do not use the App.
+The source code in this repository and new builds distributed with it are licensed under [Apache License 2.0](LICENSE), except for third-party components under their own licenses. Historical installers retain the terms distributed with those releases; publishing this source does not replace or relabel older binaries.
 
----
+Apache 2.0 permits personal and commercial use, modification and redistribution under its terms. It does not require modified versions to be open source. Redistribution obligations, including retaining applicable notices and marking changed files, are defined by the license itself.
 
-## 2. Description of Service
+[NOTICE](NOTICE) records authorship by Max Nardit. It does not add a mandatory advertising banner, require a particular UI credit or change the license. Third-party attribution is listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the accompanying license files.
 
-Beetroot is a desktop clipboard manager for Windows that:
-- Monitors your system clipboard and stores a history of copied content
-- Provides search (5-phase ranked scoring with accent folding and typo tolerance), filtering, and organization of clipboard history
-- Offers AI-powered text and image transforms (AI Vision) via cloud providers (OpenAI, Gemini, Anthropic, DeepSeek — requires API key) or local AI models (LM Studio, Ollama, llama.cpp — no API key required)
-- AI Vision: analyze images with AI — read text, describe, extract data, summarize, translate text in images
-- Provides OCR text extraction from images
-- Supports no-focus window mode (no focus stealing), pin-on-top, and follow-cursor window modes
-- Automatic backup rotation (3 copies) with recovery from database corruption
-- Uses on-device ML model for programming language detection (54 languages, no network required)
-- Stores all data locally on your device
+These usage notes explain the application and do not add restrictions to Apache 2.0. If this document conflicts with that license, the license controls.
 
----
+## Authorship and Contributions
 
-## 3. License
+Beetroot was created by [Max Nardit](https://max.nardit.com). Contributors retain copyright in their own work. Contribution terms and setup instructions are in [CONTRIBUTING.md](CONTRIBUTING.md); no copyright assignment or separate CLA is required.
 
-Beetroot is provided as **free software** for personal and commercial use. You may:
-- Install and use the App on any number of personal devices
-- Use the App for any lawful purpose, personal or commercial
+Apache 2.0 does not grant trademark rights beyond the uses described in section 6. Attribution does not mean the author endorses a fork or derivative product.
 
-You may also:
-- Redistribute the compiled application in its unmodified form (e.g., host on your website)
+## Clipboard Data
 
-You may not:
-- Reverse engineer, decompile, or disassemble the App
-- Sell or sublicense the App
-- Modify, repackage, or create derivative works of the App
-- Remove or modify any proprietary notices
-- Use the App for any unlawful purpose
+Beetroot captures supported clipboard content while monitoring is enabled, subject to exclusions and limits. History may contain private information. Password-manager markers cannot identify every sensitive clip.
 
-The source code is proprietary. All rights not expressly granted are reserved.
+Secure your Windows account and device, pause monitoring when needed, choose appropriate retention settings and keep backups of important data. The clipboard database is not encrypted. Automatic recovery is not a guarantee against data loss.
 
----
+Storage, network activity, API-key migration and deletion are explained in [PRIVACY.md](PRIVACY.md). History, WebView settings and Credential Manager keys are separate: uninstalling the app or deleting one history folder does not guarantee removal of all copies.
 
-## 4. Your Responsibilities
+## Optional AI Features
 
-### 4.1 Clipboard Content
+Cloud AI transforms send the selected text or image and prompt to your chosen provider using your API key. Saved-key tests authenticate with that provider without sending clipboard content. You are responsible for your provider account, charges and compliance with applicable provider terms.
 
-The App stores everything you copy to the clipboard. You are responsible for:
-- Being aware that sensitive data (passwords, financial info, personal data) will be stored
-- Using the Pause feature when handling highly sensitive information
-- Configuring appropriate auto-delete settings
-- Not relying solely on the App's password manager detection for security
+Local AI connects to a loopback server that you run. That server's own processing and network activity are outside Beetroot's control. Review the sensitivity of content before using either mode. AI output may be incomplete or incorrect; verify it before relying on it.
 
-### 4.2 AI Transforms
+Beetroot's own history, search and native OCR do not require a cloud AI account.
 
-When using AI text transforms:
-- You are responsible for not sending sensitive, confidential, or regulated data (text or images) to any AI provider
-- AI Vision sends images to cloud providers when triggered — do not use on images containing sensitive information
-- When using cloud providers (OpenAI, Gemini, Anthropic, DeepSeek): you must comply with each provider's usage policies and you are responsible for your API key and associated costs
-- When using Local LLM: you are responsible for the model you run and its output
-- AI-generated output may be inaccurate; verify results before relying on them
+## Updates and Support
 
-### 4.3 Data Security
+Official standalone updates are distributed through [GitHub Releases](https://github.com/mnardit/beetroot-releases/releases); the built-in updater verifies Tauri update signatures. Those signatures are separate from Windows Authenticode. Microsoft Store installations update through Microsoft Store.
 
-Since all data is stored locally on your device:
-- You are responsible for securing your device (passwords, encryption, physical access)
-- You are responsible for backing up data if needed
-- We recommend enabling full-disk encryption (e.g., BitLocker) for additional protection
+Automatic checks can be disabled; manual checks and optional network features remain available. Source publication does not itself release a new installer. The release page identifies the currently available version.
 
----
+The author may stop maintaining or distributing the application. That does not revoke rights already granted under Apache 2.0. A supported release or an issue response does not constitute a separate warranty agreement.
 
-## 5. Privacy
+## Warranty and Liability
 
-Your privacy is important. Please review our [Privacy Policy](PRIVACY.md) for details on data collection, storage, and processing. Key points:
-- All clipboard data stays on your device
-- No analytics, telemetry, or tracking
-- AI transforms send text to cloud providers only when you explicitly trigger them (or stay fully local with Local LLM)
-- No account or registration required
+The warranty disclaimer and liability terms in sections 7 and 8 of [Apache License 2.0](LICENSE) apply, subject to applicable law. These notes do not replace them or limit rights that cannot lawfully be excluded.
 
----
+The application may have defects, clipboard history may be lost and AI output may be wrong. Assess whether it is appropriate for your use and do not treat clipboard history as your only copy of important information.
 
-## 6. Intellectual Property
+## Contact
 
-Beetroot, its logo, name, and all associated materials are the intellectual property of the developer. Third-party components are used under their respective licenses:
-- Tauri (MIT/Apache-2.0)
-- React (MIT)
-- SQLite (Public Domain)
-- Other dependencies as listed in the project's package files
-
----
-
-## 7. Disclaimer of Warranties
-
-THE APP IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
-
-We do not warrant that:
-- The App will be error-free or uninterrupted
-- The App will meet your specific requirements
-- AI transform results will be accurate or complete
-- The clipboard history database will not be corrupted or lost
-- The App will detect and exclude all sensitive data (e.g., passwords)
-
----
-
-## 8. Limitation of Liability
-
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL THE DEVELOPER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:
-- Loss of data or profits
-- Data breaches resulting from the unencrypted local database
-- Unauthorized access to clipboard history by third-party software
-- Costs incurred from cloud AI provider API usage (OpenAI, Gemini, Anthropic, DeepSeek)
-- Any AI-generated content used in error
-
-OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE APP (WHICH IS $0 FOR THE FREE VERSION).
-
----
-
-## 9. Updates
-
-- The App includes an auto-update mechanism that checks for new versions
-- Updates are downloaded from GitHub Releases and verified with cryptographic signatures
-- You can disable auto-update checks in Settings
-- We may update these Terms; continued use after changes constitutes acceptance
-
----
-
-## 10. Termination
-
-- You may stop using the App at any time by uninstalling it
-- Delete `%APPDATA%/com.beetroot.desktop/` to remove all stored data
-- We reserve the right to discontinue the App at any time without notice
-
----
-
-## 11. Governing Law
-
-These Terms are governed by applicable local law. Any disputes shall be resolved in the courts of the developer's jurisdiction.
-
----
-
-## 12. Contact
-
-For questions about these Terms:
-- **GitHub Issues:** [github.com/mnardit/beetroot-releases/issues](https://github.com/mnardit/beetroot-releases/issues)
-
----
-
-## 13. Summary
-
-| Question | Answer |
-|----------|--------|
-| Is Beetroot free? | Yes, free for personal and commercial use |
-| Can I redistribute it? | Yes, the unmodified compiled app (not the source code) |
-| Who is responsible for my data? | You are; all data is stored locally |
-| Is there a warranty? | No, provided "as is" |
-| Can I use it commercially? | Yes |
-| How do I delete everything? | Uninstall + delete `%APPDATA%/com.beetroot.desktop/` |
+For general questions, use [GitHub Issues](https://github.com/mnardit/beetroot-releases/issues). Do not include personal clipboard content or credentials. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).

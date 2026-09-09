@@ -1,8 +1,12 @@
 <p align="center">
-  <img src="docs/screenshots/main.png" alt="Beetroot — Windows 剪贴板管理器" width="700" />
+  <img src="docs/screenshots/main-dark.png" alt="Beetroot — Windows 剪贴板管理器" width="700" />
 </p>
 
 <h1 align="center">Beetroot</h1>
+
+<p align="center">
+  <a href="https://github.com/mnardit/beetroot-releases">源代码</a> · <a href="CONTRIBUTING.md">参与开发</a> · <a href="https://max.nardit.com">Max Nardit</a>
+</p>
 
 <p align="center">
   Windows 本该内置的剪贴板管理器。<br/>
@@ -14,6 +18,7 @@
   <a href="https://github.com/mnardit/beetroot-releases/releases"><img src="https://img.shields.io/github/downloads/mnardit/beetroot-releases/total" alt="下载量"></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4" alt="Windows 10/11">
   <img src="https://img.shields.io/badge/price-free-brightgreen" alt="免费">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue" alt="Apache 2.0"></a>
 </p>
 
 <p align="center">
@@ -24,57 +29,51 @@
   <a href="README.md">English</a> · <a href="README.de.md">Deutsch</a> · <a href="README.es.md">Español</a> · <a href="README.ru.md">Русский</a> · <b>中文</b> · <a href="README.ja.md">日本語</a>
 </p>
 
-> **v1.6.6 新功能：** Excel / Word / PowerPoint 单元格现在保存为文本（不再是截图）。1Password 和 KeePass 条目可靠跳过。修复 Microsoft Store 版本的自启动。任何强调色下文本均可读。[查看更新内容 →](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)
+> **Beetroot 现已采用 [Apache 2.0](LICENSE) 开源。** 欢迎查看代码、报告问题或参与开发。作者：[Max Nardit](https://max.nardit.com)。
+>
+> **发布状态：** 当前安装版为 [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6)。本 README 描述仓库中的代码；[Unreleased](CHANGELOG.md#unreleased) 中的更改（包括新的密钥存储方式）计划随 1.6.7 发布，尚未包含在该下载中。
 
 ---
 
 ## 为什么不用 Win+V？
 
-| 功能 | Win+V | Beetroot |
-|---|---|---|
-| 历史记录 | 25 条 clip，重启后丢失 | 无限制，跨重启永久保存 |
-| 搜索 | 无 | 模糊搜索 + 正则表达式 |
-| AI 转换 | 无 | 4 个云端提供商 + 本地模型，10 个文本 + 5 个视觉内置 + 自定义 |
-| AI 视觉 | 无 | 用 AI 识别文字、描述内容、从图片中提取数据 |
-| 来源应用追踪 | 无 | 每条 clip 显示图标、应用名、窗口标题 |
-| OCR | 无 | Windows 原生引擎，本地处理 |
-| 图片历史 | 仅缩略图 | 完整图片，本地存储 |
-| 主题 | 无 | 9 个主题 + 自动模式 + 强调色 |
-| 纯文本粘贴 | 无 | 专用快捷键 |
-| 多显示器 | 无 | 窗口跟随光标 |
-| 置顶 | 无 | 置顶 + 任意拖动 |
-| 备注 | 无 | 可搜索的注释 |
+| 功能         | Win+V                  | Beetroot                                                     |
+| ------------ | ---------------------- | ------------------------------------------------------------ |
+| 历史记录     | 25 条 clip，重启后丢失 | 无限制，跨重启永久保存                                       |
+| 搜索         | 无                     | 模糊搜索 + 正则表达式                                        |
+| AI 转换      | 无                     | 4 个云端提供商 + 本地模型，10 个文本 + 5 个视觉内置 + 自定义 |
+| AI 视觉      | 无                     | 用 AI 识别文字、描述内容、从图片中提取数据                   |
+| 来源应用追踪 | 无                     | 每条 clip 显示图标、应用名、窗口标题                         |
+| OCR          | 无                     | Windows 原生引擎，本地处理                                   |
+| 图片历史     | 仅缩略图               | 完整图片，本地存储                                           |
+| 主题         | 无                     | 9 个主题 + 自动模式 + 强调色                                 |
+| 纯文本粘贴   | 无                     | 专用快捷键                                                   |
+| 多显示器     | 无                     | 窗口跟随光标                                                 |
+| 置顶         | 无                     | 置顶 + 任意拖动                                              |
+| 备注         | 无                     | 可搜索的注释                                                 |
 
 ---
 
-## 实际效果
+## 截图
 
 <p align="center">
-  <img src="docs/gif/search-demo.gif" alt="Beetroot — 剪贴板历史模糊搜索" width="600">
+  <img src="docs/screenshots/search.png" alt="Beetroot — 剪贴板历史模糊搜索" width="600">
 </p>
 
-| AI 转换 | 主题 |
-|---|---|
-| <img src="docs/gif/ai-transform.gif" alt="AI 翻译和语法修正" width="400"> | <img src="docs/gif/theme-switching.gif" alt="主题切换" width="400"> |
+| AI 操作                                                                    | 外观                                                                        |
+| -------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| <img src="docs/screenshots/context-menu-ai.png" alt="AI 操作" width="400"> | <img src="docs/screenshots/settings-appearance.png" alt="外观" width="400"> |
 
 <details>
 <summary>更多截图</summary>
 
-| 深色主题 | 浅色主题 |
-|---|---|
-| ![深色](docs/screenshots/main.png) | ![浅色](docs/screenshots/main-light-filters.png) |
+| 深色主题                                | 浅色主题                                 |
+| --------------------------------------- | ---------------------------------------- |
+| ![深色](docs/screenshots/main-dark.png) | ![浅色](docs/screenshots/main-light.png) |
 
-| 右键菜单与 AI | 代码预览 |
-|---|---|
-| ![右键菜单](docs/screenshots/context-menu.jpg) | ![预览](docs/screenshots/preview-code.png) |
-
-| 搜索 | AI 转换菜单 |
-|---|---|
-| ![搜索](docs/screenshots/search-results.png) | ![转换](docs/screenshots/transform-menu.png) |
-
-| 设置 | 语言 |
-|---|---|
-| ![设置](docs/screenshots/settings-general-new.png) | ![语言](docs/screenshots/settings-languages.png) |
+| 右键菜单与 AI                                     | JSON 预览                                  |
+| ------------------------------------------------- | ------------------------------------------ |
+| ![右键菜单](docs/screenshots/context-menu-ai.png) | ![预览](docs/screenshots/preview-json.png) |
 
 </details>
 
@@ -109,7 +108,7 @@ choco install beetroot
 - **5 阶段搜索** — 精确子串 → 词首匹配 → 元数据 → 模糊。容错搜索，结果按相关性排序
 - **正则模式** — `/pattern/` 支持匹配高亮
 - **过滤器** — 文本、图片、收藏、备注 — 一键筛选
-- **快速粘贴** — `Ctrl+1..9` 无需打开窗口即可粘贴最近的 clip
+- **快速粘贴**：在 Beetroot 列表处于活动状态时，`Ctrl+1..9` 可选择最近的条目；窗口隐藏时它不是全局快捷键。
 - **批量操作** — `Ctrl+Click` 多选，然后复制（自定义分隔符）或删除
 - **内容检测** — 自动识别 URL、邮箱、代码、JSON、颜色。ML 驱动的编程语言检测（54 种语言），用于代码预览
 - **单实例** — 再次启动 Beetroot 将聚焦现有窗口
@@ -135,14 +134,14 @@ choco install beetroot
 <details>
 <summary>推荐的本地文本转换模型</summary>
 
-| 模型 | 大小 | 速度 | 适用场景 |
-|-------|------|-------|----------|
-| **Qwen3 8B** (Q4_K) | ~5 GB | 快 | 语法修正、翻译、改写 |
-| **Gemma 3 4B** (Q4_K) | ~3 GB | 很快 | 修正错别字、简单改写 |
-| **Phi-4 Mini 3.8B** (Q4_K) | ~2.5 GB | 很快 | 代码和结构化文本 |
-| **Llama 3.1 8B** (Q4_K) | ~5 GB | 快 | 通用场景 |
-| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB | 慢（需 16+ GB 显存） | 高质量输出 |
-| **DeepSeek R1 7B** (Q4_K) | ~5 GB | 快 | 复杂改写、摘要 |
+| 模型                             | 大小    | 速度                 | 适用场景             |
+| -------------------------------- | ------- | -------------------- | -------------------- |
+| **Qwen3 8B** (Q4_K)              | ~5 GB   | 快                   | 语法修正、翻译、改写 |
+| **Gemma 3 4B** (Q4_K)            | ~3 GB   | 很快                 | 修正错别字、简单改写 |
+| **Phi-4 Mini 3.8B** (Q4_K)       | ~2.5 GB | 很快                 | 代码和结构化文本     |
+| **Llama 3.1 8B** (Q4_K)          | ~5 GB   | 快                   | 通用场景             |
+| **Mistral Small 3.1 24B** (Q4_K) | ~14 GB  | 慢（需 16+ GB 显存） | 高质量输出           |
+| **DeepSeek R1 7B** (Q4_K)        | ~5 GB   | 快                   | 复杂改写、摘要       |
 
 已通过 [LM Studio](https://lmstudio.ai)、[Ollama](https://ollama.com) 和 [llama.cpp](https://github.com/ggml-org/llama.cpp) 测试。在设置 → AI → Local LLM 中配置。
 
@@ -171,28 +170,28 @@ choco install beetroot
 
 ### 可靠性
 
-- **自动备份** — 3 份轮换 + 每次更新前快照
-- **自动恢复** — 检测损坏，静默从备份恢复
+- **数据库备份**：最多保留 3 份轮换备份，并在数据库迁移前创建快照。图片和设置需要另行备份。
+- **恢复并提示**：在可恢复时，保留原始文件后从有效备份恢复数据库；最近的条目可能缺失。
 - **云同步警告** — 当数据文件夹位于 OneDrive、Dropbox 或 Google Drive 时发出警告
-- **驱动器检测** — 写入 USB 或网络驱动器前发出警告
+- **驱动器检查**：对可移动驱动器和云同步文件夹发出警告；拒绝将数据库存放在网络驱动器上。
 - **自动更新** — 内置更新器，也可禁用以完全离线运行
 
 ---
 
 ## 快捷键
 
-| 快捷键 | 操作 |
-|---|---|
+| 快捷键       | 操作                 |
+| ------------ | -------------------- |
 | `` Ctrl+` `` | 显示 / 隐藏 Beetroot |
-| `Enter` | 粘贴选中项 |
-| `Ctrl+1..9` | 快速粘贴 |
-| `Space` | 预览 |
-| `Alt+T` | AI 转换 |
-| `Alt+P` | 窗口置顶 |
-| `Alt+F` | 光标跟随模式 |
-| `Shift+F10` | 右键菜单 |
-| `Ctrl+C` | 复制到剪贴板 |
-| `Alt+Del` | 删除 |
+| `Enter`      | 粘贴选中项           |
+| `Ctrl+1..9`  | 快速粘贴             |
+| `Space`      | 预览                 |
+| `Alt+T`      | AI 转换              |
+| `Alt+P`      | 窗口置顶             |
+| `Alt+F`      | 光标跟随模式         |
+| `Shift+F10`  | 右键菜单             |
+| `Ctrl+C`     | 复制到剪贴板         |
+| `Alt+Del`    | 删除                 |
 
 所有快捷键可在**设置 → 快捷键**中自定义。支持 AZERTY、QWERTZ 和 AltGr 键盘布局。
 
@@ -204,19 +203,19 @@ choco install beetroot
 是的。个人和商业使用均免费 — 无广告、无试用、无功能限制、无遥测。
 
 **Beetroot 会发送我的剪贴板数据吗？**
-不会。所有数据存储在本地 SQLite 数据库中。使用本地 AI 模型时，任何数据都不会离开您的电脑。如果使用云 AI 服务（OpenAI、Gemini、Anthropic 或 DeepSeek），仅在您明确选择转换时将选中的文本或图片发送到其 API — 且使用您自己的密钥。
+历史记录保存在本地。仅在您请求转换时，云 AI 才会收到选中的内容和提示词。本地 AI 使用回环服务器，该服务器自身的日志和网络行为取决于其配置。更新和密钥测试也会发出请求。详见 [PRIVACY.md](PRIVACY.md)。
 
 **Beetroot 能识别图片中的文字吗？**
 可以。右键点击剪贴板历史中的图片 → AI → 识别文字。支持云端提供商（GPT-5.4、Claude、Gemini）和本地视觉模型（Ollama llava、LM Studio）。如果只需要简单 OCR 而不需要 AI，可以使用内置 OCR 功能（Windows 原生引擎，完全离线）。
 
 **AI 视觉可以离线使用吗？**
-可以，使用本地视觉模型即可（例如 Ollama 配合 llava 或 moondream）。数据不会离开您的电脑。
+可以，需要在本地服务器中运行已下载的模型。Beetroot 通过回环连接访问服务器；请同时检查服务器自身的离线设置。
 
 **我的 API 密钥存储在哪里？**
-在应用的本地设置中（WebView2 配置文件中的 localStorage）。它绝不会离开您的电脑。
+密钥保存在 Windows 凭据管理器（Windows Credential Manager）中，与应用设置分开存储。当您执行 AI 操作或验证已保存的密钥时，密钥会发送给所选的 AI 服务提供商。旧版密钥迁移详情请参阅 [PRIVACY.md](PRIVACY.md)。
 
 **我的数据存储在哪里？**
-默认在 `%APPDATA%\com.beetroot.desktop\`。可在设置 → 数据中移动。数据库是标准 SQLite 文件 — 复制文件夹即可备份。
+默认位于 `%APPDATA%\com.beetroot.desktop\`，当前文件夹可在设置 > 数据中查看。复制整个文件夹备份历史前，请先从托盘退出 Beetroot。设置与 API 密钥单独存储。请参阅[备份步骤](PRIVACY.md#exporting-clipboard-history)。
 
 **自动更新可用吗？**
 是的，v1.0.6 起可用。v1.0.5 及更早版本的用户需要[手动下载](https://github.com/mnardit/beetroot-releases/releases/latest)一次 — 之后自动更新正常工作。可在设置 → 通用中禁用自动更新。
@@ -232,12 +231,13 @@ choco install beetroot
 OCR 使用 Windows 原生引擎。请确保安装了对应语言包：设置 → 时间和语言 → 语言 → 添加语言 → 勾选"语音"或"基本输入"。
 
 **Beetroot 无法打开或快捷键无响应**
+
 - 检查是否有其他应用占用了相同快捷键（如 `Ctrl+``）
-- 尝试以管理员身份运行一次以排除权限问题
+- 确认 Beetroot 与目标应用位于同一 Windows 会话；普通进程无法向以管理员权限运行的应用发送输入。
 - 在设置 → 快捷键中重新映射
 
 **SmartScreen 或杀毒软件警告**
-Beetroot 尚未进行代码签名（证书申请中）。在 SmartScreen 中点击"更多信息"→"仍要运行"。可在[发布页面](https://github.com/mnardit/beetroot-releases/releases/latest)验证 .exe 的校验和。
+对于尚未建立发布者信誉的安装程序，Windows 可能显示 SmartScreen。请从[官方发布页面](https://github.com/mnardit/beetroot-releases/releases/latest)下载，并在运行前确认文件来源。Tauri 更新签名与 Windows Authenticode 是不同的机制。
 
 ---
 
@@ -246,6 +246,7 @@ Beetroot 尚未进行代码签名（证书申请中）。在 SmartScreen 中点�
 发现 bug 或有功能建议？[创建 issue](https://github.com/mnardit/beetroot-releases/issues)。
 
 请包含：
+
 - Beetroot 版本（设置 → 关于）
 - Windows 版本（`winver`）
 - 复现步骤
@@ -253,9 +254,17 @@ Beetroot 尚未进行代码签名（证书申请中）。在 SmartScreen 中点�
 
 ---
 
+## 开发与贡献
+
+[CONTRIBUTING.md](CONTRIBUTING.md) 介绍环境准备、测试及第一个 PR。本机应用开发需要 Windows，前端检查也可在 Linux 和 macOS 上运行。本地构建不需要签名密钥。可通过[架构文档](docs/architecture.md) 了解代码结构。
+
+欢迎提交问题、翻译及范围明确的修复。较大的功能请先讨论。安全漏洞请通过 [SECURITY.md](SECURITY.md) 中的私密渠道报告，不要提交公开 issue。
+
+---
+
 ## 许可证
 
-个人和商业使用均免费。源代码为专有软件。
+本项目采用 [Apache License 2.0](LICENSE)。遵循许可条款即可用于个人或商业用途、修改及再分发。作者署名见 [NOTICE](NOTICE)。第三方组件保留其[各自的许可证](THIRD_PARTY_NOTICES.md)。
 
 [Privacy Policy](PRIVACY.md) · [Security Policy](SECURITY.md) · [Terms of Service](TERMS.md)
 
@@ -263,6 +272,7 @@ Beetroot 尚未进行代码签名（证书申请中）。在 SmartScreen 中点�
 <summary>第三方字体与致谢</summary>
 
 **字体**（SIL Open Font License 1.1）：
+
 - [Inter](https://github.com/rsms/inter) — Copyright 2020 The Inter Project Authors
 - [Open Sans](https://github.com/googlefonts/opensans) — Copyright 2020 The Open Sans Project Authors
 - [Montserrat](https://github.com/JulietaUla/montserrat) — Copyright 2011 The Montserrat Project Authors

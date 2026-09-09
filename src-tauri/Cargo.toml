@@ -1,0 +1,76 @@
+[package]
+name = "beetroot"
+version = "1.6.6"
+edition = "2021"
+license = "Apache-2.0"
+
+[lib]
+name = "beetroot_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+smoke-test = []
+
+[build-dependencies]
+tauri-build = { version = "2.5", features = [] }
+
+[dependencies]
+tauri = { version = "2.10", features = ["tray-icon", "image-png"] }
+tauri-plugin-clipboard = "2.1"
+keyboard-types = "0.7"
+tauri-plugin-autostart = "2.5"
+tauri-plugin-positioner = { version = "2.3", features = ["tray-icon"] }
+tauri-plugin-dialog = "2.6"
+tauri-plugin-updater = "2"
+tauri-plugin-process = "2"
+parking_lot = "0.12"
+rusqlite = { version = "0.31", features = ["bundled", "backup"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.22"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+dirs-next = "2"
+winreg = "0.55"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+thiserror = "2"
+windows = { version = "0.58", features = [
+    "ApplicationModel",
+    "Foundation",
+    "Graphics_Imaging",
+    "Media_Ocr",
+    "Storage",
+    "Storage_Streams",
+    "Win32_System_Com",
+    "Win32_System_DataExchange",
+    "Win32_Foundation",
+    "Win32_System_Threading",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_Common",
+    "Win32_Storage_FileSystem",
+    "Win32_Graphics_Gdi",
+    "Win32_System_Diagnostics_ToolHelp",
+] }
+raw-window-handle = "0.6"
+tauri-plugin-opener = "2.5.3"
+tauri-plugin-single-instance = "2"
+ureq = { version = "2", features = ["json"] }
+regex = "1"
+unicode-normalization = "0.1"
+sha2 = "0.10"
+keyring = { version = "3.6.3", features = ["windows-native"] }
+tauri-plugin-notification = "2"
+tauri-winrt-notification = "0.7"
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[dev-dependencies]
+tempfile = "3"
+tokio = { version = "1", features = ["macros", "rt"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

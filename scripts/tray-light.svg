@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- White beetroot silhouette for dark taskbars -->
+  <!-- Body -->
+  <path d="
+    M 16 8
+    C 11 8, 6 13, 6 18.5
+    C 6 25, 11 30, 15.2 31
+    Q 16 31.2, 16.8 31
+    C 21 30, 26 25, 26 18.5
+    C 26 13, 21 8, 16 8
+    Z
+  " fill="white"/>
+  <!-- Root -->
+  <line x1="16" y1="30.5" x2="15.7" y2="32" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Left stem + leaf -->
+  <path d="M 14.5 8 C 13.5 5, 11.5 3, 9 1.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="8" cy="1.8" rx="2.5" ry="1.5" fill="white" transform="rotate(-20 8 1.8)"/>
+  <!-- Right stem + leaf -->
+  <path d="M 17.5 8 C 18.5 5, 20.5 3, 23 1.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="24" cy="1.8" rx="2.5" ry="1.5" fill="white" transform="rotate(20 24 1.8)"/>
+  <!-- Center stem + leaf -->
+  <line x1="16" y1="8" x2="16" y2="2" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+  <ellipse cx="16" cy="1.5" rx="1.5" ry="1.2" fill="white"/>
+</svg>

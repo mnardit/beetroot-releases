@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Beetroot body — rounded teardrop -->
+  <path d="
+    M 256 120
+    C 170 120, 100 210, 100 300
+    C 100 400, 170 475, 245 490
+    Q 256 493, 267 490
+    C 342 475, 412 400, 412 300
+    C 412 210, 342 120, 256 120
+    Z
+  " fill="#B22D6E"/>
+
+  <!-- Subtle darker rings for texture -->
+  <ellipse cx="256" cy="280" rx="130" ry="18" fill="none" stroke="#9A2460" stroke-width="1.5" opacity="0.25"/>
+  <ellipse cx="256" cy="330" rx="125" ry="16" fill="none" stroke="#9A2460" stroke-width="1.5" opacity="0.2"/>
+  <ellipse cx="256" cy="380" rx="110" ry="14" fill="none" stroke="#9A2460" stroke-width="1.5" opacity="0.15"/>
+
+  <!-- Root/tail -->
+  <path d="M 256 488 Q 253 506 250 520" stroke="#8A1C52" stroke-width="7" fill="none" stroke-linecap="round"/>
+
+  <!-- Left stem -->
+  <path d="M 236 125 C 220 80, 185 40, 140 15" stroke="#2A7D40" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <!-- Left leaf -->
+  <path d="
+    M 140 15
+    C 115 2, 85 8, 78 28
+    C 71 48, 95 62, 130 48
+    C 145 42, 140 15, 140 15
+    Z
+  " fill="#3DAF5C"/>
+
+  <!-- Right stem -->
+  <path d="M 276 125 C 292 80, 327 40, 372 15" stroke="#2A7D40" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <!-- Right leaf -->
+  <path d="
+    M 372 15
+    C 397 2, 427 8, 434 28
+    C 441 48, 417 62, 382 48
+    C 367 42, 372 15, 372 15
+    Z
+  " fill="#3DAF5C"/>
+
+  <!-- Center stem -->
+  <path d="M 256 120 C 256 80, 256 50, 256 18" stroke="#2A7D40" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- Center leaf (small) -->
+  <path d="
+    M 256 18
+    C 242 4, 245 -4, 256 -2
+    C 267 -4, 270 4, 256 18
+    Z
+  " fill="#4CC26E"/>
+
+  <!-- Highlight/shine -->
+  <path d="
+    M 200 170
+    C 185 200, 178 260, 182 310
+    C 184 325, 192 315, 195 290
+    C 198 250, 202 200, 200 170
+    Z
+  " fill="white" opacity="0.13"/>
+</svg>

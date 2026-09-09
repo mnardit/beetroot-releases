@@ -1,0 +1,103 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  CARGO_TERM_COLOR: always
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+
+  release:
+    needs: checks
+    runs-on: windows-latest
+    environment: release
+    env:
+      RELEASE_TAG: ${{ github.ref_name }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Verify version matches tag in all manifests
+        shell: pwsh
+        run: |
+          $tag = $env:RELEASE_TAG -replace '^v', ''
+
+          # Use -AsHashtable: package-lock.json has an empty-string property
+          # name under "packages" (lockfile v3 root entry) which breaks default
+          # ConvertFrom-Json. Hashtable mode tolerates it.
+          $tauri = (Get-Content src-tauri/tauri.conf.json -Raw | ConvertFrom-Json -AsHashtable).version
+          $pkg = (Get-Content package.json -Raw | ConvertFrom-Json -AsHashtable).version
+          $lock = (Get-Content package-lock.json -Raw | ConvertFrom-Json -AsHashtable).version
+          $cargo = (Select-String -Path src-tauri/Cargo.toml -Pattern '^version\s*=\s*"([^"]+)"').Matches[0].Groups[1].Value
+
+          Write-Host "tag=$tag tauri=$tauri pkg=$pkg lock=$lock cargo=$cargo"
+
+          $sources = [ordered]@{
+            "tauri.conf.json" = $tauri
+            "package.json" = $pkg
+            "package-lock.json" = $lock
+            "Cargo.toml" = $cargo
+          }
+          foreach ($entry in $sources.GetEnumerator()) {
+            if ($entry.Value -ne $tag) {
+              throw "Version mismatch: $($entry.Key) = '$($entry.Value)', expected '$tag'"
+            }
+          }
+          Write-Host "All 4 manifests at $tag"
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - uses: dtolnay/rust-toolchain@1.89.0
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - run: npm ci
+
+      - name: Verify all manifest versions
+        run: node scripts/check-versions.mjs
+
+      - name: Compute version (no v prefix)
+        id: version
+        shell: pwsh
+        run: |
+          $v = $env:RELEASE_TAG -replace '^v', ''
+          "value=$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          Write-Host "Stripped version: $v"
+
+      - name: Build Tauri app
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: ${{ github.ref_name }}
+          tauriScript: node scripts/build-desktop.mjs
+          args: -- --locked
+          releaseName: "Beetroot ${{ github.ref_name }}"
+          releaseBody: |
+            ## Installation
+
+            **Windows Installer (recommended):** Download `Beetroot_${{ steps.version.outputs.value }}_x64-setup.exe`
+
+            **MSI:** Download `Beetroot_${{ steps.version.outputs.value }}_x64_en-US.msi`
+
+            See the repository README for package-manager installation. Package-manager manifests are updated separately after release verification.
+          releaseDraft: true
+          prerelease: false
+          includeUpdaterJson: true
+          updaterJsonPreferNsis: true
