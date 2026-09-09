@@ -7,11 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-The 1.6.7 test candidate is described below. The latest published installer remains [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6).
+No unreleased changes.
 
-## [1.6.7] - Unreleased
-
-These changes are available in the source repository and test builds, not in the current 1.6.6 download. A release date has not been set.
+## [1.6.7] - 2026-09-09
 
 ### Open Source
 
