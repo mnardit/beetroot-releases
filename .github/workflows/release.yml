@@ -59,7 +59,7 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - uses: dtolnay/rust-toolchain@1.89.0
+      - uses: dtolnay/rust-toolchain@1.120.0
 
       - uses: Swatinem/rust-cache@v2
         with:
