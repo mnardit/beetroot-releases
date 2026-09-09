@@ -122,14 +122,14 @@ jobs:
         run: npm run build:desktop -- --config src-tauri/tauri.unsigned.conf.json -- --locked
 
       - name: Upload MSI
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: beetroot-msi
           path: src-tauri/target/release/bundle/msi/*.msi
           retention-days: 14
 
       - name: Upload NSIS installer
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: beetroot-setup
           path: src-tauri/target/release/bundle/nsis/*.exe
