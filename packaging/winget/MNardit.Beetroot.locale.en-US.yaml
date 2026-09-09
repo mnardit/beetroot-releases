@@ -1,14 +1,14 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
 PackageIdentifier: MNardit.Beetroot
-PackageVersion: 1.6.6
+PackageVersion: 1.6.7
 PackageLocale: en-US
 Publisher: MNardit
 PublisherUrl: https://github.com/mnardit
-Author: MNardit
+Author: Max Nardit
 PackageName: Beetroot
 PackageUrl: https://github.com/mnardit/beetroot-releases
-License: Proprietary
-LicenseUrl: https://github.com/mnardit/beetroot-releases/blob/4fcfbfbbaf6aa9a4e864331faffc51b3b15c5c9e/LICENSE
+License: Apache-2.0
+LicenseUrl: https://github.com/mnardit/beetroot-releases/blob/v1.6.7/LICENSE
 ShortDescription: Lightweight clipboard manager for Windows with AI-powered text transforms
 Description: |-
   Beetroot is a modern clipboard manager for Windows that runs in the system tray.
@@ -28,7 +28,7 @@ Description: |-
   - Auto-update with option to disable for fully offline operation
   - Plain text paste hotkey
   - Non-QWERTY keyboard layout support (AZERTY, QWERTZ, AltGr) with instant layout detection
-ReleaseNotesUrl: https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6
+ReleaseNotesUrl: https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.7
 Tags:
   - clipboard
   - clipboard-manager
