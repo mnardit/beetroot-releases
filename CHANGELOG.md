@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-These changes are in the source repository and planned for 1.6.7. They are not included in the current 1.6.6 installer.
+The 1.6.7 test candidate is described below. The latest published installer remains [1.6.6](https://github.com/mnardit/beetroot-releases/releases/tag/v1.6.6).
+
+## [1.6.7] - Unreleased
+
+These changes are available in the source repository and test builds, not in the current 1.6.6 download. A release date has not been set.
 
 ### Open Source
 
@@ -16,12 +20,13 @@ These changes are in the source repository and planned for 1.6.7. They are not i
 ### Improvements and Fixes
 
 - **More reliable pasting** when searching history and switching between normal, follow-cursor and always-on-top modes. Reopening from the tray does not reuse an old paste destination.
-- **Better Explorer interactions**, including file and folder rename handling and clear copy-only feedback when the original input field is no longer available.
-- **Copy-only confirmation after the popup closes**: when automatic paste is cancelled because keys remain held or the destination changes, the existing "Copied" overlay confirms the result if enabled.
+- **Better Explorer interactions**, including file and folder rename handling. If automatic paste cannot finish, the existing "Copied" overlay can confirm that the clip is ready for manual paste, even after the popup closes.
 - **More dependable history**: fixes for undoing deletions, restoring images, moving the data folder and reopening an already-running app.
 - **Safer AI key storage** in Windows Credential Manager, with migration from older settings and retry when a key cannot be moved.
 - **AI fixes** for saving completed results, handling provider errors and DeepSeek reasoning responses.
 - **Search and responsiveness fixes**, including Unicode highlighting and background database work.
+- **More reliable app icons** in clipboard history when Windows cannot provide an icon directly.
+- **Updated TLS certificate validation** for connections to cloud AI providers.
 
 ### Known Limitations
 
