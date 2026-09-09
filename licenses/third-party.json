@@ -3,7 +3,7 @@
   "target": "x86_64-pc-windows-msvc",
   "inputs": {
     "npm": "c3a2b91c47a4df4300247a09b7a6b6f5a9725096463007aeb614e9ca4c6c690c",
-    "cargo": "7468c167506a73a12dffc9eb58b81636385cff83ae23e6d5725264d1f2871319",
+    "cargo": "b12378775ad226b3f22f556b460ab692b4758876fb049c08f6961e82a56cecaa",
     "cargoManifest": "4d0a1a0fb7d9d240f576a82b6c8ec9e2d2d30954f59033d94cec8165f8ed4750"
   },
   "native": {
@@ -3180,12 +3180,12 @@
       ]
     },
     {
-      "id": "cargo:rustls-webpki@0.103.9",
+      "id": "cargo:rustls-webpki@0.103.13",
       "ecosystem": "cargo",
       "name": "rustls-webpki",
-      "version": "0.103.9",
+      "version": "0.103.13",
       "license": "ISC",
-      "source": "https://docs.rs/crate/rustls-webpki/0.103.9/source/",
+      "source": "https://docs.rs/crate/rustls-webpki/0.103.13/source/",
       "notices": [
         "3ac27594ed56fd079c95a71f8beabc498c5b997ec31e91f4a18e59a5974adb2a"
       ]
@@ -6493,7 +6493,7 @@
     {
       "id": "3ac27594ed56fd079c95a71f8beabc498c5b997ec31e91f4a18e59a5974adb2a",
       "sources": [
-        "https://docs.rs/crate/rustls-webpki/0.103.9/source/LICENSE"
+        "https://docs.rs/crate/rustls-webpki/0.103.13/source/LICENSE"
       ],
       "text": "Except as otherwise noted, this project is licensed under the following\n(ISC-style) terms:\n\nCopyright 2015 Brian Smith.\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHORS DISCLAIM ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\nThe files under third-party/chromium are licensed as described in\nthird-party/chromium/LICENSE."
     },

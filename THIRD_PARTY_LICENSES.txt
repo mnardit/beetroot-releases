@@ -1257,9 +1257,9 @@ Declared license: MIT OR Apache-2.0
 Source: https://docs.rs/crate/rustls-platform-verifier/0.6.2/source/
 Notice IDs: 283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b, 6205904d553962d42fd62764787a5b635a1416d4b3794f4fc465ec36bfbf7ceb
 
-cargo:rustls-webpki@0.103.9
+cargo:rustls-webpki@0.103.13
 Declared license: ISC
-Source: https://docs.rs/crate/rustls-webpki/0.103.9/source/
+Source: https://docs.rs/crate/rustls-webpki/0.103.13/source/
 Notice IDs: 3ac27594ed56fd079c95a71f8beabc498c5b997ec31e91f4a18e59a5974adb2a
 
 cargo:rustls@0.23.36
@@ -5709,8 +5709,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ============================================================
 Notice 3ac27594ed56fd079c95a71f8beabc498c5b997ec31e91f4a18e59a5974adb2a
-Used by: cargo:rustls-webpki@0.103.9
-Source: https://docs.rs/crate/rustls-webpki/0.103.9/source/LICENSE
+Used by: cargo:rustls-webpki@0.103.13
+Source: https://docs.rs/crate/rustls-webpki/0.103.13/source/LICENSE
 
 Except as otherwise noted, this project is licensed under the following
 (ISC-style) terms:

@@ -83,8 +83,19 @@ jobs:
 
       - name: cargo audit (informational)
         run: |
-          cargo install cargo-audit --quiet
-          cargo audit --file src-tauri/Cargo.lock || true
+          cargo install cargo-audit --version 0.22.2 --locked --quiet
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $report = cargo audit --file src-tauri/Cargo.lock --json
+          if ($LASTEXITCODE -notin 0, 1) { exit $LASTEXITCODE }
+          $report | Write-Output
+          $audit = ($report -join "`n") | ConvertFrom-Json
+          if ($null -eq $audit.vulnerabilities -or $null -eq $audit.lockfile) {
+            throw 'cargo-audit did not produce a complete report'
+          }
+          if ($audit.vulnerabilities.found) {
+            Write-Warning 'Rust advisories are present; see the report above.'
+          }
+          exit 0
 
   build:
     needs: [lint-and-test, rust-check]
