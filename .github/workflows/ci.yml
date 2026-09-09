@@ -43,7 +43,8 @@ jobs:
         run: npx tsc --noEmit
 
       - name: Frontend tests and coverage (Vitest)
-        run: npm run test:coverage
+        # Keep timing assertions from competing with other DOM test workers.
+        run: npm run test:coverage -- --maxWorkers=1
 
       - name: Production language-model bundle
         run: npm run check:model
